@@ -24,4 +24,8 @@ Link: https://github.com/MrJake7X
 
 Modelador 3D, Sonido, VFX: Oscar Trevejo Rodriguez
 
-https://github.com/OscarTrevejo1999
+Link: https://github.com/OscarTrevejo1999
+
+Artista 2D y Texturas: Maria Fuentes
+
+Link: https://github.com/Hkoisumi
