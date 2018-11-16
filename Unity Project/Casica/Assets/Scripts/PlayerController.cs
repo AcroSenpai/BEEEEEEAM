@@ -336,7 +336,7 @@ public class PlayerController : MonoBehaviour
 
     public void run()
     {
-        if(controller.isGrounded)
+        if(controller.isGrounded && !Realentizado)
         {
             speed = tspeed + 2f;
             speedMod = true;
@@ -345,8 +345,9 @@ public class PlayerController : MonoBehaviour
 
     public void walk()
     {
-        if(controller.isGrounded && jump)
+        if(controller.isGrounded && !jump && !Realentizado)
         {
+            Debug.Log("ando");
             speed = tspeed;
             speedMod = false;
         }
@@ -354,7 +355,7 @@ public class PlayerController : MonoBehaviour
 
     public void sneeky()
     {
-        if(controller.isGrounded)
+        if(controller.isGrounded && !Realentizado)
         {
             speed = tspeed - 2f;
             speedMod = true;
