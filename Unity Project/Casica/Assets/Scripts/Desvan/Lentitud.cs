@@ -22,7 +22,6 @@ public class Lentitud : MonoBehaviour {
     {
         if (other.gameObject.tag == "Player")
         {
-            Debug.Log("Salgo lentitud");
             other.gameObject.GetComponent<PlayerController>().speed = speed + v;
             other.gameObject.GetComponent<PlayerController>().speedMod = false;
             other.gameObject.GetComponent<PlayerController>().Realentizado = false;
@@ -33,10 +32,9 @@ public class Lentitud : MonoBehaviour {
     {
         if (other.gameObject.tag == "Player")
         {
-            Debug.Log("Estoy lentitud");
             other.gameObject.GetComponent<PlayerController>().speed = speed - v;
             other.gameObject.GetComponent<PlayerController>().speedMod = false;
-            other.gameObject.GetComponent<PlayerController>().Realentizado = false;
+            other.gameObject.GetComponent<PlayerController>().Realentizado = true;
         }
     }
 
