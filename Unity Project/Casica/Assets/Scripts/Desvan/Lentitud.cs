@@ -11,6 +11,7 @@ public class Lentitud : MonoBehaviour {
     {
 		if (other.gameObject.tag == "Player")
         {
+            Debug.Log("Buena lentitud");
             speed = other.gameObject.GetComponent<PlayerController>().tspeed;
             other.gameObject.GetComponent<PlayerController>().speed = speed - v;
 		    other.gameObject.GetComponent<PlayerController>().speedMod = true;
