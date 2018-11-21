@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     private Vector2 axis;
     private CharacterController controller;
-    public Vector3 moveDirection;
+    private Vector3 moveDirection;
     public float speed;
     public float tspeed;
     private float forceToGround = Physics.gravity.y;
@@ -37,6 +37,7 @@ public class PlayerController : MonoBehaviour
     public Vector3 DistanciaRayo;
     public bool trepar;
     private RaycastHit Cubito;
+    private Animator anim;
     
     //Muerte por altura
     public float puntoMasAlto;
@@ -50,6 +51,7 @@ public class PlayerController : MonoBehaviour
     public bool planear;
     public bool inmune;
     public bool interactuar;
+    public bool bossFight;
 
     //Pruebas
     public GameObject objetoColisionado;
@@ -60,6 +62,7 @@ public class PlayerController : MonoBehaviour
     public bool fLinterna;
     public bool pLinterna;
     public int cLinterna;
+    public GameObject espada;
 
 
     // Use this for initialization
@@ -75,6 +78,8 @@ public class PlayerController : MonoBehaviour
         pLinterna = false;
         cLinterna ++;
         Realentizado = false;
+        bossFight = false;
+        anim = GetComponent<Animator>();
     }
 	
 	// Update is called once per frame
@@ -135,6 +140,7 @@ public class PlayerController : MonoBehaviour
                 num1 = 1;
                 pos = 1;
                 linterna.transform.rotation = Quaternion.Euler(37, 90, 0);
+                espada.transform.rotation = Quaternion.Euler(0, 180, 0);
                 Debug.Log("Derecha");
             }   
             else if(axis.x < 0)
@@ -143,6 +149,7 @@ public class PlayerController : MonoBehaviour
                 num2 = 0;
                 pos = 2;
                 linterna.transform.rotation = Quaternion.Euler(37, -90, 0);
+                espada.transform.rotation = Quaternion.Euler(0, 0, 0);
                 Debug.Log("Izquierda");
             }
 
@@ -151,6 +158,7 @@ public class PlayerController : MonoBehaviour
                 num2 = 1;
                 pos = 3;
                 linterna.transform.rotation = Quaternion.Euler(37, 0, 0);
+                espada.transform.rotation = Quaternion.Euler(0, 90, 0);
                 Debug.Log("Alante");
                 
             }   
@@ -160,6 +168,7 @@ public class PlayerController : MonoBehaviour
                 num1 = 0;
                 pos = 4;
                 linterna.transform.rotation = Quaternion.Euler(37, 180, 0);
+                espada.transform.rotation = Quaternion.Euler(0, -90, 0);
                 Debug.Log("Atras");
             }
 
@@ -460,6 +469,25 @@ public class PlayerController : MonoBehaviour
                 pLinterna = true;
             }
         }
+    }
+
+
+    public void SetBossFight()
+    {
+        bossFight = !bossFight;
+        if(bossFight)
+        {
+            espada.SetActive(true);
+        }
+        else
+        {
+            espada.SetActive(false);
+        }
+    }
+    public void Attack()
+    {
+        Debug.Log("Estoy atacando");
+        anim.SetTrigger("Ataque");
     }
 
 
