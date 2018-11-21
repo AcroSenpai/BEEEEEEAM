@@ -16,6 +16,9 @@ public class BossSombrita : MonoBehaviour
     public BoxCollider boss;
     public BoxCollider atras;
 
+    public int live;
+
+
 
     [Header("Target properties")]
     public float radius_1;
@@ -31,6 +34,7 @@ public class BossSombrita : MonoBehaviour
     private void Start()
     {
         anims = GetComponentInChildren<Animator>();
+        live = 3;
         SetOculto();
     }
 
@@ -64,6 +68,7 @@ public class BossSombrita : MonoBehaviour
             //ha detectado un target
             targetDetected = true;
             targetTransform = hitCollider[0].transform;
+           
         }
 
    }
@@ -88,7 +93,6 @@ public class BossSombrita : MonoBehaviour
     }
     void AtCUpdate()
     {
-        Debug.Log("Distnacia: "+ Vector3.Distance(transform.position, targetTransform.position));
         if(Vector3.Distance(transform.position, targetTransform.position) > atCDistance) SetAtd();
         //Idle Cuando salgamos del overlap
     }
@@ -105,6 +109,7 @@ public class BossSombrita : MonoBehaviour
     {
         boss.enabled = !boss.enabled;
         atras.enabled = !atras.enabled;
+        targetTransform.gameObject.GetComponent<PlayerController>().SetBossFight();
         anims.SetTrigger("Idle");
         state = State.Idle;
     }
@@ -141,6 +146,16 @@ public class BossSombrita : MonoBehaviour
            other.gameObject.GetComponent<PlayerController>().Dead();
         }
 	}
+
+    public void Damage()
+    {
+        Debug.Log("El boss pierde vida");
+        live -= 1;
+        if(live >= 0)
+        {
+            SetDead();
+        }
+    }
 
 
 }
