@@ -9,6 +9,8 @@ TagManager:
   - Object
   - Trepar
   - GameManager
+  - Palanca
+  - Boss
   layers:
   - Default
   - TransparentFX

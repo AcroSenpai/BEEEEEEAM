@@ -15,6 +15,7 @@ public class BossSombrita : MonoBehaviour
 
     public BoxCollider boss;
     public BoxCollider atras;
+    public bool Inicio;
 
     public int live;
 
@@ -36,6 +37,7 @@ public class BossSombrita : MonoBehaviour
         anims = GetComponentInChildren<Animator>();
         live = 3;
         SetOculto();
+        Inicio = false;
     }
 
     private void Update()
@@ -109,7 +111,12 @@ public class BossSombrita : MonoBehaviour
     {
         boss.enabled = !boss.enabled;
         atras.enabled = !atras.enabled;
-        targetTransform.gameObject.GetComponent<PlayerController>().SetBossFight();
+        if(!Inicio)
+        {
+            targetTransform.gameObject.GetComponent<PlayerController>().SetBossFight();
+            Inicio = true;
+        }
+        
         anims.SetTrigger("Idle");
         state = State.Idle;
     }
@@ -126,6 +133,7 @@ public class BossSombrita : MonoBehaviour
     }
     void SetDead()
     {
+        targetTransform.gameObject.GetComponent<PlayerController>().SetBossFight();
         Destroy(this.gameObject);
         state = State.Dead;
     }
