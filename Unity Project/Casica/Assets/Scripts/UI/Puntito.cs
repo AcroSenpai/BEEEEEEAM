@@ -53,6 +53,7 @@ public class Puntito : MonoBehaviour {
         if(other.tag == "Player")
         {
             start = true;
+            end = false;
         }
     }
 
@@ -61,6 +62,7 @@ public class Puntito : MonoBehaviour {
         if (other.tag == "Player")
         {
             end = true;
+            start = false;
         }
     }
 }
