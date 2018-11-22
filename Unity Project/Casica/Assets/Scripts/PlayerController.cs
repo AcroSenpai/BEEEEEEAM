@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     private Vector2 axis;
+    private Vector2 lastAxis;
     private CharacterController controller;
     private Vector3 moveDirection;
     public float speed;
@@ -127,15 +128,22 @@ public class PlayerController : MonoBehaviour
         if(axis.x == 0 && axis.y == 0)
         {
             anim.SetBool("walk", false);
+
         }
         else
         {
+            lastAxis = axis;
+            Debug.Log(lastAxis);
             anim.SetBool("walk", true);
         }
+
         controller.Move(moveDirection * Time.deltaTime);//Mueve el controller
 
         anim.SetFloat("axisX", axis.x);
         anim.SetFloat("axisY", axis.y);
+
+        anim.SetFloat("lastAxisX", lastAxis.x);
+        anim.SetFloat("lastAxisY", lastAxis.y);
 
         #region Cojer objeto 
         hit = new RaycastHit();
