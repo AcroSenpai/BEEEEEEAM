@@ -112,6 +112,8 @@ public class PlayerController : MonoBehaviour
         //transforma el movimiento del moundo al del local
         tranformDirection = axis.x * transform.right + axis.y * transform.forward;
 
+
+
         if(!trepar)
         {
             moveDirection.x = tranformDirection.x * speed;
@@ -121,9 +123,19 @@ public class PlayerController : MonoBehaviour
         {
             moveDirection.y = vy * speed;
         }
-            controller.Move(moveDirection * Time.deltaTime);//Mueve el controller
-        
-       
+
+        if(axis.x == 0 && axis.y == 0)
+        {
+            anim.SetBool("walk", false);
+        }
+        else
+        {
+            anim.SetBool("walk", true);
+        }
+        controller.Move(moveDirection * Time.deltaTime);//Mueve el controller
+
+        anim.SetFloat("axisX", axis.x);
+        anim.SetFloat("axisY", axis.y);
 
         #region Cojer objeto 
         hit = new RaycastHit();
