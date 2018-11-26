@@ -6,6 +6,8 @@ public class PlayerController : MonoBehaviour
 {
     private Vector2 axis;
     private Vector2 lastAxis;
+    private Vector2 pullAxis;
+    private bool push;
     private CharacterController controller;
     private Vector3 moveDirection;
     public float speed;
@@ -80,6 +82,7 @@ public class PlayerController : MonoBehaviour
         cLinterna ++;
         Realentizado = false;
         bossFight = false;
+        push = false;
         anim = GetComponent<Animator>();
     }
 	
@@ -144,6 +147,16 @@ public class PlayerController : MonoBehaviour
 
         anim.SetFloat("lastAxisX", lastAxis.x);
         anim.SetFloat("lastAxisY", lastAxis.y);
+
+        if(!push)
+        {
+            pullAxis = axis;
+        }
+
+        anim.SetBool("pull", push);
+
+        anim.SetFloat("pullAxisX", pullAxis.x);
+        anim.SetFloat("pullAxisY", pullAxis.y);
 
         #region Cojer objeto 
         hit = new RaycastHit();
@@ -328,6 +341,7 @@ public class PlayerController : MonoBehaviour
             jump = true;
             moveDirection.y = jumpSpeed;
             Debug.Log("Saltar");
+            anim.SetTrigger("Jump");
         }            
         
     }
@@ -339,22 +353,23 @@ public class PlayerController : MonoBehaviour
             Cubito = hit;
             Cubito.transform.parent = transform;
             objSelec = 1;
+            push = true;
 
             if(!fspeedPP)
             {
                 speedPP = speed;
                 speed = speed / 2;
                 fspeedPP = true;
+                Realentizado = true;
             }
         }
-        
-       
     }
 
     public void NoPullPush()
     {
         Cubito.transform.parent = null;
         objSelec = 0;
+        push = false;
         if (fspeedPP)
         {
             speed = speedPP;
@@ -379,6 +394,7 @@ public class PlayerController : MonoBehaviour
             Debug.Log("ando");
             speed = tspeed;
             speedMod = false;
+            anim.SetBool("crouch", false);
         }
     }
 
@@ -386,6 +402,14 @@ public class PlayerController : MonoBehaviour
     {
         if(controller.isGrounded && !Realentizado)
         {
+            if(axis.x == 0 && axis.y == 0)
+            {
+                anim.SetBool("crouch", false);
+            }
+            else
+            {
+                anim.SetBool("crouch", true);
+            }
             speed = tspeed - 2f;
             speedMod = true;
         }
