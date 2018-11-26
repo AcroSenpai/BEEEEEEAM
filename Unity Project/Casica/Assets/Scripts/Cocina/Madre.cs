@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class Madre : MonoBehaviour 
 {
 
-    public enum State {Idle, Patrol, Chase, Explosion, Dead};
+    public enum State {Idle1, Idle2, Idle3, Patrol};
     public State state;
 
     private Animator anim;
@@ -27,19 +27,17 @@ public class Madre : MonoBehaviour
     public LayerMask targetMask;
     public bool targetDetected;
     public Transform targetTransform;
+    public float distanceToPlayer;
 
-    [Header("Explosion properties")]
-    public float explosionDistance = 2.5f;
-    public float explosionRadius;
-    public float explosionForce;
-    public ParticleSystem ExplosionSP;
+    public float minPlayerDetectDistance;
+
 
     private void Start()
     {
-        anim = GetComponentInChildren<Animator>();
+        //anim = GetComponentInChildren<Animator>();
         //sound = GetComponentInChildren<SoundPlayer>();
         agent = GetComponent<NavMeshAgent>();
-
+        agent.Warp(transform.position);
         GoToNearNode();
         SetIdle();
     }
@@ -48,14 +46,17 @@ public class Madre : MonoBehaviour
     {
         switch(state)
         {
-            case State.Idle:
-                IdleUpdate();
+            case State.Idle1:
+                IdleUpdate(1);
+                break;
+            case State.Idle2:
+                IdleUpdate(2);
+                break;
+            case State.Idle3:
+                IdleUpdate(3);
                 break;
             case State.Patrol:
                 PatrolUpdate();
-                break;
-            case State.Chase:
-                ChaseUpdate();
                 break;
             default:
                 break;
@@ -74,21 +75,18 @@ public class Madre : MonoBehaviour
         }
     }
 
-    void IdleUpdate()
+    void IdleUpdate(int num)
     {
         //primera condicion patrol
         if(timeCounter >= idleTime) SetPatrol();
         else timeCounter += Time.deltaTime;
 
         //segunda condicion target
-        if(targetDetected) SetChase();
     }
 
 
     void PatrolUpdate()
     {
-        //Si hay target SetChase
-        if(targetDetected) SetChase();
         //Si se para en cada punto Idle else siguiente punto
         if(Vector3.Distance(transform.position, nodes[curentNode].position) < minDistance)
         {
@@ -96,71 +94,50 @@ public class Madre : MonoBehaviour
             if(stopAtEachNode) SetIdle();
         }
     }
-    void ChaseUpdate()
-    {
-        //Explosion Cuando la distancia sea menor que X
-        if(Vector3.Distance(transform.position, targetTransform.position) <= explosionDistance) SetExplosion();
-        //Idle Cuando salgamos del overlap
-        if(!targetDetected)
-        {
-            GoToNearNode();
-            SetIdle();
-            return;
-        }
-        //Chase: perseguir al target
-        agent.SetDestination(targetTransform.position);
-    }
-
+    
     #region Sets
     void SetIdle()
     {
         //sound.Play(Random.Range(1,5), 1);
         timeCounter = 0;
-        anim.SetBool("isMoving", false);
+        //anim.SetBool("isMoving", false);
         //agent.isStopped = true;
-       agent.stoppingDistance = 0;
-        radius = 5;
-        state = State.Idle;
+        agent.stoppingDistance = 0;
+        //radius = 5;
+        switch(curentNode)
+        {
+            case 0:
+                state = State.Idle1;
+                break;
+            case 1:
+                state = State.Idle2;
+                break;
+            case 2:
+                state = State.Idle3;
+                break;
+        }
     }
     void SetPatrol()
     {
-        anim.SetBool("isMoving", true);
+        //anim.SetBool("isMoving", true);
         agent.isStopped = false;
         //Darle destino
 
         state = State.Patrol;
     }
-    void SetChase()
-    {
-        anim.SetBool("isMoving", true);
-    	agent.isStopped = false;
-        agent.stoppingDistance = 2;
-        radius = 7;
-        state = State.Chase;
-    }
-    void SetExplosion()
-    {
-        //sound.Play(9, 1);
-        anim.SetTrigger("Explode");
-        agent.isStopped = true;
-
-        state = State.Explosion;
-    }
-    void SetDead()
-    {
-        Destroy(this.gameObject);
-        state = State.Dead;
-    }
     #endregion
 
     void GoToNearNode()
     {
+        Debug.Log("1");
         float minDist = Mathf.Infinity;
         for(int i = 0; i < nodes.Length; i++)
-        {
+        {   
+            Debug.Log("2");
             float dist = Vector3.Distance(transform.position, nodes[i].position);
             if(dist < minDist)
-            {
+            {   
+                Debug.Log("3");
                 curentNode = i;
                 minDist = dist;
             }
@@ -177,29 +154,6 @@ public class Madre : MonoBehaviour
         agent.SetDestination(nodes[curentNode].position);
     }
 
-    public void Beam()
-    {
-        //VFX
-        ExplosionSP.Play();
-        ExplosionSP.transform.parent = null;
-        //sound.Play(Random.Range(5, 9), 1);
-        
-
-        Collider[] hitCollider = Physics.OverlapSphere(transform.position, explosionRadius);
-        foreach(Collider col in hitCollider)
-        {
-            if(col.attachedRigidbody != null)
-            {
-                col.attachedRigidbody.AddExplosionForce(explosionForce, transform.position, explosionRadius, 1.0f, ForceMode.Impulse);
-            }
-            if(col.gameObject.layer == LayerMask.NameToLayer("Player"))
-            {
-                Debug.Log("Muere viejo puto");
-            }
-        }
-        SetDead();
-    }
-
     private void OnDrawGizmos()
     {
         Color c = Color.red;
@@ -207,6 +161,8 @@ public class Madre : MonoBehaviour
         Gizmos.color = c;
         Gizmos.DrawSphere(transform.position, radius);
     }
+
+    
 
 
 }
