@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Madre : MonoBehaviour 
+public class Padre : MonoBehaviour 
 {
 
     public enum State {Idle1, Idle2, Idle3, Patrol};
@@ -110,7 +110,6 @@ public class Madre : MonoBehaviour
         //Si se para en cada punto Idle else siguiente punto
         if(Vector3.Distance(transform.position, nodes[curentNode].position) < minDistance)
         {
-            GoToNextNode();
             if(stopAtEachNode) SetIdle();
         }
     }
