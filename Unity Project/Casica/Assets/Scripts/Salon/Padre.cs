@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class Padre : MonoBehaviour 
 {
 
-    public enum State {Idle1, Idle2, Idle3, Patrol};
+    public enum State {Idle,Shearch};
     public State state;
 
     private Animator anim;
@@ -31,6 +31,9 @@ public class Padre : MonoBehaviour
 
     public float minPlayerDetectDistance;
 
+    public bool triggerOn;
+    public int nextNode;
+
 
     private void Start()
     {
@@ -40,23 +43,18 @@ public class Padre : MonoBehaviour
         agent.Warp(transform.position);
         GoToNearNode();
         SetIdle();
+        triggerOn = false;
     }
 
     private void Update()
     {
         switch(state)
         {
-            case State.Idle1:
-                IdleUpdate(1);
+            case State.Idle:
+                IdleUpdate();
                 break;
-            case State.Idle2:
-                IdleUpdate(2);
-                break;
-            case State.Idle3:
-                IdleUpdate(3);
-                break;
-            case State.Patrol:
-                PatrolUpdate();
+            case State.Shearch:
+                SearchUpdate();
                 break;
             default:
                 break;
@@ -75,44 +73,29 @@ public class Padre : MonoBehaviour
         }
     }
 
-    void IdleUpdate(int num)
+    void IdleUpdate()
     {
         //primera condicion patrol
-        //Animacion Correspondiente
-
-        switch(num)
+        if(triggerOn)
         {
-            case 0:
-                //Animacion mesa
-                Debug.Log("Animacion mesa");
-                break;
-            case 1:
-                //Animacion armario
-                Debug.Log("Animacion armario");
-                break;
-            case 2:
-                //Animacion salto
-                Debug.Log("Animacion platos");
-                break;
+            Debug.Log("Voy de camino");
+            SetSearch();
+            triggerOn = false;
         }
-        
 
-
-        if(timeCounter >= idleTime) SetPatrol();
-        else timeCounter += Time.deltaTime;
-
+        GoToNode(0);
+        //Animacion Correspondiente
         //segunda condicion target
     }
 
-
-    void PatrolUpdate()
+    void SearchUpdate()
     {
-        //Si se para en cada punto Idle else siguiente punto
-        if(Vector3.Distance(transform.position, nodes[curentNode].position) < minDistance)
-        {
-            if(stopAtEachNode) SetIdle();
-        }
+        GoToNode(nextNode);
+        if(timeCounter >= idleTime) SetIdle();
+        else timeCounter += Time.deltaTime;
+
     }
+
     
     #region Sets
     void SetIdle()
@@ -123,26 +106,16 @@ public class Padre : MonoBehaviour
         //agent.isStopped = true;
         agent.stoppingDistance = 0;
         //radius = 5;
-        switch(curentNode)
-        {
-            case 0:
-                state = State.Idle1;
-                break;
-            case 1:
-                state = State.Idle2;
-                break;
-            case 2:
-                state = State.Idle3;
-                break;
-        }
+        
+        state = State.Idle;
+                
     }
-    void SetPatrol()
-    {
-        //anim.SetBool("isMoving", true);
-        agent.isStopped = false;
-        //Darle destino
 
-        state = State.Patrol;
+    void SetSearch()
+    {
+        agent.isStopped = false;
+        //radius = 5;     
+        state = State.Shearch;       
     }
     #endregion
 
@@ -164,18 +137,16 @@ public class Padre : MonoBehaviour
         agent.SetDestination(nodes[curentNode].position);
     }
 
-    void GoToNextNode()
+    void GoToNode(int num)
     {
-        /*int rand = Random.Range(0,2);
-        Debug.Log(rand);
-        while(rand == curentNode)
-        {
-             rand = Random.Range(0,2);
-             Debug.Log(rand+" T");
-        }*/
-        curentNode ++;
-        if(curentNode >= nodes.Length) curentNode = 0;
+        curentNode = num;
         agent.SetDestination(nodes[curentNode].position);
+    }
+
+    public void TriggerNode(int num)
+    {
+        triggerOn = true;
+        nextNode = num;
     }
 
     private void OnDrawGizmos()
