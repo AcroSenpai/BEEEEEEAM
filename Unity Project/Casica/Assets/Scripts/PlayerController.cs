@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     public UIControler hud;
     public bool primerSuelo;
 
+    private SoundPlayer sound;
 
     //mecanica pull/push
     public bool cerca;
@@ -84,6 +85,7 @@ public class PlayerController : MonoBehaviour
         bossFight = false;
         push = false;
         anim = GetComponent<Animator>();
+        sound = GameObject.FindGameObjectWithTag("GameManager").GetComponent<SoundPlayer>();
     }
 	
 	// Update is called once per frame
@@ -330,7 +332,7 @@ public class PlayerController : MonoBehaviour
 
     public void Step()
     {
-        Debug.Log("ARRIBA ESPAÑA");
+        sound.Play(0, .5f);
     }
 
     public void SetAxis(Vector2 naxis)
@@ -366,6 +368,7 @@ public class PlayerController : MonoBehaviour
             Cubito.transform.parent = transform;
             objSelec = 1;
             push = true;
+            sound.Play(1, 1);
 
             if(!fspeedPP)
             {

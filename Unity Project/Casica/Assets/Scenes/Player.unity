@@ -535,8 +535,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 390750141}
-  m_LocalRotation: {x: 0.099566236, y: 0.000000016558014, z: -0.000000001656852, w: 0.99503094}
-  m_LocalPosition: {x: -323.9267, y: -163.27216, z: -291.32144}
+  m_LocalRotation: {x: 0.27488497, y: -0.011300564, z: 0.0032310567, w: 0.9614053}
+  m_LocalPosition: {x: 273.8441, y: 30.029427, z: -383.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2886,6 +2886,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panel: {fileID: 673616860}
   panelNegro: {fileID: 673616856}
+--- !u!114 &1228136139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1228136135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d844bc92e0c47c9499bd76bc5c5ea54a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clips:
+  - {fileID: 8300000, guid: f7a62b9819d33c642bcdc1e7dc60ca82, type: 3}
+  - {fileID: 8300000, guid: 6248a054da48dcd49a42c0820f2e7c13, type: 3}
 --- !u!1 &1257793286
 GameObject:
   m_ObjectHideFlags: 3
