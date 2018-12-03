@@ -12,6 +12,8 @@ public class NoRenderHabJohnny : MonoBehaviour
 
     public Renderer marco;
 
+    public Renderer puerta;
+
     private Color myColor;
 
     void Start()
@@ -21,6 +23,8 @@ public class NoRenderHabJohnny : MonoBehaviour
         rend = GetComponentsInChildren<Renderer>();
 
         myColor = marco.material.color;
+
+        puerta.material.color = myColor;
     }
 
     public virtual void Update()

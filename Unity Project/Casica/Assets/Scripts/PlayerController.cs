@@ -136,7 +136,6 @@ public class PlayerController : MonoBehaviour
         else
         {
             lastAxis = axis;
-            Debug.Log(lastAxis);
             anim.SetBool("walk", true);
         }
 
@@ -319,6 +318,19 @@ public class PlayerController : MonoBehaviour
             fAltura = false;
         }
 
+    }
+
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        if(hit.collider.attachedRigidbody != null && !hit.collider.attachedRigidbody.isKinematic)
+        {
+            hit.collider.attachedRigidbody.velocity += (controller.velocity*2) * Time.deltaTime;
+        }
+    }
+
+    public void Step()
+    {
+        Debug.Log("ARRIBA ESPAÑA");
     }
 
     public void SetAxis(Vector2 naxis)
