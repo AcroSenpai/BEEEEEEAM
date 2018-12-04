@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour
     public UIControler hud;
     public bool primerSuelo;
 
-    private SoundPlayer sound;
+    private AudioManager sound;
 
     //mecanica pull/push
     public bool cerca;
@@ -85,7 +85,7 @@ public class PlayerController : MonoBehaviour
         bossFight = false;
         push = false;
         anim = GetComponent<Animator>();
-        sound = GameObject.FindGameObjectWithTag("GameManager").GetComponent<SoundPlayer>();
+        sound = GameObject.FindGameObjectWithTag("Music").GetComponent<AudioManager>();
     }
 	
 	// Update is called once per frame
@@ -152,8 +152,12 @@ public class PlayerController : MonoBehaviour
         if(!push)
         {
             pullAxis = axis;
+            //sound.Stop("push");
         }
-
+        else
+        {
+            sound.Play("push");
+        }
         anim.SetBool("pull", push);
 
         anim.SetFloat("pullAxisX", pullAxis.x);
@@ -332,7 +336,7 @@ public class PlayerController : MonoBehaviour
 
     public void Step()
     {
-        sound.Play(0, .5f);
+        sound.Play("step");
     }
 
     public void SetAxis(Vector2 naxis)
@@ -368,9 +372,8 @@ public class PlayerController : MonoBehaviour
             Cubito.transform.parent = transform;
             objSelec = 1;
             push = true;
-            sound.Play(1, 1);
 
-            if(!fspeedPP)
+            if (!fspeedPP)
             {
                 speedPP = speed;
                 speed = speed / 2;

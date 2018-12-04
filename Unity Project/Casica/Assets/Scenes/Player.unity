@@ -2256,6 +2256,61 @@ MonoBehaviour:
     roll: 0
   - position: {x: -68.83688, y: 0.000029053734, z: -0.0000044226636}
     roll: 0
+--- !u!1 &942660691
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 942660693}
+  - component: {fileID: 942660692}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Music
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &942660692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 942660691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f04d1711f89dcdd459ceff8eb429874b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: step
+    clip: {fileID: 8300000, guid: f7a62b9819d33c642bcdc1e7dc60ca82, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    audioMixer: {fileID: 0}
+    source: {fileID: 0}
+  - name: push
+    clip: {fileID: 8300000, guid: 6248a054da48dcd49a42c0820f2e7c13, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    audioMixer: {fileID: 0}
+    source: {fileID: 0}
+--- !u!4 &942660693
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 942660691}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 268.71912, y: -3.8365235, z: -317.982}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &981030998
 GameObject:
   m_ObjectHideFlags: 3
@@ -2886,20 +2941,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panel: {fileID: 673616860}
   panelNegro: {fileID: 673616856}
---- !u!114 &1228136139
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1228136135}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d844bc92e0c47c9499bd76bc5c5ea54a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clips:
-  - {fileID: 8300000, guid: f7a62b9819d33c642bcdc1e7dc60ca82, type: 3}
-  - {fileID: 8300000, guid: 6248a054da48dcd49a42c0820f2e7c13, type: 3}
 --- !u!1 &1257793286
 GameObject:
   m_ObjectHideFlags: 3
