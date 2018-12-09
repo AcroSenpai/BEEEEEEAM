@@ -12,6 +12,7 @@ TagManager:
   - Palanca
   - Boss
   - Music
+  - Plataforma
   layers:
   - Default
   - TransparentFX
