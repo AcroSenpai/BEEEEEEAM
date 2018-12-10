@@ -22,4 +22,25 @@ public class Plataforma_movil : Plataforma
 
         transform.Translate(Vector3.left * speed * Time.deltaTime);
     }
+
+    protected override void OnTriggerEnter(Collider other)
+    {
+		if (other.gameObject.tag == "Player")
+        {
+             Debug.Log("Hola buenas tardes compañero");
+            other.gameObject.transform.parent = transform;
+        }
+	}
+
+     protected override void OnTriggerExit(Collider other)
+    {
+		if (other.gameObject.tag == "Player")
+        {
+            Debug.Log("ya me voy ya joder con las prisas");
+            other.gameObject.transform.parent = null;
+            visible = false;
+            gameObject.GetComponentInChildren<MeshRenderer>().enabled = false;
+            gameObject.GetComponentInChildren<BoxCollider>().enabled = false;
+        }
+	}
 }

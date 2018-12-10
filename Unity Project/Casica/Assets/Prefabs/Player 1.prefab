@@ -320,13 +320,14 @@ GameObject:
   m_Component:
   - component: {fileID: 4104318838106576}
   - component: {fileID: 108931529851748410}
+  - component: {fileID: 114191740096142138}
   m_Layer: 0
   m_Name: Linterna
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1296269576328244
 GameObject:
   m_ObjectHideFlags: 1
@@ -2222,7 +2223,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1748589530519328}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -248.8685, y: 54.66, z: -25.879158}
+  m_LocalPosition: {x: 6.7, y: 3.9, z: -28.66}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4104318838106576}
@@ -2476,6 +2477,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 026e8e3df2805c84ba0142bf0768d6d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114191740096142138
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1294342266157604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aceadc383fe96b049b2a85c0c5a75b80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distance: 18
+  mask:
+    serializedVersion: 2
+    m_Bits: 256
+  direccion_rayo: {x: 1, y: -1.4000001, z: 0}
+  separacion: -1.4000001
 --- !u!114 &114793756282980150
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2505,7 +2523,7 @@ MonoBehaviour:
   DistanciaRayo: {x: 0, y: 2.45, z: 0}
   trepar: 0
   puntoMasAlto: 0
-  maximoAltura: 10
+  maximoAltura: 30
   fAltura: 0
   vy: 0
   planear: 0
@@ -2515,8 +2533,8 @@ MonoBehaviour:
   objetoColisionado: {fileID: 0}
   Realentizado: 0
   linterna: {fileID: 1294342266157604}
-  fLinterna: 0
-  pLinterna: 0
+  fLinterna: 1
+  pLinterna: 1
   cLinterna: 0
   espada: {fileID: 1445445344464864}
 --- !u!136 &136490303343577276

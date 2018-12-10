@@ -11,8 +11,9 @@ public class Plataforma : MonoBehaviour
 	void Start ()
     {
         visible = false;
-        gameObject.GetComponent<MeshRenderer>().enabled = false;
-        gameObject.GetComponent<BoxCollider>().enabled = false;
+        gameObject.GetComponentInChildren<MeshRenderer>().enabled = false;
+        gameObject.GetComponentsInChildren<BoxCollider>()[1].enabled = false;
+
 
     }
 
@@ -29,7 +30,25 @@ public class Plataforma : MonoBehaviour
     public void setVisible()
     {
         visible = true;
-        gameObject.GetComponent<MeshRenderer>().enabled = true;
-        gameObject.GetComponent<BoxCollider>().enabled = true;
+        gameObject.GetComponentInChildren<MeshRenderer>().enabled = true;
+        gameObject.GetComponentsInChildren<BoxCollider>()[1].enabled = true;
     }
+
+    protected virtual void OnTriggerEnter(Collider other)
+    {
+		
+	}
+
+    protected virtual void OnTriggerExit(Collider other)
+    {
+		if (other.gameObject.tag == "Player")
+        {
+            visible = false;
+            gameObject.GetComponentInChildren<MeshRenderer>().enabled = false;
+            gameObject.GetComponentsInChildren<BoxCollider>()[1].enabled = false;
+        }
+	}
+
+
+    
 }
