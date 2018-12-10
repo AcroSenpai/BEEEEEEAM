@@ -53,4 +53,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/sotanoN.unity
     guid: 015679027b3cc0c41a484c5e34e092de
+  - enabled: 1
+    path: Assets/Scenes/sotanoD.unity
+    guid: 6a790f660913e5949973c9dcc9ef7b05
   m_configObjects: {}

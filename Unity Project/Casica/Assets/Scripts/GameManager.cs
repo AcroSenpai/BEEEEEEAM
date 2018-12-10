@@ -55,6 +55,7 @@ public class GameManager : MonoBehaviour {
     public CinemachineVirtualCamera camHabPadres;
     public CinemachineVirtualCamera camLaberinto;
     public CinemachineVirtualCamera camSotanoN;
+    public CinemachineVirtualCamera camSotanoD;
 
     private Transform player;
     [Header("Teleports")]
@@ -71,7 +72,7 @@ public class GameManager : MonoBehaviour {
     public GameObject habPadresPoint;
     public GameObject laberintoPoint;
     public GameObject sotanoNPoint;
-    //public GameObject sotanoDPoint;
+    public GameObject sotanoDPoint;
 
     private void Awake()
     {
@@ -98,7 +99,8 @@ public class GameManager : MonoBehaviour {
         camDesvan.enabled = onDesvan;
         camHabPadres.enabled = onHabPadres;
         camLaberinto.enabled = onLaberinto;
-
+        camSotanoN.enabled = onSotanoN;
+        camSotanoD.enabled = onSotanoD;
 
         if (onDespensa || onCocina ||onSalon)
         {
@@ -107,15 +109,6 @@ public class GameManager : MonoBehaviour {
         else
         {
             camDespensa.enabled = false;
-        }
-
-        if(onSotanoN || onSotanoD)
-        {
-            camSotanoN.enabled = true;
-        }
-        else
-        {
-            camSotanoN.enabled = false;
         }
     }
 
@@ -215,7 +208,7 @@ public class GameManager : MonoBehaviour {
     public void TpSotanoD()
     {
         OpenSotanoD();
-        //player.position = sotanoDPoint.transform.position;
+        player.position = sotanoDPoint.transform.position;
         Debug.Log("TP DONE");
     }
     #endregion
@@ -341,13 +334,11 @@ public class GameManager : MonoBehaviour {
 
     public void OpenSotanoD()
     {
-        /*
         if (!sotanoD)
         {
             SceneManager.LoadSceneAsync("sotanoD", LoadSceneMode.Additive);
             sotanoD = true;
         }
-        */
     }
 
     #endregion
@@ -473,13 +464,11 @@ public class GameManager : MonoBehaviour {
 
     public void CloseSotanoD()
     {
-        /*
         if (sotanoD)
         {
             SceneManager.UnloadSceneAsync("sotanoD");
             sotanoD = false;
         }
-        */
     }
 
     #endregion
