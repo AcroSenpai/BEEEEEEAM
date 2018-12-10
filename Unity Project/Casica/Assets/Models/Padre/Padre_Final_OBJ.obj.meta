@@ -1,0 +1,215 @@
+fileFormatVersion: 2
+guid: dff20f170d645fa46b20bfba9addb77b
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: g_Bolsillo:Group15_Bolsillo:Group15
+    100002: g_UV:eyes:Box001_UV:eyes:Box001
+    100004: g_UV:LOW1:Group32733_UV:LOW1:Group32733
+    100006: g_UV:LOW1:Group33428_UV:LOW1:Group33428
+    100008: g_UV:LOW1:Group33431_UV:LOW1:Group33431
+    100010: g_UV:LOW1:Group33432_UV:LOW1:Group33432
+    100012: g_UV:LOW1:Group33433_UV:LOW1:Group33433
+    100014: g_UV:LOW1:Group33434_UV:LOW1:Group33434
+    100016: g_UV:LOW1:Group33439_UV:LOW1:Group33439
+    100018: g_UV:LOW1:Group33440_UV:LOW1:Group33440
+    100020: g_UV:LOW1:Group33442_UV:LOW1:Group33442
+    100022: g_UV:LOW1:Group33444_UV:LOW1:Group33444
+    100024: g_UV:LOW1:Group33445_UV:LOW1:Group33445
+    100026: g_UV:LOW1:Group33446_UV:LOW1:Group33446
+    100028: g_UV:LOW1:Group33447_UV:LOW1:Group33447
+    100030: g_UV:LOW1:Group33448_UV:LOW1:Group33448
+    100032: g_UV:LOW1:LOW1:Group33596_UV:LOW1:LOW1:Group33596
+    100034: g_UV:LOW1:LOW1:textureEditorIsolateSelectSet1_UV:LOW1:Group33432_UV:LOW1:LOW1:textureEditorIsolateSelectSet1_UV:LOW1:Group33432
+    100036: g_UV:LOW1:LOW1:textureEditorIsolateSelectSet2_UV:LOW1:Group33431_UV:LOW1:LOW1:textureEditorIsolateSelectSet2_UV:LOW1:Group33431
+    100038: g_UV:LOW1:LOW1:textureEditorIsolateSelectSet_UV:LOW1:Group33432_UV:LOW1:LOW1:textureEditorIsolateSelectSet_UV:LOW1:Group33432
+    100040: g_UV:LOW1:textureEditorIsolateSelectSet_UV:LOW1:textureEditorIsolateSelectSet1_UV:LOW1:textureEditorIsolateSelectSet2_UV:LOW1:Group60417_UV:LOW1:textureEditorIsolateSelectSet_UV:LOW1:textureEditorIsolateSelectSet1_UV:LOW1:textureEditorIsolateSelectSet2_UV:LOW1:Group60417
+    100042: //RootNode
+    400000: g_Bolsillo:Group15_Bolsillo:Group15
+    400002: g_UV:eyes:Box001_UV:eyes:Box001
+    400004: g_UV:LOW1:Group32733_UV:LOW1:Group32733
+    400006: g_UV:LOW1:Group33428_UV:LOW1:Group33428
+    400008: g_UV:LOW1:Group33431_UV:LOW1:Group33431
+    400010: g_UV:LOW1:Group33432_UV:LOW1:Group33432
+    400012: g_UV:LOW1:Group33433_UV:LOW1:Group33433
+    400014: g_UV:LOW1:Group33434_UV:LOW1:Group33434
+    400016: g_UV:LOW1:Group33439_UV:LOW1:Group33439
+    400018: g_UV:LOW1:Group33440_UV:LOW1:Group33440
+    400020: g_UV:LOW1:Group33442_UV:LOW1:Group33442
+    400022: g_UV:LOW1:Group33444_UV:LOW1:Group33444
+    400024: g_UV:LOW1:Group33445_UV:LOW1:Group33445
+    400026: g_UV:LOW1:Group33446_UV:LOW1:Group33446
+    400028: g_UV:LOW1:Group33447_UV:LOW1:Group33447
+    400030: g_UV:LOW1:Group33448_UV:LOW1:Group33448
+    400032: g_UV:LOW1:LOW1:Group33596_UV:LOW1:LOW1:Group33596
+    400034: g_UV:LOW1:LOW1:textureEditorIsolateSelectSet1_UV:LOW1:Group33432_UV:LOW1:LOW1:textureEditorIsolateSelectSet1_UV:LOW1:Group33432
+    400036: g_UV:LOW1:LOW1:textureEditorIsolateSelectSet2_UV:LOW1:Group33431_UV:LOW1:LOW1:textureEditorIsolateSelectSet2_UV:LOW1:Group33431
+    400038: g_UV:LOW1:LOW1:textureEditorIsolateSelectSet_UV:LOW1:Group33432_UV:LOW1:LOW1:textureEditorIsolateSelectSet_UV:LOW1:Group33432
+    400040: g_UV:LOW1:textureEditorIsolateSelectSet_UV:LOW1:textureEditorIsolateSelectSet1_UV:LOW1:textureEditorIsolateSelectSet2_UV:LOW1:Group60417_UV:LOW1:textureEditorIsolateSelectSet_UV:LOW1:textureEditorIsolateSelectSet1_UV:LOW1:textureEditorIsolateSelectSet2_UV:LOW1:Group60417
+    400042: //RootNode
+    2100000: g_Bolsillo_Group15_Bolsillo_Group15Mat
+    2100002: g_UV_eyes_Box001_UV_eyes_Box001Mat
+    2100004: g_UV_LOW1_Group32733_UV_LOW1_Group32733Mat
+    2100006: g_UV_LOW1_Group33428_UV_LOW1_Group33428Mat
+    2100008: g_UV_LOW1_Group33431_UV_LOW1_Group33431Mat
+    2100010: g_UV_LOW1_Group33432_UV_LOW1_Group33432Mat
+    2100012: g_UV_LOW1_Group33433_UV_LOW1_Group33433Mat
+    2100014: g_UV_LOW1_Group33434_UV_LOW1_Group33434Mat
+    2100016: g_UV_LOW1_Group33439_UV_LOW1_Group33439Mat
+    2100018: g_UV_LOW1_Group33440_UV_LOW1_Group33440Mat
+    2100020: g_UV_LOW1_Group33442_UV_LOW1_Group33442Mat
+    2100022: g_UV_LOW1_Group33444_UV_LOW1_Group33444Mat
+    2100024: g_UV_LOW1_Group33445_UV_LOW1_Group33445Mat
+    2100026: g_UV_LOW1_Group33446_UV_LOW1_Group33446Mat
+    2100028: g_UV_LOW1_Group33447_UV_LOW1_Group33447Mat
+    2100030: g_UV_LOW1_Group33448_UV_LOW1_Group33448Mat
+    2100032: g_UV_LOW1_LOW1_Group33596_UV_LOW1_LOW1_Group33596Mat
+    2100034: g_UV_LOW1_LOW1_textureEditorIsolateSelectSet1_UV_LOW1_Group33432_UV_LOW1_LOW1_textureEditorIsolateSelectSet1_UV_LOW1_Group33432Mat
+    2100036: g_UV_LOW1_LOW1_textureEditorIsolateSelectSet2_UV_LOW1_Group33431_UV_LOW1_LOW1_textureEditorIsolateSelectSet2_UV_LOW1_Group33431Mat
+    2100038: g_UV_LOW1_LOW1_textureEditorIsolateSelectSet_UV_LOW1_Group33432_UV_LOW1_LOW1_textureEditorIsolateSelectSet_UV_LOW1_Group33432Mat
+    2100040: g_UV_LOW1_textureEditorIsolateSelectSet_UV_LOW1_textureEditorIsolateSelectSet1_UV_LOW1_textureEditorIsolateSelectSet2_UV_LOW1_Group60417_UV_LOW1_textureEditorIsolateSelectSet_UV_LOW1_textureEditorIsolateSelectSet1_UV_LOW1_textureEditorIsolateSelectSet2_UV_LOW1_Group60417Mat
+    2300000: g_Bolsillo:Group15_Bolsillo:Group15
+    2300002: g_UV:eyes:Box001_UV:eyes:Box001
+    2300004: g_UV:LOW1:Group32733_UV:LOW1:Group32733
+    2300006: g_UV:LOW1:Group33428_UV:LOW1:Group33428
+    2300008: g_UV:LOW1:Group33431_UV:LOW1:Group33431
+    2300010: g_UV:LOW1:Group33432_UV:LOW1:Group33432
+    2300012: g_UV:LOW1:Group33433_UV:LOW1:Group33433
+    2300014: g_UV:LOW1:Group33434_UV:LOW1:Group33434
+    2300016: g_UV:LOW1:Group33439_UV:LOW1:Group33439
+    2300018: g_UV:LOW1:Group33440_UV:LOW1:Group33440
+    2300020: g_UV:LOW1:Group33442_UV:LOW1:Group33442
+    2300022: g_UV:LOW1:Group33444_UV:LOW1:Group33444
+    2300024: g_UV:LOW1:Group33445_UV:LOW1:Group33445
+    2300026: g_UV:LOW1:Group33446_UV:LOW1:Group33446
+    2300028: g_UV:LOW1:Group33447_UV:LOW1:Group33447
+    2300030: g_UV:LOW1:Group33448_UV:LOW1:Group33448
+    2300032: g_UV:LOW1:LOW1:Group33596_UV:LOW1:LOW1:Group33596
+    2300034: g_UV:LOW1:LOW1:textureEditorIsolateSelectSet1_UV:LOW1:Group33432_UV:LOW1:LOW1:textureEditorIsolateSelectSet1_UV:LOW1:Group33432
+    2300036: g_UV:LOW1:LOW1:textureEditorIsolateSelectSet2_UV:LOW1:Group33431_UV:LOW1:LOW1:textureEditorIsolateSelectSet2_UV:LOW1:Group33431
+    2300038: g_UV:LOW1:LOW1:textureEditorIsolateSelectSet_UV:LOW1:Group33432_UV:LOW1:LOW1:textureEditorIsolateSelectSet_UV:LOW1:Group33432
+    2300040: g_UV:LOW1:textureEditorIsolateSelectSet_UV:LOW1:textureEditorIsolateSelectSet1_UV:LOW1:textureEditorIsolateSelectSet2_UV:LOW1:Group60417_UV:LOW1:textureEditorIsolateSelectSet_UV:LOW1:textureEditorIsolateSelectSet1_UV:LOW1:textureEditorIsolateSelectSet2_UV:LOW1:Group60417
+    3300000: g_Bolsillo:Group15_Bolsillo:Group15
+    3300002: g_UV:eyes:Box001_UV:eyes:Box001
+    3300004: g_UV:LOW1:Group32733_UV:LOW1:Group32733
+    3300006: g_UV:LOW1:Group33428_UV:LOW1:Group33428
+    3300008: g_UV:LOW1:Group33431_UV:LOW1:Group33431
+    3300010: g_UV:LOW1:Group33432_UV:LOW1:Group33432
+    3300012: g_UV:LOW1:Group33433_UV:LOW1:Group33433
+    3300014: g_UV:LOW1:Group33434_UV:LOW1:Group33434
+    3300016: g_UV:LOW1:Group33439_UV:LOW1:Group33439
+    3300018: g_UV:LOW1:Group33440_UV:LOW1:Group33440
+    3300020: g_UV:LOW1:Group33442_UV:LOW1:Group33442
+    3300022: g_UV:LOW1:Group33444_UV:LOW1:Group33444
+    3300024: g_UV:LOW1:Group33445_UV:LOW1:Group33445
+    3300026: g_UV:LOW1:Group33446_UV:LOW1:Group33446
+    3300028: g_UV:LOW1:Group33447_UV:LOW1:Group33447
+    3300030: g_UV:LOW1:Group33448_UV:LOW1:Group33448
+    3300032: g_UV:LOW1:LOW1:Group33596_UV:LOW1:LOW1:Group33596
+    3300034: g_UV:LOW1:LOW1:textureEditorIsolateSelectSet1_UV:LOW1:Group33432_UV:LOW1:LOW1:textureEditorIsolateSelectSet1_UV:LOW1:Group33432
+    3300036: g_UV:LOW1:LOW1:textureEditorIsolateSelectSet2_UV:LOW1:Group33431_UV:LOW1:LOW1:textureEditorIsolateSelectSet2_UV:LOW1:Group33431
+    3300038: g_UV:LOW1:LOW1:textureEditorIsolateSelectSet_UV:LOW1:Group33432_UV:LOW1:LOW1:textureEditorIsolateSelectSet_UV:LOW1:Group33432
+    3300040: g_UV:LOW1:textureEditorIsolateSelectSet_UV:LOW1:textureEditorIsolateSelectSet1_UV:LOW1:textureEditorIsolateSelectSet2_UV:LOW1:Group60417_UV:LOW1:textureEditorIsolateSelectSet_UV:LOW1:textureEditorIsolateSelectSet1_UV:LOW1:textureEditorIsolateSelectSet2_UV:LOW1:Group60417
+    4300000: g_Bolsillo:Group15_Bolsillo:Group15
+    4300002: g_UV:eyes:Box001_UV:eyes:Box001
+    4300004: g_UV:LOW1:Group32733_UV:LOW1:Group32733
+    4300006: g_UV:LOW1:Group33428_UV:LOW1:Group33428
+    4300008: g_UV:LOW1:Group33431_UV:LOW1:Group33431
+    4300010: g_UV:LOW1:Group33432_UV:LOW1:Group33432
+    4300012: g_UV:LOW1:Group33433_UV:LOW1:Group33433
+    4300014: g_UV:LOW1:Group33434_UV:LOW1:Group33434
+    4300016: g_UV:LOW1:Group33439_UV:LOW1:Group33439
+    4300018: g_UV:LOW1:Group33440_UV:LOW1:Group33440
+    4300020: g_UV:LOW1:Group33442_UV:LOW1:Group33442
+    4300022: g_UV:LOW1:Group33444_UV:LOW1:Group33444
+    4300024: g_UV:LOW1:Group33445_UV:LOW1:Group33445
+    4300026: g_UV:LOW1:Group33446_UV:LOW1:Group33446
+    4300028: g_UV:LOW1:Group33447_UV:LOW1:Group33447
+    4300030: g_UV:LOW1:Group33448_UV:LOW1:Group33448
+    4300032: g_UV:LOW1:LOW1:Group33596_UV:LOW1:LOW1:Group33596
+    4300034: g_UV:LOW1:LOW1:textureEditorIsolateSelectSet1_UV:LOW1:Group33432_UV:LOW1:LOW1:textureEditorIsolateSelectSet1_UV:LOW1:Group33432
+    4300036: g_UV:LOW1:LOW1:textureEditorIsolateSelectSet2_UV:LOW1:Group33431_UV:LOW1:LOW1:textureEditorIsolateSelectSet2_UV:LOW1:Group33431
+    4300038: g_UV:LOW1:LOW1:textureEditorIsolateSelectSet_UV:LOW1:Group33432_UV:LOW1:LOW1:textureEditorIsolateSelectSet_UV:LOW1:Group33432
+    4300040: g_UV:LOW1:textureEditorIsolateSelectSet_UV:LOW1:textureEditorIsolateSelectSet1_UV:LOW1:textureEditorIsolateSelectSet2_UV:LOW1:Group60417_UV:LOW1:textureEditorIsolateSelectSet_UV:LOW1:textureEditorIsolateSelectSet1_UV:LOW1:textureEditorIsolateSelectSet2_UV:LOW1:Group60417
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
