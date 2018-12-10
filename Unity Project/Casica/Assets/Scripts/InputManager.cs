@@ -148,7 +148,7 @@ public class InputManager : MonoBehaviour
         //Inmune
          if(Input.GetKeyDown(KeyCode.F10))
         {
-            PC.Inmune();
+            Inmune();
         }
 
         if(PC.inmune)
@@ -186,5 +186,10 @@ public class InputManager : MonoBehaviour
                 PC.Attack();
             }
         }
+    }
+
+    public void Inmune()
+    {
+        PC.Inmune();
     }
 }

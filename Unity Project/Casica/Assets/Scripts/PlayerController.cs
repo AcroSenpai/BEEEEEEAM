@@ -76,7 +76,7 @@ public class PlayerController : MonoBehaviour
         tspeed = speed;
         speedMod = false;
         puntoMasAlto = 0;
-        maximoAltura = 10;
+        maximoAltura = 20;
         fAltura = false;
         fLinterna = false;
         pLinterna = false;

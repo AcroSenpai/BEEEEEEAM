@@ -18,7 +18,9 @@ public class Plataforma_destruccion : Plataforma
         {
             if (timeCounter > tiempo)
             {
-                Destroy(gameObject);
+                visible = false;
+                gameObject.GetComponentInChildren<MeshRenderer>().enabled = false;
+                gameObject.GetComponentInChildren<BoxCollider>().enabled = false;
             }
             else timeCounter += Time.deltaTime;
         }
