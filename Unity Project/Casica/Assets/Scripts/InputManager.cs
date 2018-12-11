@@ -35,7 +35,6 @@ public class InputManager : MonoBehaviour
         PC.SetAxis(inputAxis);
         if (Input.GetKeyDown(KeyCode.P))
         {
-            Debug.Log("Pausate");
             hud.OpenPausePanel();
         } 
         //Jump
@@ -46,7 +45,6 @@ public class InputManager : MonoBehaviour
                 {
                     PC.StartJump();
                     jump = true;
-                    Debug.Log("Salto");
                     status = 1;
                 }
                 else if (status != 0 && !Input.GetButton("Jump"))
@@ -66,7 +64,6 @@ public class InputManager : MonoBehaviour
 
             if (status == 2 && Input.GetButton("Jump"))
             {
-                Debug.Log("planeo");
                 PC.StartJump();
                 status = 3;
             }
@@ -86,7 +83,6 @@ public class InputManager : MonoBehaviour
         {
             if(Input.GetKey(KeyCode.Mouse0))
             {
-                Debug.Log("Te cojo perra");
                 PC.PullPush();
                 fPP = true;
             }
@@ -94,7 +90,6 @@ public class InputManager : MonoBehaviour
             {
                 if(fPP)
                 {
-                    Debug.Log("No Te cojo perra");
                     PC.NoPullPush();
                     fPP = false;
                 }
@@ -104,7 +99,6 @@ public class InputManager : MonoBehaviour
         {
             if(fPP)
                 {
-                    Debug.Log("No Te cojo perra");
                     PC.NoPullPush();
                     fPP = false;
                 }
@@ -115,7 +109,6 @@ public class InputManager : MonoBehaviour
         {
             if(Input.GetKey(KeyCode.Mouse0))
             {
-                Debug.Log("Voy a escalar");
                 PC.Escalar();
             }
 
@@ -125,7 +118,6 @@ public class InputManager : MonoBehaviour
         {
             if(Input.GetKeyDown(KeyCode.Mouse0))
             {
-                Debug.Log("Voy a interatuar con algo");
                 PC.Interactuar();
             }
         }

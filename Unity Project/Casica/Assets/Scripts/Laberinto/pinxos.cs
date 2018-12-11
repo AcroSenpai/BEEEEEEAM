@@ -11,7 +11,6 @@ public class pinxos : MonoBehaviour
     {
 		if (other.gameObject.tag == "Player")
         {
-			Debug.Log("He entrado perra");
 		    PC = other.gameObject.GetComponent<PlayerController>();
         }
 	}
