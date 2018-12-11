@@ -56,6 +56,9 @@ public class PlayerController : MonoBehaviour
     public bool inmune;
     public bool interactuar;
     public bool bossFight;
+    public bool cometa;
+
+    public GameObject cometita;
 
     //Pruebas
     public GameObject objetoColisionado;
@@ -84,6 +87,7 @@ public class PlayerController : MonoBehaviour
         Realentizado = false;
         bossFight = false;
         push = false;
+        cometa = false;
         anim = GetComponent<Animator>();
         sound = GameObject.FindGameObjectWithTag("Music").GetComponent<AudioManager>();
     }
@@ -118,6 +122,14 @@ public class PlayerController : MonoBehaviour
         //transforma el movimiento del moundo al del local
         tranformDirection = axis.x * transform.right + axis.y * transform.forward;
 
+        if(planear && !trepar)
+        {
+            cometita.SetActive(true);
+        }
+        else
+        {
+            cometita.SetActive(false);
+        }
 
 
         if(!trepar)
@@ -338,9 +350,13 @@ public class PlayerController : MonoBehaviour
     {
         if(!controller.isGrounded)
         {
-            gravityMagnitude = 1f;
-            speed = 15;
-            planear = true;
+            if(cometa)
+            {
+                gravityMagnitude = 1f;
+                speed = 15;
+                planear = true;
+            }
+            
         }
         else
         {
@@ -374,12 +390,14 @@ public class PlayerController : MonoBehaviour
     public void NoPullPush()
     {
         Cubito.transform.parent = null;
+        
         objSelec = 0;
         push = false;
         if (fspeedPP)
         {
             speed = speedPP;
             fspeedPP = false;
+            Realentizado = false;
         }
 
     }
@@ -534,7 +552,7 @@ public class PlayerController : MonoBehaviour
     }
     public void Attack()
     {
-        anim.SetTrigger("Ataque");
+        //anim.SetTrigger("Ataque");
     }
 
 

@@ -27,7 +27,6 @@ public class Plataforma_movil : Plataforma
     {
 		if (other.gameObject.tag == "Player")
         {
-             Debug.Log("Hola buenas tardes compañero");
             other.gameObject.transform.parent = transform;
         }
 	}
@@ -36,11 +35,10 @@ public class Plataforma_movil : Plataforma
     {
 		if (other.gameObject.tag == "Player")
         {
-            Debug.Log("ya me voy ya joder con las prisas");
             other.gameObject.transform.parent = null;
             visible = false;
             gameObject.GetComponentInChildren<MeshRenderer>().enabled = false;
-            gameObject.GetComponentInChildren<BoxCollider>().enabled = false;
+            gameObject.GetComponentsInChildren<BoxCollider>()[1].enabled = false;
         }
 	}
 }

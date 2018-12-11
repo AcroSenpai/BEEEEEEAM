@@ -20,11 +20,20 @@ public class Plataforma_destruccion : Plataforma
             {
                 visible = false;
                 gameObject.GetComponentInChildren<MeshRenderer>().enabled = false;
-                gameObject.GetComponentInChildren<BoxCollider>().enabled = false;
+                gameObject.GetComponentsInChildren<BoxCollider>()[1].enabled = false;
+                timeCounter = 0;
             }
             else timeCounter += Time.deltaTime;
         }
     }
+    protected override void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            SetMuerte();
+        }
+		
+	}
 
     public void SetMuerte()
     {
