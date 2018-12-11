@@ -18,7 +18,6 @@ public class Linternita_pm : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        Debug.Log(transform.rotation.y);
         if(transform.rotation.y > 0.6f && transform.rotation.y < 0.7f)
         {
             direccion_rayo = new Vector3(1,-2,0); 
@@ -47,7 +46,6 @@ public class Linternita_pm : MonoBehaviour
                 //Debug.DrawRay (ray.origin, ray.direction * hit.distance, Color.red, 1);
                 if (hit.collider.tag == "Plataforma")
                 {
-                    Debug.Log("Plataforma"); 
                     hit.collider.gameObject.GetComponent<Plataforma>().setVisible();
                 }
 

@@ -41,7 +41,6 @@ public class UIControler : MonoBehaviour
 
     public void OpenPausePanel()
     {
-        Debug.Log("Abro Pausa");
         pusePanel.SetActive(true);
         paused = true;
         Time.timeScale = 0;
@@ -82,7 +81,6 @@ public class UIControler : MonoBehaviour
 
     public void ClosePausePanel()
     {
-        Debug.Log("Cierro Pausa");
         pusePanel.SetActive(false);
         paused = false;
         Time.timeScale = 1;

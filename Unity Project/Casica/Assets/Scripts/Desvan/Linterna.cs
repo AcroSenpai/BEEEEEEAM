@@ -7,9 +7,13 @@ public class Linterna : Interactive
 
 	public PlayerController PC;
 
+	public void Start()
+	{
+		PC =  GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+	}
+
 	public override void Activar()
 	{
-		Debug.Log("Linternita de mi corason");
 		PC.cojerObj(1);
 		Object.Destroy(gameObject);
 	}

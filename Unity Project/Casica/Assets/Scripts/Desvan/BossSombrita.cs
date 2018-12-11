@@ -103,7 +103,7 @@ public class BossSombrita : MonoBehaviour
     void SetOculto()
     {
         boss = GetComponent<BoxCollider>();
-        atras = GameObject.Find("/Boss/Muro").GetComponent<BoxCollider>();
+        atras = GameObject.Find("Boss/Muro").GetComponent<BoxCollider>();
 
         state = State.Oculto;
     }
