@@ -3,17 +3,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TriggerHoja : MonoBehaviour {
+public class TriggerCam : MonoBehaviour {
 
-    public CinemachineVirtualCamera camHoja;
+    private CinemachineVirtualCamera camZoom;
 
     private bool zoom;
 
-    private bool cam;
-
+    public bool cam;
+    
     private void Start()
     {
-        camHoja.enabled = false;
+        camZoom = GetComponentInChildren<CinemachineVirtualCamera>();
+
+        camZoom.enabled = false;
     }
 
     private void Update()
@@ -34,7 +36,7 @@ public class TriggerHoja : MonoBehaviour {
             cam = false;
         }
 
-        camHoja.enabled = cam;
+        camZoom.enabled = cam;
     }
 
     private void OnTriggerEnter(Collider other)
