@@ -27,7 +27,7 @@ public class Plataforma : MonoBehaviour
         }
     }
 
-    public void setVisible()
+    public virtual void setVisible()
     {
         visible = true;
         gameObject.GetComponentInChildren<MeshRenderer>().enabled = true;
