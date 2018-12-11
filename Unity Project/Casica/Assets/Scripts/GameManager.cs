@@ -472,4 +472,68 @@ public class GameManager : MonoBehaviour {
     }
 
     #endregion
+
+    public void Respawn()
+    {
+        if(onBaño)
+        {
+            TpBaño();
+        }
+        else if(onCocina)
+        {
+            TpCocina();
+        }
+        else if(onCuartillo)
+        {
+            TpCuartillo();
+        }
+        else if(onDespensa)
+        {
+            TpDespensa();
+        }
+        else if(onDesvan)
+        {
+            TpDesvan();
+        }
+        else if(onHab)
+        {
+            TpHabJohnny();
+        }
+        else if(onHabPadres)
+        {
+            TpHabPadres();
+        }
+        else if(onLaberinto)
+        {
+            TpLaberinto();
+        }
+        else if(onNegacionD)
+        {
+            TpNegacionD();
+        }
+        else if(onNegacionN)
+        {
+            TpNegacionN();
+        }
+        else if(onPasillo)
+        {
+            TpPasillo();
+        }
+        else if(onSalon)
+        {
+            TpSalon();
+        }
+        else if(onSotanoD)
+        {
+            TpSotanoD();
+        }
+        else if(onSotanoN)
+        {
+            TpSotanoN();
+        }
+        else
+        {
+            TpHabJohnny();
+        }
+    }
 }

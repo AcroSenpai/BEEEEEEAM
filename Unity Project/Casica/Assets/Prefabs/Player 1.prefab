@@ -2223,7 +2223,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1748589530519328}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.7, y: 3.9, z: -28.66}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4104318838106576}
@@ -2533,8 +2533,8 @@ MonoBehaviour:
   objetoColisionado: {fileID: 0}
   Realentizado: 0
   linterna: {fileID: 1294342266157604}
-  fLinterna: 1
-  pLinterna: 1
+  fLinterna: 0
+  pLinterna: 0
   cLinterna: 0
   espada: {fileID: 1445445344464864}
 --- !u!136 &136490303343577276

@@ -179,7 +179,6 @@ public class PlayerController : MonoBehaviour
                 pos = 1;
                 linterna.transform.rotation = Quaternion.Euler(37, 90, 0);
                 espada.transform.rotation = Quaternion.Euler(0, 180, 0);
-                Debug.Log("Derecha");
             }   
             else if(axis.x < 0)
             {
@@ -188,7 +187,6 @@ public class PlayerController : MonoBehaviour
                 pos = 2;
                 linterna.transform.rotation = Quaternion.Euler(37, -90, 0);
                 espada.transform.rotation = Quaternion.Euler(0, 0, 0);
-                Debug.Log("Izquierda");
             }
 
             if(axis.y > 0) 
@@ -197,7 +195,6 @@ public class PlayerController : MonoBehaviour
                 pos = 3;
                 linterna.transform.rotation = Quaternion.Euler(37, 0, 0);
                 espada.transform.rotation = Quaternion.Euler(0, 90, 0);
-                Debug.Log("Alante");
                 
             }   
             else if(axis.y < 0)
@@ -207,12 +204,10 @@ public class PlayerController : MonoBehaviour
                 pos = 4;
                 linterna.transform.rotation = Quaternion.Euler(37, 180, 0);
                 espada.transform.rotation = Quaternion.Euler(0, -90, 0);
-                Debug.Log("Atras");
             }
 
             if(axis.x == 0 && axis.y == 0)
             {
-                Debug.Log("Parado");
                 switch(pos)
                 {
                     case 1:
@@ -246,8 +241,6 @@ public class PlayerController : MonoBehaviour
             ray = new Ray(origen, direccion_rayo);
             if (Physics.Raycast(ray, out hit, distance, mask))
             {
-                Debug.Log("Estoy cerca");
-                Debug.Log(hit.transform.name);
                 objetoColisionado = hit.transform.gameObject;
                 //Debug.DrawRay (ray.origin, ray.direction * hit.distance, Color.red, 1);
                 switch(i)
@@ -255,17 +248,14 @@ public class PlayerController : MonoBehaviour
                     case 0:
                             if(hit.collider.tag == "Object")
                             {
-                                Debug.Log("Es una caja movible");
                                 cerca = true;
                             }
                             else if(hit.collider.tag == "Trepar")
                             {
-                                Debug.Log("Es una pared escalabre");
                                 trepar = true;
                             }
                             else if(hit.collider.tag == "Palanca")
                             {
-                                Debug.Log("Es un objeto activable");
                                 interactuar = true;
                             }
                             else
@@ -350,7 +340,6 @@ public class PlayerController : MonoBehaviour
         {
             gravityMagnitude = 1f;
             speed = 15;
-            Debug.Log("Planear");
             planear = true;
         }
         else
@@ -358,7 +347,6 @@ public class PlayerController : MonoBehaviour
             speed = 15;
             jump = true;
             moveDirection.y = jumpSpeed;
-            Debug.Log("Saltar");
             anim.SetTrigger("Jump");
         }            
         
@@ -409,7 +397,6 @@ public class PlayerController : MonoBehaviour
     {
         if(controller.isGrounded && !jump && !Realentizado)
         {
-            Debug.Log("ando");
             speed = tspeed;
             speedMod = false;
             anim.SetBool("crouch", false);
@@ -464,7 +451,6 @@ public class PlayerController : MonoBehaviour
     {
         if(!inmune && primerSuelo)
         {
-            Debug.Log("Me ha dado un infartito");
             hud.OpenLosePanel();
         }
         
@@ -480,18 +466,19 @@ public class PlayerController : MonoBehaviour
         inmune = !inmune;
         if(inmune)
         {
-            Debug.Log("Eres jisus");
             moveDirection.y = vy;
+            Realentizado = true;
+            speed = 40;
         }
         else
         {
-            Debug.Log("Ya no eres jisus");
+            Realentizado = false;
+            speed = 7;
         }
     }
 
     public void Interactuar()
     {
-        Debug.Log("Interactuo");
         objetoColisionado.GetComponent<Interactive>().Activar();
     }
 
@@ -516,7 +503,6 @@ public class PlayerController : MonoBehaviour
     {
         if(num == 1)
         {
-            Debug.Log("Cojo la linternita");
             /*Animaicon recogiendo la linterna y que desde ahora aparezca */
             cLinterna ++;
         }
@@ -548,7 +534,6 @@ public class PlayerController : MonoBehaviour
     }
     public void Attack()
     {
-        Debug.Log("Estoy atacando");
         anim.SetTrigger("Ataque");
     }
 
