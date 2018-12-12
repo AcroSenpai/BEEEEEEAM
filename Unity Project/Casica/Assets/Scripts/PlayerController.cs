@@ -355,6 +355,7 @@ public class PlayerController : MonoBehaviour
                 gravityMagnitude = 1f;
                 speed = 15;
                 planear = true;
+                objetoColisionado = null;
             }
             
         }
@@ -406,7 +407,7 @@ public class PlayerController : MonoBehaviour
     {
         if(controller.isGrounded && !Realentizado)
         {
-            speed = tspeed + 2f;
+            speed = tspeed + 6f;
             speedMod = true;
         }
     }
@@ -497,7 +498,10 @@ public class PlayerController : MonoBehaviour
 
     public void Interactuar()
     {
-        objetoColisionado.GetComponent<Interactive>().Activar();
+        if(objetoColisionado != null)
+        {
+            objetoColisionado.GetComponent<Interactive>().Activar();
+        }
     }
 
     public void Linterna()
