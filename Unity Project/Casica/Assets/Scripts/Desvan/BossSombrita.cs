@@ -19,7 +19,7 @@ public class BossSombrita : MonoBehaviour
 
     public int live;
 
-
+    private SoundPlayer sound;
 
     [Header("Target properties")]
     public float radius_1;
@@ -35,6 +35,7 @@ public class BossSombrita : MonoBehaviour
     private void Start()
     {
         anims = GetComponentInChildren<Animator>();
+        sound = GetComponent<SoundPlayer>();
         live = 3;
         SetOculto();
         Inicio = false;
@@ -157,6 +158,7 @@ public class BossSombrita : MonoBehaviour
 
     public void Damage()
     {
+        sound.Play(0, 1);
         Debug.Log("El boss pierde vida");
         live -= 1;
         if(live >= 0)

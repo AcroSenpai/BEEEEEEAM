@@ -6,11 +6,20 @@ public class Palanca : Interactive {
 
 	public GameObject[] luces;
 
-	public override void Activar()
+    private SoundPlayer sound;
+
+    private void Start()
+    {
+        sound = GetComponent<SoundPlayer>();
+    }
+
+    public override void Activar()
 	{
-		foreach(GameObject luz in luces)
+        sound.Play(0, 1);
+        foreach (GameObject luz in luces)
 		{
 			luz.SetActive(true);
+
 		}
 	}
 

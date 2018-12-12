@@ -74,6 +74,8 @@ public class GameManager : MonoBehaviour {
     public GameObject sotanoNPoint;
     public GameObject sotanoDPoint;
 
+    private AudioManager sound;
+
     private void Awake()
     {
         if (GameObject.FindGameObjectsWithTag("GameManager").Length > 1)
@@ -86,10 +88,18 @@ public class GameManager : MonoBehaviour {
         }
 
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        sound = GameObject.FindGameObjectWithTag("Music").GetComponent<AudioManager>();
+
+        sound.Play("song");
     }
 
     private void Update()
     {
+        if (SceneManager.GetActiveScene().name == "MenuPrincipal")
+        {
+            Destroy(gameObject);
+        }
+
         camHab.enabled = onHab;
         camPasillo.enabled = onPasillo;
         camBaño.enabled = onBaño;
@@ -118,98 +128,98 @@ public class GameManager : MonoBehaviour {
     {
         OpenHabJohnny();
         player.position = habJohnnyPoint.transform.position;
-        Debug.Log("TP DONE");
+        //Debug.Log("TP DONE");
     }
 
     public void TpPasillo()
     {
         OpenPasillo();
         player.position = pasilloPoint.transform.position;
-        Debug.Log("TP DONE");
+        //Debug.Log("TP DONE");
     }
 
     public void TpBaño()
     {
         OpenBaño();
         player.position = bañoPoint.transform.position;
-        Debug.Log("TP DONE");
+        //Debug.Log("TP DONE");
     }
 
     public void TpNegacionN()
     {
         OpenNegacionN();
         player.position = negacionNPoint.transform.position;
-        Debug.Log("TP DONE");
+        //Debug.Log("TP DONE");
     }
 
     public void TpNegacionD()
     {
         OpenNegacionD();
         player.position = negacionDPoint.transform.position;
-        Debug.Log("TP DONE");
+        //Debug.Log("TP DONE");
     }
 
     public void TpCuartillo()
     {
         OpenCuartillo();
         player.position = cuartilloPoint.transform.position;
-        Debug.Log("TP DONE");
+        //Debug.Log("TP DONE");
     }
 
     public void TpDesvan()
     {
         OpenDesvan();
         player.position = desvanPoint.transform.position;
-        Debug.Log("TP DONE");
+        //Debug.Log("TP DONE");
     }
 
     public void TpDespensa()
     {
         OpenDespensa();
         player.position = despensaPoint.transform.position;
-        Debug.Log("TP DONE");
+        //Debug.Log("TP DONE");
     }
 
     public void TpCocina()
     {
         OpenCocina();
         player.position = cocinaPoint.transform.position;
-        Debug.Log("TP DONE");
+        //Debug.Log("TP DONE");
     }
 
     public void TpSalon()
     {
         OpenSalon();
         player.position = salonPoint.transform.position;
-        Debug.Log("TP DONE");
+        //Debug.Log("TP DONE");
     }
 
     public void TpHabPadres()
     {
         OpenHabPadres();
         player.position = habPadresPoint.transform.position;
-        Debug.Log("TP DONE");
+        //Debug.Log("TP DONE");
     }
 
     public void TpLaberinto()
     {
         OpenLaberinto();
         player.position = laberintoPoint.transform.position;
-        Debug.Log("TP DONE");
+        //Debug.Log("TP DONE");
     }
 
     public void TpSotanoN()
     {
         OpenSotanoN();
         player.position = sotanoNPoint.transform.position;
-        Debug.Log("TP DONE");
+        //Debug.Log("TP DONE");
     }
 
     public void TpSotanoD()
     {
         OpenSotanoD();
         player.position = sotanoDPoint.transform.position;
-        Debug.Log("TP DONE");
+        //Debug.Log("TP DONE");
     }
     #endregion
 

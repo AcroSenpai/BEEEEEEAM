@@ -39,13 +39,13 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 11
-  m_GIWorkflowMode: 0
+  m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -90,7 +90,8 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000002, guid: 6f7765982a8c12c4693e776d9630de80,
+    type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
@@ -516,6 +517,7 @@ GameObject:
   - component: {fileID: 51373158}
   - component: {fileID: 51373157}
   - component: {fileID: 51373156}
+  - component: {fileID: 51373160}
   m_Layer: 10
   m_Name: Palanca
   m_TagString: Palanca
@@ -611,6 +613,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 51373154}
   m_Mesh: {fileID: 4300040, guid: 2b457343d7332794f80b91cebac51368, type: 3}
+--- !u!114 &51373160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 51373154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d844bc92e0c47c9499bd76bc5c5ea54a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clips:
+  - {fileID: 8300000, guid: d141d557a22b2904a9e9797c30abd992, type: 3}
 --- !u!1 &62065474
 GameObject:
   m_ObjectHideFlags: 0
@@ -16731,6 +16746,7 @@ GameObject:
   - component: {fileID: 1973739976}
   - component: {fileID: 1973739975}
   - component: {fileID: 1973739974}
+  - component: {fileID: 1973739977}
   m_Layer: 8
   m_Name: Boss
   m_TagString: Untagged
@@ -16815,6 +16831,19 @@ MonoBehaviour:
     m_Bits: 512
   targetDetected: 0
   targetTransform: {fileID: 0}
+--- !u!114 &1973739977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1973739972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d844bc92e0c47c9499bd76bc5c5ea54a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clips:
+  - {fileID: 8300000, guid: 0eaa0cf0282333d4384498230158a580, type: 3}
 --- !u!1 &1998463135
 GameObject:
   m_ObjectHideFlags: 0

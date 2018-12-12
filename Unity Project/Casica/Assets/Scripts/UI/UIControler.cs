@@ -39,6 +39,11 @@ public class UIControler : MonoBehaviour
         //winLose = false;
     }
 
+    public void LoadMenu()
+    {
+        SceneManager.LoadScene("MenuPrincipal");
+    }
+
     public void OpenPausePanel()
     {
         pusePanel.SetActive(true);
