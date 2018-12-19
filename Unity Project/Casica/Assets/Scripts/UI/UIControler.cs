@@ -13,6 +13,7 @@ public class UIControler : MonoBehaviour
     public GameObject godPanel;
     //ublic GameObject MenuPanel;
     //public GameObject CreditsPanel;
+    public GameObject[] iconos;
 
     public bool paused;
     //public bool winLose;
@@ -29,6 +30,11 @@ public class UIControler : MonoBehaviour
             OpenMenuPanel();
             //Debug.Log("TAMOS EN LA 1");
         }*/
+
+        foreach (GameObject i in iconos)
+        {
+            i.SetActive(false);
+        }
     }
 
     public void LoadScene(int num)
