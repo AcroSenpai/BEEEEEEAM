@@ -71,6 +71,9 @@ public class PlayerController : MonoBehaviour
     public int cLinterna;
     public GameObject espada;
 
+    //HUd
+     public GameObject[] iconos;
+
 
     // Use this for initialization
     void Start ()
@@ -152,6 +155,18 @@ public class PlayerController : MonoBehaviour
             lastAxis = axis;
             anim.SetBool("walk", true);
         }
+
+        if(cometa)
+        {
+            iconos[0].SetActive(true);
+        }
+
+        if(pLinterna)
+        {
+            iconos[1].SetActive(true);
+        }
+
+
 
         controller.Move(moveDirection * Time.deltaTime);//Mueve el controller
 
@@ -356,6 +371,7 @@ public class PlayerController : MonoBehaviour
                 speed = 15;
                 planear = true;
                 objetoColisionado = null;
+
             }
             
         }

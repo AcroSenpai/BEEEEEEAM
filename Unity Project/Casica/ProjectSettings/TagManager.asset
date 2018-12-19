@@ -13,6 +13,7 @@ TagManager:
   - Boss
   - Music
   - Plataforma
+  - Icono
   layers:
   - Default
   - TransparentFX

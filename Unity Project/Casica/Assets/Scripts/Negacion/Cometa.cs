@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Cometa : Interactive 
 {
 	public PlayerController PC;
+	public GameObject icono;
 
 	public void Start()
 	{
