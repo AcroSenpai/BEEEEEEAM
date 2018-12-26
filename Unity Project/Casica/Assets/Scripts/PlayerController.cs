@@ -57,12 +57,14 @@ public class PlayerController : MonoBehaviour
     public bool interactuar;
     public bool bossFight;
     public bool cometa;
+    public bool escalar;
 
     public GameObject cometita;
 
     //Pruebas
     public GameObject objetoColisionado;
     public bool Realentizado;
+    public bool llave;
 
     //Linterna
     public GameObject linterna;
@@ -70,6 +72,8 @@ public class PlayerController : MonoBehaviour
     public bool pLinterna;
     public int cLinterna;
     public GameObject espada;
+
+   
 
     //HUd
      public GameObject[] iconos;
@@ -91,6 +95,8 @@ public class PlayerController : MonoBehaviour
         bossFight = false;
         push = false;
         cometa = false;
+        escalar = false;
+        llave = false;
         anim = GetComponent<Animator>();
         sound = GameObject.FindGameObjectWithTag("Music").GetComponent<AudioManager>();
     }
@@ -107,7 +113,7 @@ public class PlayerController : MonoBehaviour
          }
         if (tocandoSuelo && !jump)//Dice si el controler esta tocando el suelo
         {
-            moveDirection.y = forceToGround;
+            if(!escalar)moveDirection.y = forceToGround;
             gravityMagnitude = 5;
             planear = false;
         }
@@ -457,6 +463,8 @@ public class PlayerController : MonoBehaviour
 
     public void Escalar()
     {
+        Debug.Log("Escalo");
+        escalar = true;
         if(pos == 1 || pos == 2)//Derecha izquierda
         {
             moveDirection.y = tranformDirection.x * speed;
@@ -544,7 +552,7 @@ public class PlayerController : MonoBehaviour
             /*Animaicon recogiendo la linterna y que desde ahora aparezca */
             cLinterna ++;
         }
-        else
+        else if(num == 2)
         {
             /*Recojer pilas */
             cLinterna ++;
@@ -554,6 +562,10 @@ public class PlayerController : MonoBehaviour
                 /*Linterna operativa */
                 pLinterna = true;
             }
+        }
+        else if(num == 3)
+        {
+            llave = !llave;
         }
     }
 

@@ -525,7 +525,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1473059903586494
 GameObject:
   m_ObjectHideFlags: 1
@@ -1225,8 +1225,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1974504856182958}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.305, y: -0, z: 0.61}
-  m_LocalScale: {x: 0.58704346, y: 1, z: 1}
+  m_LocalPosition: {x: -0.194, y: 0, z: 0.61}
+  m_LocalScale: {x: 0.43, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4874117291952854}
   m_RootOrder: 0
@@ -1546,13 +1546,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1492742418110374}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0.28691182, y: -0, z: -0, w: 0.95795697}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
   m_Children: []
   m_Father: {fileID: 4994785928844000}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -33.346, y: 0, z: 0}
 --- !u!4 &4501227896367312
 Transform:
   m_ObjectHideFlags: 1
@@ -2017,14 +2017,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1445445344464864}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0.013472699, y: 0.5710477, z: -0.16238955, w: 0.8045823}
   m_LocalPosition: {x: -0.8314972, y: 0.43999863, z: 1.1791573}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4874117291952854}
   m_Father: {fileID: 4994785928844000}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 170.573, y: -110.621994, z: -196.289}
 --- !u!4 &4837921681556438
 Transform:
   m_ObjectHideFlags: 1
@@ -2254,7 +2254,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1748589530519328}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 6.7, y: 21.1, z: -28.66}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4104318838106576}
@@ -2588,7 +2588,7 @@ MonoBehaviour:
   tspeed: 0
   gravityMagnitude: 5
   jump: 0
-  jumpSpeed: 20
+  jumpSpeed: 10
   tocandoSuelo: 0
   speedMod: 0
   tranformDirection: {x: 0, y: 0, z: 0}
