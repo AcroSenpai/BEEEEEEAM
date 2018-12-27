@@ -38,7 +38,7 @@ public class InputManager : MonoBehaviour
             hud.OpenPausePanel();
         } 
         //Jump
-        if(PC.tocandoSuelo)
+        if(PC.tocandoSuelo && PC.saltar)
         {
                 
                 if (status == 0 && Input.GetButton("Jump") && !jump)

@@ -58,6 +58,8 @@ public class PlayerController : MonoBehaviour
     public bool bossFight;
     public bool cometa;
     public bool escalar;
+    public bool saltar;
+    public bool corriendo;
 
     public GameObject cometita;
 
@@ -97,6 +99,8 @@ public class PlayerController : MonoBehaviour
         cometa = false;
         escalar = false;
         llave = false;
+        saltar = true;
+        corriendo = false;
         anim = GetComponent<Animator>();
         sound = GameObject.FindGameObjectWithTag("Music").GetComponent<AudioManager>();
     }
@@ -170,6 +174,11 @@ public class PlayerController : MonoBehaviour
         if(pLinterna)
         {
             iconos[1].SetActive(true);
+        }
+
+        if(corriendo)
+        {
+            if(speed < 12) speed += 0.2f;
         }
 
 
@@ -279,15 +288,8 @@ public class PlayerController : MonoBehaviour
                 switch(i)
                 {
                     case 0:
-                            if(hit.collider.tag == "Object")
-                            {
-                                cerca = true;
-                            }
-                            else if(hit.collider.tag == "Trepar")
-                            {
-                                trepar = true;
-                            }
-                            else if(hit.collider.tag == "Palanca")
+                           
+                            if(hit.collider.tag == "Palanca")
                             {
                                 interactuar = true;
                             }
@@ -299,11 +301,19 @@ public class PlayerController : MonoBehaviour
                             }
                             break;
                     case 1:
+                           
 
                     case 2:
-
-                    break;
-
+                        if (hit.collider.tag == "Object")
+                        {
+                            cerca = true;
+                        }
+                        if (hit.collider.tag == "Trepar")
+                        {
+                            if (!cerca) trepar = true;
+                            else trepar = false;
+                        }
+                        break;
                 }
                 
             }
@@ -395,6 +405,7 @@ public class PlayerController : MonoBehaviour
     {
         if(hit.transform != null)
         {
+            saltar = false;
             Cubito = hit;
             Cubito.transform.parent = transform;
             objSelec = 1;
@@ -413,7 +424,8 @@ public class PlayerController : MonoBehaviour
     public void NoPullPush()
     {
         Cubito.transform.parent = null;
-        
+        saltar = true;
+
         objSelec = 0;
         push = false;
         if (fspeedPP)
@@ -429,7 +441,8 @@ public class PlayerController : MonoBehaviour
     {
         if(controller.isGrounded && !Realentizado)
         {
-            speed = tspeed + 6f;
+            corriendo = true;
+            //speed = tspeed + 6f;
             speedMod = true;
         }
     }
@@ -438,6 +451,7 @@ public class PlayerController : MonoBehaviour
     {
         if(controller.isGrounded && !jump && !Realentizado)
         {
+            corriendo = false;
             speed = tspeed;
             speedMod = false;
             anim.SetBool("crouch", false);
@@ -456,6 +470,7 @@ public class PlayerController : MonoBehaviour
             {
                 anim.SetBool("crouch", true);
             }
+            corriendo = false;
             speed = tspeed - 2f;
             speedMod = true;
         }
