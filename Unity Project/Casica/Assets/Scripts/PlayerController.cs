@@ -176,6 +176,15 @@ public class PlayerController : MonoBehaviour
             iconos[1].SetActive(true);
         }
 
+        if(llave)
+        {
+            iconos[2].SetActive(true);
+        }
+        else
+        {
+            iconos[2].SetActive(false);
+        }
+
         if(corriendo)
         {
             if(speed < 12) speed += 0.2f;
