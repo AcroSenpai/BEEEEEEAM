@@ -88,7 +88,7 @@ public class PlayerController : MonoBehaviour
         tspeed = speed;
         speedMod = false;
         puntoMasAlto = 0;
-        maximoAltura = 20;
+        maximoAltura = 25;
         fAltura = false;
         fLinterna = false;
         pLinterna = false;
@@ -187,7 +187,7 @@ public class PlayerController : MonoBehaviour
 
         if(corriendo)
         {
-            if(speed < 12) speed += 0.2f;
+            if(speed < 18) speed += 0.2f;
         }
 
 
