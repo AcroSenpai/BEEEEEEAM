@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 pullAxis;
     private bool push;
     private CharacterController controller;
-    private Vector3 moveDirection;
+    public Vector3 moveDirection;
     public float speed;
     public float tspeed;
     private float forceToGround = Physics.gravity.y;
@@ -145,10 +145,23 @@ public class PlayerController : MonoBehaviour
         }
 
 
-        if(!trepar)
+        if(!escalar)
         {
-            moveDirection.x = tranformDirection.x * speed;
             moveDirection.z = tranformDirection.z * speed;
+            moveDirection.x = tranformDirection.x * speed;
+        }
+        else
+        {
+            if (pos == 1 || pos == 2)
+            {
+                moveDirection.z = 0;
+            }
+            else
+            {
+                moveDirection.x = 0;
+            }
+            
+            
         }
         if(inmune)
         {
@@ -214,7 +227,7 @@ public class PlayerController : MonoBehaviour
         anim.SetFloat("pullAxisX", pullAxis.x);
         anim.SetFloat("pullAxisY", pullAxis.y);
 
-        #region Cojer objeto 
+        #region Interactuar con los rayCast  
         hit = new RaycastHit();
         
 
@@ -310,7 +323,6 @@ public class PlayerController : MonoBehaviour
                             }
                             break;
                     case 1:
-                           
 
                     case 2:
                         if (hit.collider.tag == "Object")
@@ -333,7 +345,22 @@ public class PlayerController : MonoBehaviour
                     cerca = false;
                     
                 }
-                if(i == 2)
+
+                if (i == 1 && trepar)
+                {
+                    cerca = false;
+                    Debug.Log("Trepo pero no tego nada delante");
+                    Realentizado = true;
+                    speed = 4;
+                }
+                else if(i == 1 && !trepar)
+                {
+                    Realentizado = false;
+                    speed = tspeed;
+                    escalar = false;
+                }
+
+                if (i == 2)
                 {
                     trepar = false;
                 }
