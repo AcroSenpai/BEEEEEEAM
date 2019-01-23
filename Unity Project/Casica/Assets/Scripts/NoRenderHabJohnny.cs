@@ -31,7 +31,7 @@ public class NoRenderHabJohnny : MonoBehaviour
     {
         if (!manager.onHab)
         {
-            myColor.a = 0.2f;
+            myColor.a = 0.5f;
 
             foreach (Renderer r in rend)
             {
