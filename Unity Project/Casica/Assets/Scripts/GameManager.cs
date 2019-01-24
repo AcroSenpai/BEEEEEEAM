@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour {
 
     [Header("Progreso")]
+    public Progresion p;
     public bool negacionDone;
     public bool pissed;
     public bool goNegacionD;
@@ -110,6 +111,17 @@ public class GameManager : MonoBehaviour {
         {
             camDespensa.enabled = false;
         }
+
+        SetProgreso();
+
+
+    }
+
+    private void SetProgreso()
+    {
+        if (onBaño) p.SetProgresion(1);
+        else if (onCuartillo) p.SetProgresion(2);
+
     }
 
 
