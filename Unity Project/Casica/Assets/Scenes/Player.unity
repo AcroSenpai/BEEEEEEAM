@@ -3689,10 +3689,6 @@ PrefabInstance:
       propertyPath: iconos.Array.data[2]
       value: 
       objectReference: {fileID: 462016314}
-    - target: {fileID: 4342483089519448, guid: 1303c111064ad7d4286b8e9c3151e945, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.63
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1303c111064ad7d4286b8e9c3151e945, type: 3}
 --- !u!1 &1638940646
