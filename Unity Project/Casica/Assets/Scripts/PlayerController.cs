@@ -145,7 +145,7 @@ public class PlayerController : MonoBehaviour
         }
 
 
-        if(!escalar)
+        if(!trepar)
         {
             moveDirection.z = tranformDirection.z * speed;
             moveDirection.x = tranformDirection.x * speed;
@@ -302,6 +302,17 @@ public class PlayerController : MonoBehaviour
         for(int i = 0; i < 3; i++)
         {
             direccion_rayo = new Vector3( x, 0, z);
+            if(escalar)
+            {
+                if (pos == 1 || pos == 2)
+                {
+                    direccion_rayo = new Vector3( x, 0, 0);
+                }
+                else
+                {
+                    direccion_rayo = new Vector3( 0, 0, z);
+                }
+            }
             ray = new Ray(origen, direccion_rayo);
             if (Physics.Raycast(ray, out hit, distance, mask))
             {
