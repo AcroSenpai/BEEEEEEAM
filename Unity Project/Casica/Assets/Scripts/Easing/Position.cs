@@ -60,7 +60,7 @@ public class Position : MonoBehaviour
         }
     }
 
-    void ExpoScale()
+    public void ExpoScale()
     {
         //calculo de los valores del easing
         Vector3 value = new Vector3(
@@ -85,7 +85,7 @@ public class Position : MonoBehaviour
 
     }
 
-    void CircScale()
+    public void CircScale()
     {
         //calculo de los valores del easing
         Vector3 value = new Vector3(
@@ -110,7 +110,7 @@ public class Position : MonoBehaviour
 
     }
 
-    void QuintScale()
+    public void QuintScale()
     {
         //calculo de los valores del easing
         Vector3 value = new Vector3(
@@ -135,7 +135,7 @@ public class Position : MonoBehaviour
 
     }
 
-    void QuartScale()
+    public void QuartScale()
     {
         //calculo de los valores del easing
         Vector3 value = new Vector3(
@@ -160,7 +160,7 @@ public class Position : MonoBehaviour
 
     }
 
-    void QuadScale()
+    public void QuadScale()
     {
         //calculo de los valores del easing
         Vector3 value = new Vector3(
@@ -185,7 +185,7 @@ public class Position : MonoBehaviour
 
     }
 
-    void SineScale()
+    public void SineScale()
     {
         //calculo de los valores del easing
         Vector3 value = new Vector3(
@@ -210,7 +210,7 @@ public class Position : MonoBehaviour
 
     }
 
-    void BackScale()
+    public void BackScale()
     {
         //calculo de los valores del easing
         Vector3 value = new Vector3(
@@ -235,7 +235,7 @@ public class Position : MonoBehaviour
 
     }
 
-    void BounceScale()
+    public void BounceScale()
     {
         //calculo de los valores del easing
         Vector3 value = new Vector3(
@@ -260,7 +260,7 @@ public class Position : MonoBehaviour
 
     }
 
-    void ElasticScale()
+    public void ElasticScale()
     {
         //calculo de los valores del easing
         Vector3 value = new Vector3(

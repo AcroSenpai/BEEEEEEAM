@@ -357,7 +357,7 @@ public class PlayerController : MonoBehaviour
                 {
                     Realentizado = false;
                     speed = tspeed;
-                    escalar = false;
+                    //escalar = false;
                 }
 
                 if (i == 2)
@@ -446,14 +446,8 @@ public class PlayerController : MonoBehaviour
             Cubito.transform.parent = transform;
             objSelec = 1;
             push = true;
-
-            if (!fspeedPP)
-            {
-                speedPP = speed;
-                speed = speed / 2;
-                fspeedPP = true;
-                Realentizado = true;
-            }
+            speed = speed / 2;
+            Realentizado = true;
         }
     }
 
@@ -464,13 +458,8 @@ public class PlayerController : MonoBehaviour
 
         objSelec = 0;
         push = false;
-        if (fspeedPP)
-        {
-            speed = speedPP;
-            fspeedPP = false;
-            Realentizado = false;
-        }
-
+        speed = speedPP;
+        Realentizado = false;
     }
 
     public void run()
