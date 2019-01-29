@@ -7,6 +7,7 @@ public class OptionsFunctions : MonoBehaviour
 {
 	public Dropdown resolucion;
 	public Dropdown calidad;
+    public Slider gamma;
 
 	public void changeResolution(int num)
 	{
@@ -43,5 +44,13 @@ public class OptionsFunctions : MonoBehaviour
 				break;
 				
 		}
-	} 
+	}
+    
+    public void changeGamma()
+    {
+        float num = gamma.value;
+        Debug.Log(num);
+        RenderSettings.ambientLight = new Color(num, num, num, 1);
+    }
+
 }
