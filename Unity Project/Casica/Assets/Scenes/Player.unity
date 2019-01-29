@@ -1055,10 +1055,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1223076256038384, guid: 7a49ad339ec11204abfa6de7cceba1cf, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 223448983234087380, guid: 7a49ad339ec11204abfa6de7cceba1cf,
         type: 3}
       propertyPath: m_RenderMode
@@ -1323,6 +1319,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1223076256038384, guid: 7a49ad339ec11204abfa6de7cceba1cf, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 114910518178652320, guid: 7a49ad339ec11204abfa6de7cceba1cf,
         type: 3}
       propertyPath: m_Sprite
@@ -1334,6 +1334,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 747879249}
+    - target: {fileID: 222445630302041166, guid: 7a49ad339ec11204abfa6de7cceba1cf,
+        type: 3}
+      propertyPath: m_CullTransparentMesh
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 114713475303519470, guid: 7a49ad339ec11204abfa6de7cceba1cf,
         type: 3}
       propertyPath: m_Sprite
@@ -1435,11 +1440,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1228136137}
-    - target: {fileID: 222445630302041166, guid: 7a49ad339ec11204abfa6de7cceba1cf,
-        type: 3}
-      propertyPath: m_CullTransparentMesh
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a49ad339ec11204abfa6de7cceba1cf, type: 3}
 --- !u!1 &546076237 stripped
