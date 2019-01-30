@@ -9,9 +9,12 @@ public class OptionsFunctions : MonoBehaviour
 	public Dropdown calidad;
     public Slider gamma;
 
-	public void changeResolution(int num)
+	public void changeResolution()
 	{
-		switch(num)
+
+        int num = resolucion.value;
+
+        switch (num)
 		{
 			case 0: 
 				Screen.SetResolution(1280, 720, true);
@@ -26,9 +29,12 @@ public class OptionsFunctions : MonoBehaviour
 		}
 	} 
 
-	public void changeQuality(int num)
+	public void changeQuality()
 	{
-		switch(num)
+
+        int num = calidad.value;
+        Debug.Log(num);
+        switch (num)
 		{
 			case 0: 
 				QualitySettings.SetQualityLevel(num, true);
@@ -49,7 +55,6 @@ public class OptionsFunctions : MonoBehaviour
     public void changeGamma()
     {
         float num = gamma.value;
-        Debug.Log(num);
         RenderSettings.ambientLight = new Color(num, num, num, 1);
     }
 

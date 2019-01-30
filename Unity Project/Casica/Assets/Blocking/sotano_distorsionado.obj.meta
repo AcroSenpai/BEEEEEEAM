@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: 76ae0611af2101a4592b76e22235eee1
 ModelImporter:
-  serializedVersion: 22
+  serializedVersion: 23
   fileIDToRecycleName:
     100000: Checkpoint
     100002: Checkpoint1
@@ -74,6 +74,40 @@ ModelImporter:
     400066: Plataforma_rompible9
     400068: //RootNode
     2100000: initialShadingGroup
+    2100002: CheckpointMat
+    2100004: Checkpoint1Mat
+    2100006: Checkpoint2Mat
+    2100008: ParedesMat
+    2100010: PlataformaMat
+    2100012: Plataforma1Mat
+    2100014: Plataforma10Mat
+    2100016: Plataforma11Mat
+    2100018: Plataforma12Mat
+    2100020: Plataforma2Mat
+    2100022: Plataforma3Mat
+    2100024: Plataforma4Mat
+    2100026: Plataforma5Mat
+    2100028: Plataforma6Mat
+    2100030: Plataforma7Mat
+    2100032: Plataforma8Mat
+    2100034: Plataforma9Mat
+    2100036: Plataforma_finalMat
+    2100038: Plataforma_movilMat
+    2100040: Plataforma_movil1Mat
+    2100042: Plataforma_movil2Mat
+    2100044: Plataforma_movil3Mat
+    2100046: Plataforma_movil4Mat
+    2100048: Plataforma_movil5Mat
+    2100050: Plataforma_rompibleMat
+    2100052: Plataforma_rompible1Mat
+    2100054: Plataforma_rompible2Mat
+    2100056: Plataforma_rompible3Mat
+    2100058: Plataforma_rompible4Mat
+    2100060: Plataforma_rompible5Mat
+    2100062: Plataforma_rompible6Mat
+    2100064: Plataforma_rompible7Mat
+    2100066: Plataforma_rompible8Mat
+    2100068: Plataforma_rompible9Mat
     2300000: Checkpoint
     2300002: Checkpoint1
     2300004: Checkpoint2
@@ -195,6 +229,7 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
@@ -209,6 +244,7 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
+    useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
@@ -226,11 +262,16 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
@@ -245,7 +286,6 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1

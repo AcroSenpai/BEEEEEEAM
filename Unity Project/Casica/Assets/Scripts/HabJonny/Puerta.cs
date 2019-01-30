@@ -5,7 +5,7 @@ using UnityEngine;
 public class Puerta : Interactive
 {
     public PlayerController PC;
-    Animator anim;
+    public Animator anim;
 
 
     public void Start()
@@ -16,8 +16,10 @@ public class Puerta : Interactive
 
     public override void Activar()
     {
+        Debug.Log("buenas tardes");
         if(PC.llave)
         {
+            Debug.Log("Que tal?");
             anim.SetTrigger("Puerta");
             PC.llave = false;
         }

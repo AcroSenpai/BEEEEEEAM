@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: 903d8672f99328e4e851744095e54a7a
 ModelImporter:
-  serializedVersion: 22
+  serializedVersion: 23
   fileIDToRecycleName:
     100000: Caja_1
     100002: Caja_2
@@ -30,6 +30,18 @@ ModelImporter:
     400022: Trampilla
     400024: Trofeo
     2100000: initialShadingGroup
+    2100002: Caja_1Mat
+    2100004: Caja_2Mat
+    2100006: CuerdaMat
+    2100008: Estanteria_1Mat
+    2100010: Estanteria_2Mat
+    2100012: Estanteria_3Mat
+    2100014: Estanteria_4Mat
+    2100016: Estanteria_5Mat
+    2100018: Estanteria_6Mat
+    2100020: ParedesMat
+    2100022: TrampillaMat
+    2100024: TrofeoMat
     2300000: Caja_1
     2300002: Caja_2
     2300004: Cuerda
@@ -85,6 +97,7 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
@@ -99,6 +112,7 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
+    useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
@@ -116,11 +130,16 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
@@ -135,7 +154,6 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1

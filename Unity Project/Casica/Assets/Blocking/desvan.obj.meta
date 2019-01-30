@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: 2b457343d7332794f80b91cebac51368
 ModelImporter:
-  serializedVersion: 22
+  serializedVersion: 23
   fileIDToRecycleName:
     100000: Caja_1
     100002: Caja_10
@@ -86,6 +86,46 @@ ModelImporter:
     400078: Ventilador
     400080: Ventilador_Helices
     2100000: initialShadingGroup
+    2100002: Caja_1Mat
+    2100004: Caja_10Mat
+    2100006: Caja_11Mat
+    2100008: Caja_12Mat
+    2100010: Caja_13Mat
+    2100012: Caja_14Mat
+    2100014: Caja_2Mat
+    2100016: Caja_3Mat
+    2100018: Caja_4Mat
+    2100020: Caja_5Mat
+    2100022: Caja_6Mat
+    2100024: Caja_7Mat
+    2100026: Caja_8Mat
+    2100028: Caja_9Mat
+    2100030: Caja_ropaMat
+    2100032: ColchonMat
+    2100034: FocoMat
+    2100036: Foco1Mat
+    2100038: Foco2Mat
+    2100040: MuroMat
+    2100042: PalancaMat
+    2100044: Pared_EncufeMat
+    2100046: Pared_PalancaMat
+    2100048: ParedesMat
+    2100050: pCube1Mat
+    2100052: pCube10Mat
+    2100054: pCube11Mat
+    2100056: pCube2Mat
+    2100058: pCube3Mat
+    2100060: pCube4Mat
+    2100062: pCube5Mat
+    2100064: pCube6Mat
+    2100066: pCube7Mat
+    2100068: pCube8Mat
+    2100070: pCube9Mat
+    2100072: RespiraderoMat
+    2100074: Tablon_1Mat
+    2100076: Tablon_2Mat
+    2100078: VentiladorMat
+    2100080: Ventilador_HelicesMat
     2300000: Caja_1
     2300002: Caja_10
     2300004: Caja_11
@@ -225,6 +265,7 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
@@ -239,6 +280,7 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
+    useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
@@ -256,11 +298,16 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
@@ -275,7 +322,6 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
