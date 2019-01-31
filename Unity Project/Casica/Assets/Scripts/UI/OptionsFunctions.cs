@@ -2,12 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class OptionsFunctions : MonoBehaviour 
 {
 	public Dropdown resolucion;
 	public Dropdown calidad;
     public Slider gamma;
+    public Slider audio;
+    public Slider music;
+    public Slider sound;
+    public AudioMixer muiscMixer;
 
 	public void changeResolution()
 	{
@@ -56,6 +61,20 @@ public class OptionsFunctions : MonoBehaviour
     {
         float num = gamma.value;
         RenderSettings.ambientLight = new Color(num, num, num, 1);
+    }
+
+    public void changeAudio()
+    {
+        muiscMixer.SetFloat("volumeA", audio.value);
+    }
+    public void changeMusic()
+    {
+        muiscMixer.SetFloat("volumeM", music.value);
+    }
+
+    public void changeSound()
+    {
+        muiscMixer.SetFloat("volumeS", sound.value);
     }
 
 }
