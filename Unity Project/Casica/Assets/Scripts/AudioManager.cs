@@ -5,6 +5,7 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour {
 
     public Sound[] sounds;
+    public AudioSource ase;
 
 	void Awake ()
     {
@@ -16,8 +17,8 @@ public class AudioManager : MonoBehaviour {
         {
             DontDestroyOnLoad(gameObject);
         }
-
-		foreach (Sound s in sounds)
+        
+        foreach (Sound s in sounds)
         {
             s.source = gameObject.AddComponent<AudioSource>();
             s.source.clip = s.clip;
@@ -27,7 +28,7 @@ public class AudioManager : MonoBehaviour {
 
             s.source.loop = s.loop;
 
-            s.source.outputAudioMixerGroup = s.audioMixer;
+            s.source.outputAudioMixerGroup = ase.outputAudioMixerGroup;
         }
     }
     

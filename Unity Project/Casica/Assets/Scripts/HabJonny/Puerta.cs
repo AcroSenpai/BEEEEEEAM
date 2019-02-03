@@ -6,10 +6,12 @@ public class Puerta : Interactive
 {
     public PlayerController PC;
     public Animator anim;
+    public GameObject puntito;
 
 
     public void Start()
     {
+        
         PC = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         anim = GetComponent<Animator>();
     }
@@ -20,8 +22,10 @@ public class Puerta : Interactive
         if(PC.llave)
         {
             Debug.Log("Que tal?");
-            anim.SetTrigger("Puerta");
+            anim.SetTrigger("P");
             PC.llave = false;
+            Object.Destroy(puntito);
+
         }
     }
 

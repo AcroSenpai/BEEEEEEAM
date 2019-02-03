@@ -33,7 +33,7 @@ public class InputManager : MonoBehaviour
         inputAxis.y = Input.GetAxis("Vertical");
 
         PC.SetAxis(inputAxis);
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetButtonDown("Pause"))
         {
             hud.OpenPausePanel();
         } 
@@ -128,11 +128,11 @@ public class InputManager : MonoBehaviour
         {
             PC.sneeky();
         }
-        else if(Input.GetKey(KeyCode.LeftShift))
+        else if(Input.GetButton("Run"))
         {
             PC.run();
         }
-        else
+        else if(!PC.ando)
         {
             PC.walk();
         }
@@ -165,7 +165,7 @@ public class InputManager : MonoBehaviour
             hud.OpenGodPanel();
         }
 
-        if(Input.GetKeyDown(KeyCode.F))
+        if (Input.GetButtonDown("Linterna"))
         {
             PC.Linterna();
         }

@@ -60,6 +60,7 @@ public class PlayerController : MonoBehaviour
     public bool escalar;
     public bool saltar;
     public bool corriendo;
+    public bool ando;
 
     public GameObject cometita;
 
@@ -120,6 +121,7 @@ public class PlayerController : MonoBehaviour
             if(!escalar)moveDirection.y = forceToGround;
             gravityMagnitude = 5;
             planear = false;
+            if(ando)speed = tspeed;
         }
         else if(!tocandoSuelo && jump)
         {
@@ -200,7 +202,13 @@ public class PlayerController : MonoBehaviour
 
         if(corriendo)
         {
-            if(speed < 18) speed += 0.2f;
+            Debug.Log(speed);
+            if (speed < 18)
+            {
+                
+                speed += 0.2f;
+                Debug.Log(speed);
+            }
         }
 
 
@@ -367,7 +375,7 @@ public class PlayerController : MonoBehaviour
                 else if(i == 1 && !trepar)
                 {
                     Realentizado = false;
-                    speed = tspeed;
+                    //speed = tspeed;
                     //escalar = false;
                 }
 
@@ -478,8 +486,9 @@ public class PlayerController : MonoBehaviour
         if(controller.isGrounded && !Realentizado)
         {
             corriendo = true;
-            //speed = tspeed + 6f;
-            speedMod = true;
+            //speed = tspeed;
+            //speedMod = true;
+            ando = false;
         }
     }
 
@@ -491,6 +500,7 @@ public class PlayerController : MonoBehaviour
             speed = tspeed;
             speedMod = false;
             anim.SetBool("crouch", false);
+            ando = true;
         }
     }
 
@@ -507,8 +517,9 @@ public class PlayerController : MonoBehaviour
                 anim.SetBool("crouch", true);
             }
             corriendo = false;
-            speed = tspeed - 2f;
+            speed = tspeed - 4f;
             speedMod = true;
+            ando = false;
         }
     }
 
