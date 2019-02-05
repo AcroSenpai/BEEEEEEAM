@@ -124,6 +124,7 @@ public class InputManager : MonoBehaviour
 
 
         //run/walk/sneeky
+
         if(Input.GetButton("Sneeky"))
         {
             PC.sneeky();

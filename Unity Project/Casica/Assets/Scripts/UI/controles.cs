@@ -7,7 +7,7 @@ public class controles : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log(PlayerPrefs.GetString("Jump", "3"));
+        //AxisConfiguration axisConfig = InputManager.GetAxisConfiguration("MoveVertical");
     }
 
     // Update is called once per frame
