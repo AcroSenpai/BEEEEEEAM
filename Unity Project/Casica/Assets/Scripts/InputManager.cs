@@ -124,7 +124,7 @@ public class InputManager : MonoBehaviour
 
 
         //run/walk/sneeky
-        if(Input.GetKey(KeyCode.LeftControl))
+        if(Input.GetButton("Sneeky"))
         {
             PC.sneeky();
         }
