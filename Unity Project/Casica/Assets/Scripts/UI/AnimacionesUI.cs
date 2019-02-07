@@ -12,6 +12,7 @@ public class AnimacionesUI : MonoBehaviour
     void Start()
     {
         titulo.DOFade(1, 4).OnComplete(MostrarOpcionesMenu);
+        titulo.GetComponent<RectTransform>().DOLocalRotate(new Vector3(0, 0, 1), 1).OnComplete(MostrarOpcionesMenu); 
     }
 
     public void MostrarOpcionesMenu()
@@ -21,4 +22,6 @@ public class AnimacionesUI : MonoBehaviour
             i.DOFade(1, 3);
         }
     }
+
+
 }

@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Experimental.Input;
 
 public class InputManager : MonoBehaviour
 {
     private PlayerController PC;
     private GameManager manager;
+
 
     private float sensitivity = 3.0f;
     private bool fPP = false;
@@ -13,6 +15,16 @@ public class InputManager : MonoBehaviour
     public int status; 
     public UIControler hud;
 
+    public InputAction moveAction;
+
+    public void Awake()
+    {
+        moveAction.performed += OnMove;
+    }
+    public void OnMove(InputAction.CallbackContext context)
+    {
+        // 'Move' code here.
+    }
 
     // Use this for initialization
     void Start ()

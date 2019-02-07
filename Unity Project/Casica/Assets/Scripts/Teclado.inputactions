@@ -1,0 +1,104 @@
+{
+    "name": "Teclado",
+    "maps": [
+        {
+            "name": "Gameplay",
+            "id": "54449655-9060-4e6f-9aac-8dd60fd71a58",
+            "actions": [
+                {
+                    "name": "saltar",
+                    "id": "b2b37e19-33cd-4d73-bb25-6c15a6f8dc26",
+                    "expectedControlLayout": "",
+                    "bindings": []
+                },
+                {
+                    "name": "moverseL",
+                    "id": "0dc20d52-a777-4671-bb50-4332691f684d",
+                    "expectedControlLayout": "",
+                    "bindings": []
+                },
+                {
+                    "name": "moverseR",
+                    "id": "0dc20d52-a777-4671-bb50-4332691f684d",
+                    "expectedControlLayout": "",
+                    "bindings": []
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "path": "<Keyboard>/space",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "",
+                    "action": "saltar",
+                    "chainWithPrevious": false,
+                    "isComposite": false,
+                    "isPartOfComposite": false,
+                    "modifiers": ""
+                },
+                {
+                    "name": "",
+                    "path": "<DualShockGamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "saltar",
+                    "chainWithPrevious": false,
+                    "isComposite": false,
+                    "isPartOfComposite": false,
+                    "modifiers": ""
+                },
+                {
+                    "name": "",
+                    "path": "<Keyboard>/a",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "",
+                    "action": "moverseL",
+                    "chainWithPrevious": false,
+                    "isComposite": false,
+                    "isPartOfComposite": false,
+                    "modifiers": ""
+                },
+                {
+                    "name": "",
+                    "path": "<Keyboard>/d",
+                    "interactions": "Press",
+                    "processors": "Invert",
+                    "groups": "",
+                    "action": "moverseL",
+                    "chainWithPrevious": false,
+                    "isComposite": false,
+                    "isPartOfComposite": false,
+                    "modifiers": ""
+                },
+                {
+                    "name": "",
+                    "path": "<Keyboard>/w",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "",
+                    "action": "moverseR",
+                    "chainWithPrevious": false,
+                    "isComposite": false,
+                    "isPartOfComposite": false,
+                    "modifiers": ""
+                },
+                {
+                    "name": "",
+                    "path": "<Keyboard>/s",
+                    "interactions": "Press",
+                    "processors": "Invert",
+                    "groups": "",
+                    "action": "moverseR",
+                    "chainWithPrevious": false,
+                    "isComposite": false,
+                    "isPartOfComposite": false,
+                    "modifiers": ""
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
