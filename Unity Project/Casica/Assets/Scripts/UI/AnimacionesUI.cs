@@ -12,12 +12,14 @@ public class AnimacionesUI : MonoBehaviour
     void Start()
     {
         titulo.DOFade(1, 4).OnComplete(MostrarOpcionesMenu);
-        titulo.GetComponent<RectTransform>().DOLocalRotate(new Vector3(0, 0, 1), 1).OnComplete(MostrarOpcionesMenu); 
+        titulo.GetComponent<RectTransform>().DOLocalRotate(new Vector3(0, 0, 0.5f), 5).SetLoops(-1, LoopType.Yoyo);
+        titulo.GetComponent<RectTransform>().DOAnchorPosX(450, 5).SetLoops(-1, LoopType.Yoyo);
+        titulo.GetComponent<RectTransform>().DOAnchorPosY(-250, 5).SetLoops(-1, LoopType.Yoyo);
     }
 
     public void MostrarOpcionesMenu()
     {
-        foreach(Text i in opciones)
+        foreach (Text i in opciones)
         {
             i.DOFade(1, 3);
         }

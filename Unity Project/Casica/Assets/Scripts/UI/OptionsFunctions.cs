@@ -14,11 +14,8 @@ public class OptionsFunctions : MonoBehaviour
     public Slider sound;
     public AudioMixer muiscMixer;
 
-	public void changeResolution()
+	public void changeResolution(int num)
 	{
-
-        int num = resolucion.value;
-
         switch (num)
 		{
 			case 0: 
@@ -34,11 +31,10 @@ public class OptionsFunctions : MonoBehaviour
 		}
 	} 
 
-	public void changeQuality()
+	public void changeQuality(int num)
 	{
 
-        int num = calidad.value;
-        Debug.Log(num);
+        
         switch (num)
 		{
 			case 0: 
