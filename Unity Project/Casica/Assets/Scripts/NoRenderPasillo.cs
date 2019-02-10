@@ -33,18 +33,6 @@ public class NoRenderPasillo : MonoBehaviour {
                 r.enabled = false;
             }
 
-            MaterialPropertyBlock block1 = new MaterialPropertyBlock();
-            MaterialPropertyBlock block2 = new MaterialPropertyBlock();
-
-            marco1.GetPropertyBlock(block1);
-            marco2.GetPropertyBlock(block2);
-
-            block1.SetColor("_Color", myColor);
-            block2.SetColor("_Color", myColor);
-
-            marco1.SetPropertyBlock(block1);
-            marco2.SetPropertyBlock(block2);
-
             done = true;
         }
         if (done && manager.onPasillo)
@@ -55,18 +43,6 @@ public class NoRenderPasillo : MonoBehaviour {
             {
                 r.enabled = true;
             }
-
-            MaterialPropertyBlock block1 = new MaterialPropertyBlock();
-            MaterialPropertyBlock block2 = new MaterialPropertyBlock();
-
-            marco1.GetPropertyBlock(block1);
-            marco2.GetPropertyBlock(block2);
-
-            block1.SetColor("_Color", myColor);
-            block2.SetColor("_Color", myColor);
-
-            marco1.SetPropertyBlock(block1);
-            marco2.SetPropertyBlock(block2);
 
             done = false;
         }

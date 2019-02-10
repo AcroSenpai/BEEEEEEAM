@@ -40,9 +40,9 @@ public class calidadUI : MonoBehaviour
         {
             case 1:
                 op1.DOAnchorPosX(160, 2f, true);
-                op2.DOAnchorPosX(480, 2f, true);
-                op3.DOAnchorPosX(800, 2f, true);
-                op4.DOAnchorPosX(1120, 2f, true);
+                op2.DOAnchorPosX(200, 2f, true);
+                op3.DOAnchorPosX(240, 2f, true);
+                op4.DOAnchorPosX(280, 2f, true);
                 op1.GetComponent<Text>().DOFade(1, 4f);
                 op2.GetComponent<Text>().DOFade(0, 0.2f);
                 op3.GetComponent<Text>().DOFade(0, 0.2f);
@@ -54,10 +54,10 @@ public class calidadUI : MonoBehaviour
                 of.changeQuality(0);
                 break;
             case 2:
-                op1.DOAnchorPosX(-160, 2f, true);
+                op1.DOAnchorPosX(120, 2f, true);
                 op2.DOAnchorPosX(160, 2f, true);
-                op3.DOAnchorPosX(480, 2f, true);
-                op4.DOAnchorPosX(800, 2f, true);
+                op3.DOAnchorPosX(200, 2f, true);
+                op4.DOAnchorPosX(240, 2f, true);
                 op1.GetComponent<Text>().DOFade(0, 0.2f);
                 op2.GetComponent<Text>().DOFade(1, 4f);
                 op3.GetComponent<Text>().DOFade(0, 0.2f);
@@ -69,10 +69,10 @@ public class calidadUI : MonoBehaviour
                 of.changeQuality(1);
                 break;
             case 3:
-                op1.DOAnchorPosX(-480, 2f, true);
-                op2.DOAnchorPosX(-160, 2f, true);
+                op1.DOAnchorPosX(80, 2f, true);
+                op2.DOAnchorPosX(120, 2f, true);
                 op3.DOAnchorPosX(160, 2f, true);
-                op4.DOAnchorPosX(480, 2f, true);
+                op4.DOAnchorPosX(200, 2f, true);
                 op1.GetComponent<Text>().DOFade(0, 0.2f);
                 op2.GetComponent<Text>().DOFade(0, 0.2f);
                 op3.GetComponent<Text>().DOFade(1, 4f);
@@ -84,9 +84,9 @@ public class calidadUI : MonoBehaviour
                 of.changeQuality(2);
                 break;
             case 4:
-                op1.DOAnchorPosX(-800, 2f, true);
-                op2.DOAnchorPosX(-480, 2f, true);
-                op3.DOAnchorPosX(-160, 2f, true);
+                op1.DOAnchorPosX(40, 2f, true);
+                op2.DOAnchorPosX(80, 2f, true);
+                op3.DOAnchorPosX(120, 2f, true);
                 op4.DOAnchorPosX(160, 2f, true);
                 op1.GetComponent<Text>().DOFade(0, 0.2f);
                 op2.GetComponent<Text>().DOFade(0, 0.2f);

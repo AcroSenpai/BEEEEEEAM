@@ -121,7 +121,8 @@ public class PlayerController : MonoBehaviour
             if(!escalar)moveDirection.y = forceToGround;
             gravityMagnitude = 5;
             planear = false;
-            if(ando)speed = tspeed;
+            if (Realentizado) ando = false;
+            if (ando) speed = tspeed;                           
         }
         else if(!tocandoSuelo && jump)
         {
@@ -202,7 +203,6 @@ public class PlayerController : MonoBehaviour
 
         if(corriendo)
         {
-            Debug.Log(speed);
             if (speed < 18)
             {
                 
@@ -343,6 +343,7 @@ public class PlayerController : MonoBehaviour
                             break;
                     case 1:
 
+
                     case 2:
                         if (hit.collider.tag == "Object")
                         {
@@ -362,7 +363,8 @@ public class PlayerController : MonoBehaviour
                 if(i == 0)
                 {
                     cerca = false;
-                    
+                    interactuar = false;
+                    Realentizado = true;
                 }
 
                 if (i == 1 && trepar)
@@ -458,14 +460,14 @@ public class PlayerController : MonoBehaviour
 
     public void PullPush()
     {
-        if(hit.transform != null)
+        if(hit.transform != null && !jump)
         {
             saltar = false;
             Cubito = hit;
             Cubito.transform.parent = transform;
             objSelec = 1;
             push = true;
-            speed = speed / 2;
+            speed = speed / 4;
             Realentizado = true;
         }
     }
@@ -527,6 +529,7 @@ public class PlayerController : MonoBehaviour
     {
         Debug.Log("Escalo");
         escalar = true;
+        Realentizado = true;
         if(pos == 1 || pos == 2)//Derecha izquierda
         {
             moveDirection.y = tranformDirection.x * speed;
