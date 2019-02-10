@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Mear : MonoBehaviour {
+public class Mear : Interactive
+{
 
     private GameManager manager;
 
@@ -11,11 +12,8 @@ public class Mear : MonoBehaviour {
         manager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
     }
 
-    private void OnTriggerEnter(Collider other)
+    public override void Activar()
     {
-        if(other.tag == "Player")
-        {
-            manager.pissed = true;
-        }
+        manager.pissed = true;
     }
 }

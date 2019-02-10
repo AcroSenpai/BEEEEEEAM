@@ -8930,9 +8930,9 @@ GameObject:
   - component: {fileID: 2033393085}
   - component: {fileID: 2033393084}
   - component: {fileID: 2033393086}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: TriggerMear
-  m_TagString: Ground
+  m_TagString: Palanca
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8948,8 +8948,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.9292603, y: 4.204912, z: 4.1749573}
-  m_Center: {x: 0.0990448, y: -0.3975439, z: 0.41252136}
+  m_Size: {x: 3.9292603, y: 12.02, z: 5.44}
+  m_Center: {x: 0.62, y: 1.28, z: 1.8}
 --- !u!4 &2033393085
 Transform:
   m_ObjectHideFlags: 0
@@ -8958,7 +8958,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2033393083}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 150.17, y: -0.79, z: -262.05}
+  m_LocalPosition: {x: 150.17, y: -4.46, z: -265.16}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
