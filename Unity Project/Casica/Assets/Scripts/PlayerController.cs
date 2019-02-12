@@ -342,8 +342,11 @@ public class PlayerController : MonoBehaviour
                             }
                             break;
                     case 1:
-
-
+                        if (hit.collider.tag == "Trepar")
+                        {
+                            Realentizado = true;
+                        }
+                        break;
                     case 2:
                         if (hit.collider.tag == "Object")
                         {
@@ -364,7 +367,7 @@ public class PlayerController : MonoBehaviour
                 {
                     cerca = false;
                     interactuar = false;
-                    Realentizado = true;
+                   
                 }
 
                 if (i == 1 && trepar)
@@ -412,6 +415,11 @@ public class PlayerController : MonoBehaviour
         else
         {
             fAltura = false;
+        }
+
+        if(trepar)
+        {
+            speed = 6;
         }
 
     }
