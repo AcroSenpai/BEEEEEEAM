@@ -155,12 +155,15 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
+            Debug.Log(pos);
             if (pos == 1 || pos == 2)
             {
+                Debug.Log(1);
                 moveDirection.z = 0;
             }
             else
             {
+                Debug.Log(pos);
                 moveDirection.x = 0;
             }
             
@@ -538,13 +541,21 @@ public class PlayerController : MonoBehaviour
         Debug.Log("Escalo");
         escalar = true;
         Realentizado = true;
-        if(pos == 1 || pos == 2)//Derecha izquierda
+        if(pos == 1)//Derecha izquierda
         {
             moveDirection.y = tranformDirection.x * speed;
         }
-        else
+        else if (pos == 2)
+        {
+            moveDirection.y = tranformDirection.x * speed * -1;
+        }
+        else if (pos == 3)
         {
             moveDirection.y = tranformDirection.z * speed;
+        }
+        else
+        {
+            moveDirection.y = tranformDirection.z * speed * -1;
         }
     }
 
