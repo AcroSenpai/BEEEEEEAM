@@ -15,5 +15,7 @@ public class Mear : Interactive
     public override void Activar()
     {
         manager.pissed = true;
+        manager.SetProgresion(2);
+        Destroy(gameObject);
     }
 }

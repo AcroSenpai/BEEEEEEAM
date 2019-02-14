@@ -5,7 +5,7 @@ using UnityEngine;
 public class Progresion
 {
 
-    public enum Zonas {HJ, SHYSB, ND, SNN, IDES, ABL, DESP, HP, SOP, SOF}
+    public enum Zonas {HJ, SHY, SB, ND, SNN, IDES, ABL, DESP, HP, SOP, SOF}
     public Zonas progreso;
     // Start is called before the first frame update
     void Start()
@@ -29,7 +29,8 @@ public class Progresion
 /* Leyenda siglas Zonas
  * 
  * HJ = Habitacion jony
- * SSHYSB = Salir de la habitacion y salir del Baño
+ * SSHY = Salir de la habitacion 
+ * SB = Salir del Baño
  * ND = Negacion Distorsionada
  * SNN = Segunda Negacion Normal
  * IDES = Inicio del desvan

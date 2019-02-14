@@ -155,19 +155,14 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            Debug.Log(pos);
             if (pos == 1 || pos == 2)
             {
-                Debug.Log(1);
                 moveDirection.z = 0;
             }
             else
             {
-                Debug.Log(pos);
                 moveDirection.x = 0;
             }
-            
-            
         }
         if(inmune)
         {
@@ -208,9 +203,7 @@ public class PlayerController : MonoBehaviour
         {
             if (speed < 18)
             {
-                
                 speed += 0.2f;
-                Debug.Log(speed);
             }
         }
 

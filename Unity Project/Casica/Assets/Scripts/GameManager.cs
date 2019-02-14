@@ -87,10 +87,14 @@ public class GameManager : MonoBehaviour {
         }
 
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        p = new Progresion();
     }
 
     private void Update()
     {
+
+        Debug.Log(p.GetProgresion());
+
         camHab.enabled = onHab;
         camPasillo.enabled = onPasillo;
         camBaño.enabled = onBaño;
@@ -547,5 +551,15 @@ public class GameManager : MonoBehaviour {
         {
             TpHabJohnny();
         }
+    }
+
+    public void SetProgresion(int num)
+    {
+        p.SetProgresion(num);
+    }
+
+    public int GetProgresion()
+    {
+        return p.GetProgresion();
     }
 }
