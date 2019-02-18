@@ -418,6 +418,11 @@ public class PlayerController : MonoBehaviour
             speed = 6;
         }
 
+        if(push)
+        {
+            speed = 12;
+        }
+
     }
 
     private void OnControllerColliderHit(ControllerColliderHit hit)

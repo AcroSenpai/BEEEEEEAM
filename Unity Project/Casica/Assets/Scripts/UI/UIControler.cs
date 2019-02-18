@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class UIControler : MonoBehaviour
 {
     public GameObject pusePanel;
+    public AudioSource sonidoPausa;
     public GameObject optionPanel;
     public GameObject winPanel;
     public GameObject losePanel;
@@ -50,6 +51,7 @@ public class UIControler : MonoBehaviour
         pusePanel.SetActive(true);
         paused = true;
         Time.timeScale = 0;
+        sonidoPausa.Play();
     }
 
     public void OpenOptionPanel()
@@ -90,6 +92,9 @@ public class UIControler : MonoBehaviour
         pusePanel.SetActive(false);
         paused = false;
         Time.timeScale = 1;
+        sonidoPausa.Play();
+        //CloseOptionPanel();
+        optionPanel.SetActive(false);
     }
 
     public void CloseOptionPanel()

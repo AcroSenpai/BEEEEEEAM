@@ -47,7 +47,8 @@ public class InputManager : MonoBehaviour
         PC.SetAxis(inputAxis);
         if (Input.GetButtonDown("Pause"))
         {
-            hud.OpenPausePanel();
+            if (hud.paused) hud.ClosePausePanel();
+            else hud.OpenPausePanel();
         } 
         //Jump
         if(PC.tocandoSuelo && PC.saltar)

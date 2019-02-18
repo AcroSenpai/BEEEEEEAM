@@ -29,7 +29,7 @@ public class FundidoNegro : MonoBehaviour {
         {
             panelNegro.SetActive(true);
 
-            if (counter < 10)
+            if (counter < 5)
             {
                 counter += Time.deltaTime;
             }
@@ -53,7 +53,7 @@ public class FundidoNegro : MonoBehaviour {
 
         if (manager.onNegacionD)
         {
-            if (counter < 5)
+            if (counter < 1)
             {
                 counter += Time.deltaTime;
             }

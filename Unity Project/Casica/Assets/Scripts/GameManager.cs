@@ -93,8 +93,6 @@ public class GameManager : MonoBehaviour {
     private void Update()
     {
 
-        Debug.Log(p.GetProgresion());
-
         camHab.enabled = onHab;
         camPasillo.enabled = onPasillo;
         camBaño.enabled = onBaño;
