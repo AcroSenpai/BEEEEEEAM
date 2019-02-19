@@ -9,6 +9,7 @@ public class UIControler : MonoBehaviour
     public GameObject pusePanel;
     public AudioSource sonidoPausa;
     public GameObject optionPanel;
+    public GameObject ControlPanel;
     public GameObject winPanel;
     public GameObject losePanel;
     public GameObject godPanel;

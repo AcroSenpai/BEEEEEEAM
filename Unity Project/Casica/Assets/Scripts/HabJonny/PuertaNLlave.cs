@@ -19,7 +19,7 @@ public class PuertaNLlave : Interactive
     {
             anim.SetTrigger("P");
             PC.llave = false;
-            Object.Destroy(puntito);
+            puntito.SetActive(false);
     }
 
 }

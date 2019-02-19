@@ -6,6 +6,7 @@ public class Mear : Interactive
 {
 
     private GameManager manager;
+    public GameObject puntito;
 
     private void Start()
     {
