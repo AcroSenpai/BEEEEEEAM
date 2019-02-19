@@ -1052,6 +1052,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 317832658332028557, guid: ccee4b14148ef9040a9d41ef691ea5f4,
+        type: 3}
+      propertyPath: m_Name
+      value: SpritePuntito
+      objectReference: {fileID: 0}
     - target: {fileID: 4581175557296390, guid: ccee4b14148ef9040a9d41ef691ea5f4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 50.804047
@@ -1143,11 +1148,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 317832658332028557, guid: ccee4b14148ef9040a9d41ef691ea5f4,
-        type: 3}
-      propertyPath: m_Name
-      value: SpritePuntito
       objectReference: {fileID: 0}
     - target: {fileID: 6367362213326783954, guid: ccee4b14148ef9040a9d41ef691ea5f4,
         type: 3}
@@ -1440,9 +1440,10 @@ GameObject:
   m_Component:
   - component: {fileID: 813405434}
   - component: {fileID: 813405435}
-  m_Layer: 0
+  - component: {fileID: 813405436}
+  m_Layer: 8
   m_Name: TriggerAnimacion
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1455,7 +1456,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 813405433}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 259.1, y: -14.384668, z: -321.2}
+  m_LocalPosition: {x: 259.1, y: -6.9, z: -331}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1473,6 +1474,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a44ba2459e3216c46aedcdd88cbf9f6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &813405436
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813405433}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 16.22, y: 17.14, z: 18.62}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &980361738
 GameObject:
   m_ObjectHideFlags: 0

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PuertaNegacion : Interactive
+public class PuertaNegacion : MonoBehaviour
 {
     public PlayerController PC;
     public Animator anim;
@@ -11,28 +11,31 @@ public class PuertaNegacion : Interactive
 
     public void Start()
     {
-        
         PC = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
-        manager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         anim = GetComponent<Animator>();
-
-        if (manager.GetProgresion() > 4) puertaAbierta();
+        manager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
     }
 
-    public override void Activar()
+    public void Update()
     {
-        if(PC.llave)
+        if(manager.GetProgresion() == 3)
         {
             anim.SetTrigger("P");
-            PC.llave = false;
-            puntito.SetActive(false);
-
         }
+        
+        if(manager.GetProgresion() == 4)
+        {
+            anim.SetTrigger("C");
+        }
+            
+
     }
 
-    public void puertaAbierta()
+    public void Destruir()
     {
-        anim.SetTrigger("P");
+        Destroy(gameObject);
     }
+
+
 
 }
