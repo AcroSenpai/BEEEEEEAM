@@ -9138,6 +9138,11 @@ PrefabInstance:
       propertyPath: iconos.Array.data[2]
       value: 
       objectReference: {fileID: 462016314}
+    - target: {fileID: 95353889612552418, guid: 1303c111064ad7d4286b8e9c3151e945,
+        type: 3}
+      propertyPath: m_Avatar
+      value: 
+      objectReference: {fileID: 9000000, guid: f4275ad164606c542a68c1db853a4f7a, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1303c111064ad7d4286b8e9c3151e945, type: 3}
 --- !u!1 &1616169343
