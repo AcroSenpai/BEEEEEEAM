@@ -17,7 +17,7 @@ public class FinalOscuro : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (manager.habJohnny || manager.cuartillo) final.SetActive(false);
+        if (manager.onHab || manager.onCuartillo) final.SetActive(false);
         else final.SetActive(true);
     }
 }

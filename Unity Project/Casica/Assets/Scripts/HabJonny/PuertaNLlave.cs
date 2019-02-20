@@ -7,19 +7,22 @@ public class PuertaNLlave : Interactive
     public PlayerController PC;
     public Animator anim;
     public GameObject puntito;
+    public AudioSource aus;
 
 
     public void Start()
     {
         PC = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         anim = GetComponent<Animator>();
+        aus = GetComponent<AudioSource>();
     }
 
     public override void Activar()
     {
-            anim.SetTrigger("P");
+            anim.SetTrigger("T");
             PC.llave = false;
             puntito.SetActive(false);
+            aus.Play();
     }
 
 }

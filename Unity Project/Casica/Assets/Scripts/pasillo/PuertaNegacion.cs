@@ -8,12 +8,14 @@ public class PuertaNegacion : MonoBehaviour
     public Animator anim;
     public GameObject puntito;
     private GameManager manager;
+    public AudioSource aus;
 
     public void Start()
     {
         PC = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         anim = GetComponent<Animator>();
         manager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+        aus = GetComponent<AudioSource>();
     }
 
     public void Update()
@@ -33,7 +35,8 @@ public class PuertaNegacion : MonoBehaviour
 
     public void Destruir()
     {
-        Destroy(gameObject);
+        aus.Play();
+        GetComponentInChildren<GameObject>().SetActive(false);
     }
 
 

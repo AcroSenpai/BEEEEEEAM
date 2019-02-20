@@ -6,7 +6,8 @@ using UnityEngine;
 public class Cometa : Interactive 
 {
 	public PlayerController PC;
-	public GameObject icono;
+	public GameObject muerte;
+
 
 	public void Start()
 	{
@@ -16,6 +17,7 @@ public class Cometa : Interactive
 	public override void Activar()
 	{
 		PC.cometa = true;
+        muerte.GetComponent<MuerteMortalNegacion>().Inicio();
 		Object.Destroy(gameObject);
 	}
 }

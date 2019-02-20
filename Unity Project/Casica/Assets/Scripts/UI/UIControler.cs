@@ -16,6 +16,7 @@ public class UIControler : MonoBehaviour
     //ublic GameObject MenuPanel;
     //public GameObject CreditsPanel;
     public GameObject[] iconos;
+    public AudioSource musicaMenu;
 
     public bool paused;
     //public bool winLose;
@@ -53,6 +54,7 @@ public class UIControler : MonoBehaviour
         paused = true;
         Time.timeScale = 0;
         sonidoPausa.Play();
+        musicaMenu.volume= 0.5f;
     }
 
     public void OpenOptionPanel()
@@ -96,6 +98,7 @@ public class UIControler : MonoBehaviour
         sonidoPausa.Play();
         //CloseOptionPanel();
         optionPanel.SetActive(false);
+        musicaMenu.volume = 0f;
     }
 
     public void CloseOptionPanel()

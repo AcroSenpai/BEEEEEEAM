@@ -8,6 +8,7 @@ public class Puerta : Interactive
     public Animator anim;
     public GameObject puntito;
     private GameManager manager;
+    public AudioSource aus;
 
     public void Start()
     {
@@ -15,6 +16,7 @@ public class Puerta : Interactive
         PC = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         manager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         anim = GetComponent<Animator>();
+        aus = GetComponent<AudioSource>();
 
         if (manager.GetProgresion() > 0) puertaAbierta();
     }
@@ -23,16 +25,16 @@ public class Puerta : Interactive
     {
         if(PC.llave)
         {
-            anim.SetTrigger("P");
+            anim.SetTrigger("T");
             PC.llave = false;
             puntito.SetActive(false);
-
+            aus.Play();
         }
     }
 
     public void puertaAbierta()
     {
-        anim.SetTrigger("P");
+        anim.SetTrigger("T");
         puntito.SetActive(false);
     }
 

@@ -114,17 +114,17 @@ public class GameManager : MonoBehaviour {
             camDespensa.enabled = false;
         }
 
-        SetProgreso();
+        //SetProgreso();
 
 
     }
 
-    private void SetProgreso()
+    /*private void SetProgreso()
     {
         if (onBaño) p.SetProgresion(1);
         else if (onCuartillo) p.SetProgresion(2);
 
-    }
+    }*/
 
 
     #region Teleports
