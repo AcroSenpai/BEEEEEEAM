@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Animations;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -109,8 +110,6 @@ public class PlayerController : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-       
-        
         tocandoSuelo = controller.isGrounded;
          if(!primerSuelo && tocandoSuelo)
          {
@@ -138,6 +137,7 @@ public class PlayerController : MonoBehaviour
         //transforma el movimiento del moundo al del local
         tranformDirection = axis.x * transform.right + axis.y * transform.forward;
 
+        // Rotación del modelo en la dirección del movimiento
         Vector3 movement = new Vector3(axis.x, 0, axis.y);
 
         if(movement != Vector3.zero && !push && !trepar)
@@ -147,15 +147,16 @@ public class PlayerController : MonoBehaviour
 
         if (planear && !trepar)
         {
-            cometita.SetActive(true);
+            //cometita.SetActive(true);
+            anim.SetBool("Planear", true);
         }
         else
         {
-            cometita.SetActive(false);
+            //cometita.SetActive(false);
+            anim.SetBool("Planear", false);
         }
 
-
-        if(!trepar)
+        if (!trepar)
         {
             moveDirection.z = tranformDirection.z * speed;
             moveDirection.x = tranformDirection.x * speed;
@@ -179,12 +180,22 @@ public class PlayerController : MonoBehaviour
         if(axis.x == 0 && axis.y == 0)
         {
             anim.SetBool("walk", false);
-
+            anim.SetBool("run", false);
         }
         else
         {
             lastAxis = axis;
-            anim.SetBool("walk", true);
+            anim.SetBool("walk", ando);
+            anim.SetBool("run", corriendo);
+            /*
+            if (ando)
+            {
+                anim.SetBool("walk", true);
+            }
+            else if (corriendo)
+            {
+                anim.SetBool("run", true);
+            }*/
         }
 
         if(cometa)
@@ -213,8 +224,6 @@ public class PlayerController : MonoBehaviour
                 speed += 0.2f;
             }
         }
-
-
 
         controller.Move(moveDirection * Time.deltaTime);//Mueve el controller
 
@@ -370,7 +379,6 @@ public class PlayerController : MonoBehaviour
                 {
                     cerca = false;
                     interactuar = false;
-                   
                 }
 
                 if (i == 1 && trepar)
@@ -390,6 +398,8 @@ public class PlayerController : MonoBehaviour
                 if (i == 2)
                 {
                     trepar = false;
+                    escalar = false;
+                    anim.SetBool("Climb", false);
                 }
                 
             }
@@ -460,7 +470,6 @@ public class PlayerController : MonoBehaviour
                 speed = 15;
                 planear = true;
                 objetoColisionado = null;
-
             }
             
         }
@@ -546,6 +555,8 @@ public class PlayerController : MonoBehaviour
         Debug.Log("Escalo");
         escalar = true;
         Realentizado = true;
+        anim.SetBool("Climb", true);
+        anim.SetBool("walk", false);
         if(pos == 1)//Derecha izquierda
         {
             moveDirection.y = tranformDirection.x * speed;
@@ -613,6 +624,7 @@ public class PlayerController : MonoBehaviour
     {
         if(objetoColisionado != null)
         {
+            anim.SetTrigger("Pick");
             objetoColisionado.GetComponent<Interactive>().Activar();
         }
     }
@@ -621,6 +633,9 @@ public class PlayerController : MonoBehaviour
     {
         if(pLinterna)
         {
+            //Cambia a la layer con las animaciones de la linterna
+            anim.SetLayerWeight(1, 1);
+
             fLinterna = !fLinterna;
             if(fLinterna)
             {
@@ -650,6 +665,8 @@ public class PlayerController : MonoBehaviour
             {
                 /*Linterna operativa */
                 pLinterna = true;
+                //Cambia a la layer con las animaciones de la linterna
+                anim.SetLayerWeight(1, 1);
             }
         }
         else if(num == 3)
