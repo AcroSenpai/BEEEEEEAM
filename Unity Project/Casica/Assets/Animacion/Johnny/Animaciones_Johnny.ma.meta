@@ -178,6 +178,7 @@ ModelImporter:
     7400024: Drag
     7400026: Planear
     7400028: Pick
+    7400030: Idle_Detras
     9500000: //RootNode
     13700000: J_Rigg_003:Linterna
     13700002: J_Rigg_003:Mesh

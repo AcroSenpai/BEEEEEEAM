@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
     public Vector3 tranformDirection;
     public UIControler hud;
     public bool primerSuelo;
+    public Transform model;
 
     private AudioManager sound;
 
@@ -75,7 +76,6 @@ public class PlayerController : MonoBehaviour
     public bool pLinterna;
     public int cLinterna;
     public GameObject espada;
-
    
 
     //HUd
@@ -138,7 +138,14 @@ public class PlayerController : MonoBehaviour
         //transforma el movimiento del moundo al del local
         tranformDirection = axis.x * transform.right + axis.y * transform.forward;
 
-        if(planear && !trepar)
+        Vector3 movement = new Vector3(axis.x, 0, axis.y);
+
+        if(movement != Vector3.zero && !push && !trepar)
+        {
+            model.rotation = Quaternion.LookRotation(movement);
+        }
+
+        if (planear && !trepar)
         {
             cometita.SetActive(true);
         }
