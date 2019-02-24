@@ -15,7 +15,6 @@ public class PuertaNegacion : MonoBehaviour
         PC = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         anim = GetComponent<Animator>();
         manager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
-        aus = GetComponent<AudioSource>();
     }
 
     public void Update()

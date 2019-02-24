@@ -120,8 +120,14 @@ public class InputManager : MonoBehaviour
         //Trepar
         if(PC.trepar)
         {
-            if(Input.GetKey(KeyCode.Mouse0))
+            if(Input.GetButton("Interactuar"))
             {
+                
+                PC.Escalar();
+            }
+            else if (Input.GetAxis("Interactuar") > 0)
+            {
+                Debug.Log("Buenas0");
                 PC.Escalar();
             }
 
@@ -129,7 +135,7 @@ public class InputManager : MonoBehaviour
 
         if(PC.interactuar)
         {
-            if(Input.GetKeyDown(KeyCode.Mouse0))
+            if(Input.GetButtonDown("Interactuar"))
             {
                 PC.Interactuar();
             }
@@ -139,6 +145,10 @@ public class InputManager : MonoBehaviour
         //run/walk/sneeky
 
         if(Input.GetButton("Sneeky"))
+        {
+            PC.sneeky();
+        }
+        else if (Input.GetAxis("Sneeky") > 0)
         {
             PC.sneeky();
         }

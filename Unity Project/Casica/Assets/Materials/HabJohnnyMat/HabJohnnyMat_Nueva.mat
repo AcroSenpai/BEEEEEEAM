@@ -63,8 +63,8 @@ Material:
     - _GlossMapScale: 0
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _LightSmoothness: 0.12
-    - _LightThreshold: 0.755
+    - _LightSmoothness: 0.811
+    - _LightThreshold: 0.91
     - _MKEditorShowDetailBehavior: 0
     - _MKEditorShowDissolveBehavior: 0
     - _MKEditorShowLightBehavior: 1
