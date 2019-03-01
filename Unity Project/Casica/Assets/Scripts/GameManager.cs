@@ -233,7 +233,7 @@ public class GameManager : MonoBehaviour {
     {
         if(!habJohnny)
         {
-            SceneManager.LoadSceneAsync("habJohnny", LoadSceneMode.Additive);
+            SceneManager.LoadSceneAsync("3habJohnny", LoadSceneMode.Additive);
             habJohnny = true;
         }
     }
@@ -242,7 +242,7 @@ public class GameManager : MonoBehaviour {
     {
         if (!pasillo)
         {
-            SceneManager.LoadSceneAsync("pasillo", LoadSceneMode.Additive);
+            SceneManager.LoadSceneAsync("4pasillo", LoadSceneMode.Additive);
             pasillo = true;
         }
     }
@@ -251,7 +251,7 @@ public class GameManager : MonoBehaviour {
     {
         if (!baño)
         {
-            SceneManager.LoadSceneAsync("baño", LoadSceneMode.Additive);
+            SceneManager.LoadSceneAsync("5baño", LoadSceneMode.Additive);
             baño = true;
         }
     }
@@ -260,7 +260,7 @@ public class GameManager : MonoBehaviour {
     {
         if (!negacionN)
         {
-            SceneManager.LoadSceneAsync("negacion_N", LoadSceneMode.Additive);
+            SceneManager.LoadSceneAsync("6negacion_N", LoadSceneMode.Additive);
             negacionN = true;
         }
     }
@@ -269,7 +269,7 @@ public class GameManager : MonoBehaviour {
     {
         if (!negacionD)
         {
-            SceneManager.LoadSceneAsync("negacion_D", LoadSceneMode.Additive);
+            SceneManager.LoadSceneAsync("7negacion_D", LoadSceneMode.Additive);
             negacionD = true;
         }
     }
@@ -363,7 +363,7 @@ public class GameManager : MonoBehaviour {
     {
         if (habJohnny)
         {
-            SceneManager.UnloadSceneAsync("habJohnny");
+            SceneManager.UnloadSceneAsync("3habJohnny");
             habJohnny = false;
         }
     }
@@ -372,7 +372,7 @@ public class GameManager : MonoBehaviour {
     {
         if (pasillo)
         {
-            SceneManager.UnloadSceneAsync("pasillo");
+            SceneManager.UnloadSceneAsync("4pasillo");
             pasillo = false;
         }
     }
@@ -381,7 +381,7 @@ public class GameManager : MonoBehaviour {
     {
         if (baño)
         {
-            SceneManager.UnloadSceneAsync("baño");
+            SceneManager.UnloadSceneAsync("5baño");
             baño = false;
         }
     }
@@ -390,7 +390,7 @@ public class GameManager : MonoBehaviour {
     {
         if (negacionN)
         {
-            SceneManager.UnloadSceneAsync("negacion_N");
+            SceneManager.UnloadSceneAsync("6negacion_N");
             negacionN = false;
         }
     }
@@ -399,7 +399,7 @@ public class GameManager : MonoBehaviour {
     {
         if (negacionD)
         {
-            SceneManager.UnloadSceneAsync("negacion_D");
+            SceneManager.UnloadSceneAsync("7negacion_D");
             negacionD = false;
         }
     }

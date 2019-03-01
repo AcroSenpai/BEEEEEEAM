@@ -6,9 +6,12 @@ public class Puntito : MonoBehaviour {
 
     private SpriteRenderer sprite;
 
+    private Transform player;
+
     private float counter = 1;
 
     private float alpha = 0;
+    private float nextAlpha = 0;
 
     private Color myColor;
 
@@ -22,6 +25,8 @@ public class Puntito : MonoBehaviour {
 
         myColor = Color.white;
 
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+
     }
 
     void Update ()
@@ -30,23 +35,39 @@ public class Puntito : MonoBehaviour {
 
         myColor.a = alpha;
 
-        if(start)
+        if(Mathf.Floor(alpha) != nextAlpha) alpha += counter * Time.deltaTime;
+        else alpha = nextAlpha;
+        
+
+        if(Vector3.Distance(transform.position, player.position) < 10)
         {
-            alpha += counter * Time.deltaTime;
-            if(alpha >= 1)
-            {
-                start = false;
-            }
+            ChangeAlfaProximetriAndInteractuable(2);
         }
-        if(end)
+        else
         {
-            alpha -= counter * Time.deltaTime;
-            if (alpha <= 0)
-            {
-                end = false;
-            }
+            ChangeAlfaProximetriAndInteractuable(3);
         }
 	}
+
+    public void ChangeAlfaProximetriAndInteractuable(int num)
+    {
+        switch(num)
+        {
+            case 1:
+                alpha = 1;
+                myColor = Color.white;
+                break;
+
+            case 2: 
+                alpha = 0.5f;
+                myColor = Color.gray;
+                break;
+
+            case 3:
+                alpha = 0;
+                break;
+        }
+    }
 
     private void OnTriggerEnter(Collider other)
     {

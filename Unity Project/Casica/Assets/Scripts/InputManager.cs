@@ -120,14 +120,13 @@ public class InputManager : MonoBehaviour
         //Trepar
         if(PC.trepar)
         {
-            if(Input.GetButton("Interactuar"))
+            if(Input.GetButton("Jump"))
             {
                 
                 PC.Escalar();
             }
-            else if (Input.GetAxis("Interactuar") > 0)
+            else if (Input.GetAxis("Jump") > 0)
             {
-                Debug.Log("Buenas0");
                 PC.Escalar();
             }
 

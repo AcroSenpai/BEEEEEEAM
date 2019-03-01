@@ -362,6 +362,7 @@ public class PlayerController : MonoBehaviour
                         if (hit.collider.tag == "Object")
                         {
                             cerca = true;
+                            objetoColisionado.GetComponentInChildren<Puntito>().ChangeAlfaProximetriAndInteractuable(1);
                         }
                         if (hit.collider.tag == "Trepar")
                         {
@@ -402,6 +403,7 @@ public class PlayerController : MonoBehaviour
                 }
                 
             }
+            if(!cerca) if(objetoColisionado != null) if(objetoColisionado.CompareTag("Object")) objetoColisionado.GetComponentInChildren<Puntito>().ChangeAlfaProximetriAndInteractuable(0);
             origen.y += sing * (i + 1) * DistanciaRayo.y;
             sing *= -1;
             //interactuar = false;
