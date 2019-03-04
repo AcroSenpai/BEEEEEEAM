@@ -29,7 +29,7 @@ public class Progresion
 
 /* Leyenda siglas Zonas
  * 
- * HJ = Habitacion jony
+ * HJ 12= Habitacion jony
  * SSHY = Salir de la habitacion 
  * SB = Salir del Baño
  * PHJ = Padre habitacion jony

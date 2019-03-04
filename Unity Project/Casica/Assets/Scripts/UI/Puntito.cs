@@ -8,7 +8,7 @@ public class Puntito : MonoBehaviour {
 
     private Transform player;
 
-    private float counter = 1;
+    private float counter = 0.1f;
 
     private float alpha = 0;
     private float nextAlpha = 0;
@@ -27,16 +27,31 @@ public class Puntito : MonoBehaviour {
 
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
 
+        start = true;
+
     }
 
     void Update ()
     {
-        sprite.color = myColor;
+        Debug.Log("1");
+        if (start)
+        {
+            Debug.Log("2: "+ Mathf.Floor(alpha) + " n: "+ nextAlpha);
+            if (Mathf.Floor(alpha) != nextAlpha)
+            {
+                if (Mathf.Floor(alpha) > nextAlpha) alpha = nextAlpha;
+                alpha += Time.deltaTime;
+            }
+            else alpha = nextAlpha;
+            sprite.color = myColor;
+            myColor.a = alpha;
+        }
+            
 
-        myColor.a = alpha;
+       
 
-        if(Mathf.Floor(alpha) != nextAlpha) alpha += counter * Time.deltaTime;
-        else alpha = nextAlpha;
+        //if(Mathf.Floor(alpha) != nextAlpha) alpha += counter * Time.deltaTime;
+        //else alpha = nextAlpha;
         
 
         if(Vector3.Distance(transform.position, player.position) < 10)
@@ -47,24 +62,30 @@ public class Puntito : MonoBehaviour {
         {
             ChangeAlfaProximetriAndInteractuable(3);
         }
+
+        
 	}
 
     public void ChangeAlfaProximetriAndInteractuable(int num)
     {
-        switch(num)
+        Debug.Log("3: " + num);
+        switch (num)
         {
             case 1:
-                alpha = 1;
+                nextAlpha = 1;
                 myColor = Color.white;
+                start = true;
                 break;
 
-            case 2: 
-                alpha = 0.5f;
+            case 2:
+                nextAlpha = 0.5f;
                 myColor = Color.gray;
+                start = true;
                 break;
 
             case 3:
-                alpha = 0;
+                nextAlpha = 0;
+                start = true;
                 break;
         }
     }
