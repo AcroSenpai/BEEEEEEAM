@@ -694,5 +694,15 @@ public class PlayerController : MonoBehaviour
         //anim.SetTrigger("Ataque");
     }
 
+    public void SetCometa()
+    {
+        cometa = !cometa;
+    }
+
+    public void SetLintera()
+    {
+        pLinterna = !pLinterna;
+    }
+
 
 }

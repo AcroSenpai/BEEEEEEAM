@@ -136,4 +136,8 @@ public class UIControler : MonoBehaviour
     {
         Application.Quit();
     }
+
+
+    
+
 }

@@ -29,6 +29,7 @@ public class Puerta : Interactive
             PC.llave = false;
             puntito.SetActive(false);
             aus.Play();
+            manager.SetProgresion(1);
         }
     }
 
