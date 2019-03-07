@@ -260,24 +260,24 @@ public class PlayerController : MonoBehaviour
             {
                 num1 = 1;
                 pos = 1;
-                linterna.transform.rotation = Quaternion.Euler(37, 90, 0);
-                espada.transform.rotation = Quaternion.Euler(0, 180, 0);
+                //linterna.transform.rotation = Quaternion.Euler(37, 90, 0);
+                //espada.transform.rotation = Quaternion.Euler(0, 180, 0);
             }   
             else if(axis.x < 0)
             {
                 num1 = -1;
                 num2 = 0;
                 pos = 2;
-                linterna.transform.rotation = Quaternion.Euler(37, -90, 0);
-                espada.transform.rotation = Quaternion.Euler(0, 0, 0);
+                //linterna.transform.rotation = Quaternion.Euler(37, -90, 0);
+                //espada.transform.rotation = Quaternion.Euler(0, 0, 0);
             }
 
             if(axis.y > 0) 
             {
                 num2 = 1;
                 pos = 3;
-                linterna.transform.rotation = Quaternion.Euler(37, 0, 0);
-                espada.transform.rotation = Quaternion.Euler(0, 90, 0);
+                //linterna.transform.rotation = Quaternion.Euler(37, 0, 0);
+                //espada.transform.rotation = Quaternion.Euler(0, 90, 0);
                 
             }   
             else if(axis.y < 0)
@@ -285,8 +285,8 @@ public class PlayerController : MonoBehaviour
                 num2 = -1;
                 num1 = 0;
                 pos = 4;
-                linterna.transform.rotation = Quaternion.Euler(37, 180, 0);
-                espada.transform.rotation = Quaternion.Euler(0, -90, 0);
+                //linterna.transform.rotation = Quaternion.Euler(37, 180, 0);
+                //espada.transform.rotation = Quaternion.Euler(0, -90, 0);
             }
 
             if(axis.x == 0 && axis.y == 0)
