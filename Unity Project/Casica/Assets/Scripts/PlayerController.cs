@@ -81,6 +81,11 @@ public class PlayerController : MonoBehaviour
     //HUd
      public GameObject[] iconos;
 
+    //Perder el control del personaje
+    public float tiempoDeEspera;
+    public float contadorTiempoDeEspera;
+    public bool enPerdidaDeControl;
+
 
     // Use this for initialization
     void Start ()
@@ -109,239 +114,241 @@ public class PlayerController : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        tocandoSuelo = controller.isGrounded;
-         if(!primerSuelo && tocandoSuelo)
-         {
-             primerSuelo = true;
-         }
-        if (tocandoSuelo && !jump)//Dice si el controler esta tocando el suelo
+        if (!enPerdidaDeControl)
         {
-            if(!escalar)moveDirection.y = forceToGround;
-            gravityMagnitude = 5;
-            planear = false;
-            if (Realentizado) ando = false;
-            if (ando) speed = tspeed;                           
-        }
-        else if(!tocandoSuelo && jump)
-        {
-            gravityMagnitude = 5;
-            moveDirection.y = forceToGround;
-            planear = false;
-        }
-        else
-        {
-            jump = false;
-            moveDirection.y += Physics.gravity.y * gravityMagnitude * Time.deltaTime;
-        }
-        //transforma el movimiento del moundo al del local
-        tranformDirection = axis.x * transform.right + axis.y * transform.forward;
-
-        // Rotación del modelo en la dirección del movimiento
-        Vector3 movement = new Vector3(axis.x, 0, axis.y);
-
-        if(movement != Vector3.zero && !push && !trepar)
-        {
-            model.rotation = Quaternion.LookRotation(movement);
-        }
-
-        if (planear && !trepar)
-        {
-            //cometita.SetActive(true);
-            anim.SetBool("Planear", true);
-        }
-        else
-        {
-            //cometita.SetActive(false);
-            anim.SetBool("Planear", false);
-        }
-
-        if (!trepar)
-        {
-            moveDirection.z = tranformDirection.z * speed;
-            moveDirection.x = tranformDirection.x * speed;
-        }
-        else
-        {
-            if (pos == 1 || pos == 2)
+            tocandoSuelo = controller.isGrounded;
+            if (!primerSuelo && tocandoSuelo)
             {
-                moveDirection.z = 0;
+                primerSuelo = true;
+            }
+            if (tocandoSuelo && !jump)//Dice si el controler esta tocando el suelo
+            {
+                if (!escalar) moveDirection.y = forceToGround;
+                gravityMagnitude = 5;
+                planear = false;
+                if (Realentizado) ando = false;
+                if (ando) speed = tspeed;
+            }
+            else if (!tocandoSuelo && jump)
+            {
+                gravityMagnitude = 5;
+                moveDirection.y = forceToGround;
+                planear = false;
             }
             else
             {
-                moveDirection.x = 0;
+                jump = false;
+                moveDirection.y += Physics.gravity.y * gravityMagnitude * Time.deltaTime;
             }
-        }
-        if(inmune)
-        {
-            moveDirection.y = vy * speed;
-        }
+            //transforma el movimiento del moundo al del local
+            tranformDirection = axis.x * transform.right + axis.y * transform.forward;
 
-        if(axis.x == 0 && axis.y == 0)
-        {
-            anim.SetBool("walk", false);
-            anim.SetBool("run", false);
-        }
-        else
-        {
-            lastAxis = axis;
-            anim.SetBool("walk", ando);
-            anim.SetBool("run", corriendo);
-            /*
-            if (ando)
+            // Rotación del modelo en la dirección del movimiento
+            Vector3 movement = new Vector3(axis.x, 0, axis.y);
+
+            if (movement != Vector3.zero && !push && !trepar)
             {
-                anim.SetBool("walk", true);
-            }
-            else if (corriendo)
-            {
-                anim.SetBool("run", true);
-            }*/
-        }
-
-        if(cometa)
-        {
-            iconos[0].SetActive(true);
-        }
-
-        if(pLinterna)
-        {
-            iconos[1].SetActive(true);
-        }
-
-        if(llave)
-        {
-            iconos[2].SetActive(true);
-        }
-        else
-        {
-            iconos[2].SetActive(false);
-        }
-
-        if(corriendo)
-        {
-            if (speed < 18)
-            {
-                speed += 0.2f;
-            }
-        }
-
-        controller.Move(moveDirection * Time.deltaTime);//Mueve el controller
-
-        anim.SetFloat("axisX", axis.x);
-        anim.SetFloat("axisY", axis.y);
-
-        anim.SetFloat("lastAxisX", lastAxis.x);
-        anim.SetFloat("lastAxisY", lastAxis.y);
-
-        if(!push)
-        {
-            pullAxis = axis;
-            //sound.Stop("push");
-        }
-        else
-        {
-            sound.Play("push");
-        }
-        anim.SetBool("pull", push);
-
-        anim.SetFloat("pullAxisX", pullAxis.x);
-        anim.SetFloat("pullAxisY", pullAxis.y);
-
-        #region Interactuar con los rayCast  
-        hit = new RaycastHit();
-        
-
-        if(objSelec == 0)
-        {
-
-            int num1 = 0;
-            int num2 = 0;
-            
-            if(axis.x > 0) 
-            {
-                num1 = 1;
-                pos = 1;
-                //linterna.transform.rotation = Quaternion.Euler(37, 90, 0);
-                //espada.transform.rotation = Quaternion.Euler(0, 180, 0);
-            }   
-            else if(axis.x < 0)
-            {
-                num1 = -1;
-                num2 = 0;
-                pos = 2;
-                //linterna.transform.rotation = Quaternion.Euler(37, -90, 0);
-                //espada.transform.rotation = Quaternion.Euler(0, 0, 0);
+                model.rotation = Quaternion.LookRotation(movement);
             }
 
-            if(axis.y > 0) 
+            if (planear && !trepar)
             {
-                num2 = 1;
-                pos = 3;
-                //linterna.transform.rotation = Quaternion.Euler(37, 0, 0);
-                //espada.transform.rotation = Quaternion.Euler(0, 90, 0);
-                
-            }   
-            else if(axis.y < 0)
+                //cometita.SetActive(true);
+                anim.SetBool("Planear", true);
+            }
+            else
             {
-                num2 = -1;
-                num1 = 0;
-                pos = 4;
-                //linterna.transform.rotation = Quaternion.Euler(37, 180, 0);
-                //espada.transform.rotation = Quaternion.Euler(0, -90, 0);
+                //cometita.SetActive(false);
+                anim.SetBool("Planear", false);
             }
 
-            if(axis.x == 0 && axis.y == 0)
+            if (!trepar)
             {
-                switch(pos)
-                {
-                    case 1:
-                        num1 = 1;
-                        num2 = 0;
-                        break;
-                    case 2:
-                        num1 = -1;
-                        num2 = 0;
-                        break;
-                    case 3:
-                        num1 = 0;
-                        num2 = 1;
-                        break;
-                    case 4:
-                        num1 = 0;
-                        num2 = -1;
-                        break;
-                }
+                moveDirection.z = tranformDirection.z * speed;
+                moveDirection.x = tranformDirection.x * speed;
             }
-
-            x = 1.1f * axis.x + num1;
-            z = 1.1f * axis.y + num2;
-        }   
-        
-       origen = transform.position;
-       int sing = 1;
-        for(int i = 0; i < 3; i++)
-        {
-            direccion_rayo = new Vector3( x, 0, z);
-            if(escalar)
+            else
             {
                 if (pos == 1 || pos == 2)
                 {
-                    direccion_rayo = new Vector3( x, 0, 0);
+                    moveDirection.z = 0;
                 }
                 else
                 {
-                    direccion_rayo = new Vector3( 0, 0, z);
+                    moveDirection.x = 0;
                 }
             }
-            ray = new Ray(origen, direccion_rayo);
-            if (Physics.Raycast(ray, out hit, distance, mask))
+            if (inmune)
             {
-                objetoColisionado = hit.transform.gameObject;
-                //Debug.DrawRay (ray.origin, ray.direction * hit.distance, Color.red, 1);
-                switch(i)
+                moveDirection.y = vy * speed;
+            }
+
+            if (axis.x == 0 && axis.y == 0)
+            {
+                anim.SetBool("walk", false);
+                anim.SetBool("run", false);
+            }
+            else
+            {
+                lastAxis = axis;
+                anim.SetBool("walk", ando);
+                anim.SetBool("run", corriendo);
+                /*
+                if (ando)
                 {
-                    case 0:
-                           
-                            if(hit.collider.tag == "Palanca")
+                    anim.SetBool("walk", true);
+                }
+                else if (corriendo)
+                {
+                    anim.SetBool("run", true);
+                }*/
+            }
+
+            if (cometa)
+            {
+                iconos[0].SetActive(true);
+            }
+
+            if (pLinterna)
+            {
+                iconos[1].SetActive(true);
+            }
+
+            if (llave)
+            {
+                iconos[2].SetActive(true);
+            }
+            else
+            {
+                iconos[2].SetActive(false);
+            }
+
+            if (corriendo)
+            {
+                if (speed < 18)
+                {
+                    speed += 0.2f;
+                }
+            }
+
+            controller.Move(moveDirection * Time.deltaTime);//Mueve el controller
+
+            anim.SetFloat("axisX", axis.x);
+            anim.SetFloat("axisY", axis.y);
+
+            anim.SetFloat("lastAxisX", lastAxis.x);
+            anim.SetFloat("lastAxisY", lastAxis.y);
+
+            if (!push)
+            {
+                pullAxis = axis;
+                //sound.Stop("push");
+            }
+            else
+            {
+                sound.Play("push");
+            }
+            anim.SetBool("pull", push);
+
+            anim.SetFloat("pullAxisX", pullAxis.x);
+            anim.SetFloat("pullAxisY", pullAxis.y);
+
+            #region Interactuar con los rayCast  
+            hit = new RaycastHit();
+
+
+            if (objSelec == 0)
+            {
+
+                int num1 = 0;
+                int num2 = 0;
+
+                if (axis.x > 0)
+                {
+                    num1 = 1;
+                    pos = 1;
+                    //linterna.transform.rotation = Quaternion.Euler(37, 90, 0);
+                    //espada.transform.rotation = Quaternion.Euler(0, 180, 0);
+                }
+                else if (axis.x < 0)
+                {
+                    num1 = -1;
+                    num2 = 0;
+                    pos = 2;
+                    //linterna.transform.rotation = Quaternion.Euler(37, -90, 0);
+                    //espada.transform.rotation = Quaternion.Euler(0, 0, 0);
+                }
+
+                if (axis.y > 0)
+                {
+                    num2 = 1;
+                    pos = 3;
+                    //linterna.transform.rotation = Quaternion.Euler(37, 0, 0);
+                    //espada.transform.rotation = Quaternion.Euler(0, 90, 0);
+
+                }
+                else if (axis.y < 0)
+                {
+                    num2 = -1;
+                    num1 = 0;
+                    pos = 4;
+                    //linterna.transform.rotation = Quaternion.Euler(37, 180, 0);
+                    //espada.transform.rotation = Quaternion.Euler(0, -90, 0);
+                }
+
+                if (axis.x == 0 && axis.y == 0)
+                {
+                    switch (pos)
+                    {
+                        case 1:
+                            num1 = 1;
+                            num2 = 0;
+                            break;
+                        case 2:
+                            num1 = -1;
+                            num2 = 0;
+                            break;
+                        case 3:
+                            num1 = 0;
+                            num2 = 1;
+                            break;
+                        case 4:
+                            num1 = 0;
+                            num2 = -1;
+                            break;
+                    }
+                }
+
+                x = 1.1f * axis.x + num1;
+                z = 1.1f * axis.y + num2;
+            }
+
+            origen = transform.position;
+            int sing = 1;
+            for (int i = 0; i < 3; i++)
+            {
+                direccion_rayo = new Vector3(x, 0, z);
+                if (escalar)
+                {
+                    if (pos == 1 || pos == 2)
+                    {
+                        direccion_rayo = new Vector3(x, 0, 0);
+                    }
+                    else
+                    {
+                        direccion_rayo = new Vector3(0, 0, z);
+                    }
+                }
+                ray = new Ray(origen, direccion_rayo);
+                if (Physics.Raycast(ray, out hit, distance, mask))
+                {
+                    objetoColisionado = hit.transform.gameObject;
+                    //Debug.DrawRay (ray.origin, ray.direction * hit.distance, Color.red, 1);
+                    switch (i)
+                    {
+                        case 0:
+
+                            if (hit.collider.tag == "Palanca")
                             {
                                 interactuar = true;
                             }
@@ -352,95 +359,100 @@ public class PlayerController : MonoBehaviour
                                 interactuar = false;
                             }
                             break;
-                    case 1:
-                        if (hit.collider.tag == "Trepar")
-                        {
-                            Realentizado = true;
-                        }
-                        break;
-                    case 2:
-                        if (hit.collider.tag == "Object")
-                        {
-                            cerca = true;
-                            objetoColisionado.GetComponentInChildren<Puntito>().ChangeAlfaProximetriAndInteractuable(1);
-                        }
-                        if (hit.collider.tag == "Trepar")
-                        {
-                            if (!cerca) trepar = true;
-                            else trepar = false;
-                        }
-                        break;
+                        case 1:
+                            if (hit.collider.tag == "Trepar")
+                            {
+                                Realentizado = true;
+                            }
+                            break;
+                        case 2:
+                            if (hit.collider.tag == "Object")
+                            {
+                                cerca = true;
+                                objetoColisionado.GetComponentInChildren<Puntito>().ChangeAlfaProximetriAndInteractuable(1);
+                            }
+                            if (hit.collider.tag == "Trepar")
+                            {
+                                if (!cerca) trepar = true;
+                                else trepar = false;
+                            }
+                            break;
+                    }
+
                 }
-                
+                else
+                {
+                    if (i == 0)
+                    {
+                        cerca = false;
+                        interactuar = false;
+                    }
+
+                    if (i == 1 && trepar)
+                    {
+                        cerca = false;
+                        Debug.Log("Trepo pero no tego nada delante");
+                        Realentizado = true;
+                        speed = 4;
+                    }
+                    else if (i == 1 && !trepar)
+                    {
+                        Realentizado = false;
+                        //speed = tspeed;
+                        //escalar = false;
+                    }
+
+                    if (i == 2)
+                    {
+                        trepar = false;
+                        escalar = false;
+                        anim.SetBool("Climb", false);
+                    }
+
+                }
+                if (!cerca) if (objetoColisionado != null) if (objetoColisionado.CompareTag("Object")) objetoColisionado.GetComponentInChildren<Puntito>().ChangeAlfaProximetriAndInteractuable(0);
+                origen.y += sing * (i + 1) * DistanciaRayo.y;
+                sing *= -1;
+                //interactuar = false;
+            }
+
+            #endregion
+
+            if (!tocandoSuelo && !planear)
+            {
+                if (!fAltura)
+                {
+                    fAltura = true;
+                    puntoMasAlto = transform.position.y;
+                }
+                else
+                {
+                    if (puntoMasAlto - transform.position.y >= maximoAltura)
+                    {
+                        Dead();
+                    }
+                }
             }
             else
             {
-                if(i == 0)
-                {
-                    cerca = false;
-                    interactuar = false;
-                }
-
-                if (i == 1 && trepar)
-                {
-                    cerca = false;
-                    Debug.Log("Trepo pero no tego nada delante");
-                    Realentizado = true;
-                    speed = 4;
-                }
-                else if(i == 1 && !trepar)
-                {
-                    Realentizado = false;
-                    //speed = tspeed;
-                    //escalar = false;
-                }
-
-                if (i == 2)
-                {
-                    trepar = false;
-                    escalar = false;
-                    anim.SetBool("Climb", false);
-                }
-                
+                fAltura = false;
             }
-            if(!cerca) if(objetoColisionado != null) if(objetoColisionado.CompareTag("Object")) objetoColisionado.GetComponentInChildren<Puntito>().ChangeAlfaProximetriAndInteractuable(0);
-            origen.y += sing * (i + 1) * DistanciaRayo.y;
-            sing *= -1;
-            //interactuar = false;
-        }
-        
-    #endregion
 
-        if(!tocandoSuelo && !planear)
-        {
-            if(!fAltura)
+            if (trepar)
             {
-                fAltura = true;
-                puntoMasAlto = transform.position.y;
+                speed = 6;
             }
-            else
+
+            if (push)
             {
-                if(puntoMasAlto - transform.position.y >= maximoAltura)
-                {
-                    Dead();
-                }
+                speed = 12;
             }
         }
         else
         {
-            fAltura = false;
+            if (contadorTiempoDeEspera < tiempoDeEspera) contadorTiempoDeEspera += Time.deltaTime;
+            else recuperarElControl();
         }
-
-        if(trepar)
-        {
-            speed = 6;
-        }
-
-        if(push)
-        {
-            speed = 12;
-        }
-
     }
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
@@ -702,6 +714,20 @@ public class PlayerController : MonoBehaviour
     public void SetLintera()
     {
         pLinterna = !pLinterna;
+    }
+
+    public void perderElControl(float tiempo)
+    {
+        tiempoDeEspera = tiempo;
+        contadorTiempoDeEspera = 0;
+        enPerdidaDeControl = true;
+        GetComponent<CharacterController>().enabled = false;
+    }
+
+    public void recuperarElControl()
+    {
+        enPerdidaDeControl = false;
+        GetComponent<CharacterController>().enabled = true;
     }
 
 
