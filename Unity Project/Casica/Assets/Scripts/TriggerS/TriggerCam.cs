@@ -6,7 +6,7 @@ using UnityEngine;
 public class TriggerCam : MonoBehaviour {
 
     private CinemachineVirtualCamera camZoom;
-
+    private PlayerController player;
     private bool zoom;
 
     public bool cam;
@@ -14,7 +14,7 @@ public class TriggerCam : MonoBehaviour {
     private void Start()
     {
         camZoom = GetComponentInChildren<CinemachineVirtualCamera>();
-
+        player = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
         camZoom.enabled = false;
     }
 
@@ -22,13 +22,15 @@ public class TriggerCam : MonoBehaviour {
     {
         if(zoom)
         {
-            if (Input.GetButtonDown("Fire1") && !cam)
+            if (Input.GetButtonDown("Interactuar") && !cam)
             {
                 cam = true;
+                player.OcultarMesh();
             }
-            else if (Input.GetButtonDown("Fire1") && cam)
+            else if (Input.GetButtonDown("Interactuar") && cam)
             {
                 cam = false;
+                player.MostrarMesh();
             }
         }
         else

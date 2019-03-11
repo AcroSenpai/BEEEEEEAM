@@ -33,10 +33,8 @@ public class Puntito : MonoBehaviour {
 
     void Update ()
     {
-        Debug.Log("1");
         if (start)
         {
-            Debug.Log("2: "+ Mathf.Floor(alpha) + " n: "+ nextAlpha);
             if (Mathf.Floor(alpha) != nextAlpha)
             {
                 if (Mathf.Floor(alpha) > nextAlpha) alpha = nextAlpha;

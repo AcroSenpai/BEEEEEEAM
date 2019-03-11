@@ -86,6 +86,10 @@ public class PlayerController : MonoBehaviour
     public float contadorTiempoDeEspera;
     public bool enPerdidaDeControl;
 
+    public GameObject mesh;
+    public float contadorOcultarMostrarMesh;
+    public bool meshOculta;
+
 
     // Use this for initialization
     void Start ()
@@ -109,6 +113,7 @@ public class PlayerController : MonoBehaviour
         corriendo = false;
         anim = GetComponent<Animator>();
         sound = GameObject.FindGameObjectWithTag("Music").GetComponent<AudioManager>();
+        contadorOcultarMostrarMesh = 0;
     }
 	
 	// Update is called once per frame
@@ -447,6 +452,29 @@ public class PlayerController : MonoBehaviour
             {
                 speed = 12;
             }
+
+            if(meshOculta)
+            {
+                if(contadorOcultarMostrarMesh < 1.6f)
+                {
+                    contadorOcultarMostrarMesh += Time.deltaTime;
+                }
+                else
+                {
+                    mesh.SetActive(false);
+                }
+            }
+            else
+            {
+                if(contadorOcultarMostrarMesh < 0.5f)
+                {
+                    contadorOcultarMostrarMesh += Time.deltaTime;
+                }
+                else
+                {
+                    mesh.SetActive(true);
+                }
+            }
         }
         else
         {
@@ -688,24 +716,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-
-    public void SetBossFight()
-    {
-        bossFight = !bossFight;
-        if(bossFight)
-        {
-            espada.SetActive(true);
-        }
-        else
-        {
-            espada.SetActive(false);
-        }
-    }
-    public void Attack()
-    {
-        //anim.SetTrigger("Ataque");
-    }
-
     public void SetCometa()
     {
         cometa = !cometa;
@@ -730,5 +740,16 @@ public class PlayerController : MonoBehaviour
         GetComponent<CharacterController>().enabled = true;
     }
 
+     public void OcultarMesh()
+    {
+        contadorOcultarMostrarMesh = 0;
+        meshOculta = true;
+    }
+
+    public void MostrarMesh()
+    {
+        contadorOcultarMostrarMesh = 0;
+        meshOculta = false;
+    }
 
 }

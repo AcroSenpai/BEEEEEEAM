@@ -193,14 +193,7 @@ public class InputManager : MonoBehaviour
             PC.Linterna();
         }
 
-        //Ataque
-        if(PC.bossFight)
-        {
-            if(Input.GetKeyDown(KeyCode.Mouse1))
-            {
-                PC.Attack();
-            }
-        }
+ 
     }
 
     public void Inmune()
