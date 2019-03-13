@@ -508,7 +508,7 @@ public class PlayerController : MonoBehaviour
             if(cometa)
             {
                 gravityMagnitude = 1f;
-                speed = 15;
+                speed = 20;
                 planear = true;
                 objetoColisionado = null;
             }
