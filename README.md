@@ -22,10 +22,9 @@ Animador y Programador: Alex Reverter Lices
 
 Link: https://github.com/MrJake7X
 
-Modelador 3D, Sonido, VFX: Oscar Trevejo Rodriguez
+Modelador 3D, Texturas, Sonido, VFX: Oscar Trevejo Rodriguez
 
 Link: https://github.com/OscarTrevejo1999
 
-Artista 2D y Texturas: Maria Fuentes
+Modelador 3D: Jaume Monferrer
 
-Link: https://github.com/Hkoisumi
