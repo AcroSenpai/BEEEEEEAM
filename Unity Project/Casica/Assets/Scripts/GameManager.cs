@@ -278,7 +278,7 @@ public class GameManager : MonoBehaviour {
     {
         if (!cuartillo)
         {
-            SceneManager.LoadSceneAsync("cuartillo", LoadSceneMode.Additive);
+            SceneManager.LoadSceneAsync("8Cuartillo", LoadSceneMode.Additive);
             cuartillo = true;
         }
     }

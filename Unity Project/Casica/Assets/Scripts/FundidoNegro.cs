@@ -25,7 +25,7 @@ public class FundidoNegro : MonoBehaviour {
     {
         panel.alpha = alpha;
 
-        if (manager.goNegacionD && !manager.onNegacionD)
+        if (manager.onNegacionN)
         {
             panelNegro.SetActive(true);
 
@@ -43,7 +43,7 @@ public class FundidoNegro : MonoBehaviour {
                 manager.negacionDone = true;
 
                 manager.OpenNegacionD();
-
+                manager.TpNegacionD();
                 manager.ClosePasillo();
                 manager.CloseNegacionN();
 

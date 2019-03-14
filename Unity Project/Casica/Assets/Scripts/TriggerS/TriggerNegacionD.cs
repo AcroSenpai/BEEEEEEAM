@@ -21,7 +21,7 @@ public class TriggerNegacionD : MonoBehaviour {
             manager.ClosePasillo();
             manager.CloseBaño();
             manager.CloseNegacionN();
-            manager.CloseCuartillo();
+            //manager.CloseCuartillo();
             manager.CloseDesvan();
             manager.CloseDespensa();
             manager.CloseCocina();
@@ -30,6 +30,8 @@ public class TriggerNegacionD : MonoBehaviour {
             manager.CloseLaberinto();
             manager.CloseSotanoN();
             manager.CloseSotanoD();
+
+            manager.OpenCuartillo();
         }
     }
 
