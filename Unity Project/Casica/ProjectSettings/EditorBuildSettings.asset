@@ -18,7 +18,7 @@ EditorBuildSettings:
     path: Assets/Scenes/4pasillo.unity
     guid: 36ee8e61e749064438781f9e58edc536
   - enabled: 1
-    path: "Assets/Scenes/5ba\xF1o.unity"
+    path: Assets/Scenes/5bano.unity
     guid: a86cc2e2f5c3bc44a95f0b05f4f0848b
   - enabled: 1
     path: Assets/Scenes/6negacion_N.unity

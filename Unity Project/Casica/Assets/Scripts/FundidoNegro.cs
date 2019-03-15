@@ -43,7 +43,7 @@ public class FundidoNegro : MonoBehaviour {
                 manager.negacionDone = true;
 
                 manager.OpenNegacionD();
-
+                manager.TpNegacionD();
                 manager.ClosePasillo();
                 manager.CloseNegacionN();
 

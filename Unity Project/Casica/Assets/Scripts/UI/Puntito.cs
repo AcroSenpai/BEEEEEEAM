@@ -66,7 +66,6 @@ public class Puntito : MonoBehaviour {
 
     public void ChangeAlfaProximetriAndInteractuable(int num)
     {
-        Debug.Log("3: " + num);
         switch (num)
         {
             case 1:

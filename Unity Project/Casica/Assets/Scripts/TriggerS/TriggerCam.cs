@@ -35,7 +35,8 @@ public class TriggerCam : MonoBehaviour {
         }
         else
         {
-            cam = false;
+            //cam = false;
+            
         }
 
         camZoom.enabled = cam;
@@ -55,6 +56,7 @@ public class TriggerCam : MonoBehaviour {
         {
             cam = false;
             zoom = false;
+            player.MostrarMesh();
         }
     }
 }
