@@ -25,7 +25,7 @@ public class FundidoNegro : MonoBehaviour {
     {
         panel.alpha = alpha;
 
-        if (manager.goNegacionD && !manager.onNegacionD)
+        if (manager.onNegacionN)
         {
             panelNegro.SetActive(true);
 

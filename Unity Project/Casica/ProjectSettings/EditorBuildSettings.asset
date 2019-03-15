@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/7negacion_D.unity
     guid: 48702c135fc3f2b49b20c3df05e44b3c
+  - enabled: 1
+    path: Assets/Scenes/8Cuartillo.unity
+    guid: 1652462deb83d1740bb7bb8292ef8555
   m_configObjects: {}
