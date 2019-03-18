@@ -67,6 +67,8 @@ public class PlayerController : MonoBehaviour
 
     //Pruebas
     public GameObject objetoColisionado;
+    public Transform padreObjetoColisionado;
+    public bool padreGuardado;
     public bool Realentizado;
     public bool llave;
 
@@ -111,6 +113,7 @@ public class PlayerController : MonoBehaviour
         llave = false;
         saltar = true;
         corriendo = false;
+        padreGuardado = false;
         anim = GetComponent<Animator>();
         sound = GameObject.FindGameObjectWithTag("Music").GetComponent<AudioManager>();
         contadorOcultarMostrarMesh = 0;
@@ -528,6 +531,13 @@ public class PlayerController : MonoBehaviour
     {
         if(hit.transform != null && !jump)
         {
+            if(!padreGuardado)
+            {
+                padreObjetoColisionado = hit.transform.parent;
+                padreGuardado = true;
+            }
+            
+            
             saltar = false;
             Cubito = hit;
             Cubito.transform.parent = transform;
@@ -540,13 +550,13 @@ public class PlayerController : MonoBehaviour
 
     public void NoPullPush()
     {
-        Cubito.transform.parent = null;
+        Cubito.transform.parent = padreObjetoColisionado;
         saltar = true;
-
         objSelec = 0;
         push = false;
         speed = speedPP;
         Realentizado = false;
+        padreGuardado = false;
     }
 
     public void run()

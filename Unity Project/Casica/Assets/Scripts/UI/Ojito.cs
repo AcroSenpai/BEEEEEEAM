@@ -32,7 +32,7 @@ public class Ojito : MonoBehaviour {
         sprite.color = myColor;
 
         myColor.a = alpha;
-        Debug.Log(!triggerCam.cam);
+        //Debug.Log(!triggerCam.cam);
         if (!triggerCam.cam)
         {
             Appear();
@@ -50,7 +50,7 @@ public class Ojito : MonoBehaviour {
 
     public void Appear()
     {
-        Debug.Log("Estoi apareciendo");
+        //Debug.Log("Estoi apareciendo");
         alpha += counter * Time.deltaTime;
         if (alpha >= 1)
         {
@@ -60,7 +60,7 @@ public class Ojito : MonoBehaviour {
 
     public void Disappear()
     {   
-        Debug.Log("Estoi desapareciendo");
+        //Debug.Log("Estoi desapareciendo");
         alpha -= counter * Time.deltaTime;
         if (alpha <= 0)
         {
