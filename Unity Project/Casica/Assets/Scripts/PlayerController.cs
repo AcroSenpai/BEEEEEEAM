@@ -515,10 +515,15 @@ public class PlayerController : MonoBehaviour
                 planear = true;
                 objetoColisionado = null;
             }
+            else
+            {
+                gravityMagnitude = 5f;
+            }
             
         }
         else
         {
+            gravityMagnitude = 5f;
             speed = 15;
             jump = true;
             moveDirection.y = jumpSpeed;
