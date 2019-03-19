@@ -6,10 +6,11 @@ using UnityEngine.SceneManagement;
 public class TriggerCuartillo : MonoBehaviour {
 
     private GameManager manager;
-
+    public GameObject collider;
     private void Start()
     {
         manager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+        collider.SetActive(false);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -21,8 +22,8 @@ public class TriggerCuartillo : MonoBehaviour {
             manager.CloseHabJohnny();
             manager.ClosePasillo();
             manager.CloseBaño();
+            manager.CloseNegacionN();
             manager.CloseNegacionD();
-            manager.CloseDesvan();
             manager.CloseDespensa();
             manager.CloseCocina();
             manager.CloseSalon();
@@ -31,7 +32,8 @@ public class TriggerCuartillo : MonoBehaviour {
             manager.CloseSotanoN();
             manager.CloseSotanoD();
 
-            manager.OpenNegacionN();
+            manager.OpenDesvan();
+            collider.SetActive(true);
 
         }
     }
