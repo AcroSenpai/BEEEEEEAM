@@ -9,9 +9,10 @@ public class TrigersNegacionDistorsionada : MonoBehaviour
     // Start is called before the first frame update
     private void OnTriggerEnter(Collider other)
     {
-		if (other.gameObject.tag == "Player")
+		    if (other.gameObject.tag == "Player")
         {
           Escalar.SetActive(Accion);
         }
-	}
+	  }
+    
 }

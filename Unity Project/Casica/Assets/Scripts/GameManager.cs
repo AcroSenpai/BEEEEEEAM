@@ -251,7 +251,7 @@ public class GameManager : MonoBehaviour {
     {
         if (!baño)
         {
-            SceneManager.LoadSceneAsync("5baño", LoadSceneMode.Additive);
+            SceneManager.LoadSceneAsync("5bano", LoadSceneMode.Additive);
             baño = true;
         }
     }
@@ -381,7 +381,8 @@ public class GameManager : MonoBehaviour {
     {
         if (baño)
         {
-            SceneManager.UnloadSceneAsync("5baño");
+            Debug.Log("Cierro el baño");
+            SceneManager.UnloadSceneAsync("5bano");
             baño = false;
         }
     }
