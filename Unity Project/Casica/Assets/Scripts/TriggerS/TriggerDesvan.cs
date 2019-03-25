@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class TriggerDesvan : MonoBehaviour {
 
     private GameManager manager;
-
+    public int parteHabitacion;
     private void Start()
     {
         manager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
@@ -16,22 +16,28 @@ public class TriggerDesvan : MonoBehaviour {
     {
         if (other.tag == "Player")
         {
-            manager.onDesvan = true;
 
-            manager.CloseHabJohnny();
-            manager.ClosePasillo();
-            manager.CloseBaño();
-            manager.CloseNegacionN();
-            manager.CloseNegacionD();
-            manager.CloseCuartillo();
-            manager.CloseCocina();
-            manager.CloseSalon();
-            manager.CloseHabPadres();
-            manager.CloseLaberinto();
-            manager.CloseSotanoN();
-            manager.CloseSotanoD();
+            if(parteHabitacion == 1)
+            {
+                manager.CloseHabJohnny();
+                manager.ClosePasillo();
+                manager.CloseBaño();
+                manager.CloseNegacionN();
+                manager.CloseNegacionD();
+                manager.CloseCuartillo();
+                manager.CloseCocina();
+                manager.CloseSalon();
+                manager.CloseHabPadres();
+                manager.CloseLaberinto();
+                manager.CloseSotanoN();
+                manager.CloseSotanoD();
 
-            manager.OpenDespensa();
+                //manager.OpenDespensa();
+            }
+            
+            manager.onDesvanPart = parteHabitacion;
+
+            
         }
     }
 

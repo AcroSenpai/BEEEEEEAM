@@ -51,7 +51,13 @@ public class GameManager : MonoBehaviour {
     public CinemachineVirtualCamera camNegacionN;
     public CinemachineVirtualCamera camNegacionD;
     public CinemachineVirtualCamera camCuartillo;
-    public CinemachineVirtualCamera camDesvan;
+    public CinemachineVirtualCamera camDesvan1;
+    public CinemachineVirtualCamera camDesvan2;
+    public CinemachineVirtualCamera camDesvan3;
+    public CinemachineVirtualCamera camDesvan4;
+    public CinemachineVirtualCamera camDesvan5;
+    public CinemachineVirtualCamera camDesvan6;
+    public CinemachineVirtualCamera camDesvan7;
     public CinemachineVirtualCamera camDespensa;
     public CinemachineVirtualCamera camHabPadres;
     public CinemachineVirtualCamera camLaberinto;
@@ -74,6 +80,8 @@ public class GameManager : MonoBehaviour {
     public GameObject laberintoPoint;
     public GameObject sotanoNPoint;
     public GameObject sotanoDPoint;
+
+    public int onDesvanPart;
 
     private void Awake()
     {
@@ -99,7 +107,47 @@ public class GameManager : MonoBehaviour {
         camNegacionN.enabled = onNegacionN;
         camNegacionD.enabled = onNegacionD;
         camCuartillo.enabled = onCuartillo;
-        camDesvan.enabled = onDesvan;
+        
+        switch(onDesvanPart)
+        {
+            case 1:
+                camDesvan1.enabled = true;
+                camDesvan2.enabled = false;
+                break;
+            case 2:
+                camDesvan1.enabled = false;
+                camDesvan2.enabled = true;
+                camDesvan3.enabled = false;
+                break;
+            case 3:
+                camDesvan2.enabled = false;
+                camDesvan3.enabled = true;
+                camDesvan4.enabled = false;
+                break;
+            case 4:
+                camDesvan3.enabled = false;
+                camDesvan4.enabled = true;
+                camDesvan5.enabled = false;
+                break;
+            case 5:
+                camDesvan4.enabled = false;
+                camDesvan5.enabled = true;
+                camDesvan6.enabled = false;
+                break;
+            case 6:
+                camDesvan5.enabled = false;
+                camDesvan6.enabled = true;
+                camDesvan7.enabled = false;
+                break;
+            case 7:
+                camDesvan7.enabled = true;
+                camDesvan6.enabled = false;
+                break;
+            
+        }
+        
+        
+        
         camHabPadres.enabled = onHabPadres;
         camLaberinto.enabled = onLaberinto;
         camSotanoN.enabled = onSotanoN;
@@ -288,7 +336,7 @@ public class GameManager : MonoBehaviour {
         if (!desvan)
         {
             SceneManager.LoadSceneAsync("9desvan", LoadSceneMode.Additive);
-            desvan = true;
+            //desvan = true;
         }
     }
 
