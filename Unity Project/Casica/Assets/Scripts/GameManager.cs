@@ -107,41 +107,79 @@ public class GameManager : MonoBehaviour {
         camNegacionN.enabled = onNegacionN;
         camNegacionD.enabled = onNegacionD;
         camCuartillo.enabled = onCuartillo;
-        
+
+        Debug.Log(onDesvanPart);
         switch(onDesvanPart)
         {
             case 1:
+                Debug.Log("Estoy en la 1");
                 camDesvan1.enabled = true;
                 camDesvan2.enabled = false;
+                camDesvan3.enabled = false;
+                camDesvan4.enabled = false;
+                camDesvan5.enabled = false;
+                camDesvan6.enabled = false;
+                camDesvan7.enabled = false;
                 break;
             case 2:
+                Debug.Log("Estoy en la 2");
                 camDesvan1.enabled = false;
                 camDesvan2.enabled = true;
                 camDesvan3.enabled = false;
+                camDesvan4.enabled = false;
+                camDesvan5.enabled = false;
+                camDesvan6.enabled = false;
+                camDesvan7.enabled = false;
                 break;
             case 3:
+                Debug.Log("Estoy en la 3");
+                camDesvan1.enabled = false;
                 camDesvan2.enabled = false;
                 camDesvan3.enabled = true;
                 camDesvan4.enabled = false;
+                camDesvan5.enabled = false;
+                camDesvan6.enabled = false;
+                camDesvan7.enabled = false;
                 break;
             case 4:
+                Debug.Log("Estoy en la 4");
+                camDesvan1.enabled = false;
+                camDesvan2.enabled = false;
                 camDesvan3.enabled = false;
                 camDesvan4.enabled = true;
                 camDesvan5.enabled = false;
+                camDesvan6.enabled = false;
+                camDesvan7.enabled = false;
                 break;
             case 5:
+                Debug.Log("Estoy en la 5");
+                camDesvan1.enabled = false;
+                camDesvan2.enabled = false;
+                camDesvan3.enabled = false;
                 camDesvan4.enabled = false;
                 camDesvan5.enabled = true;
                 camDesvan6.enabled = false;
+                camDesvan7.enabled = false;
                 break;
             case 6:
+                Debug.Log("Estoy en la 6");
+                camDesvan1.enabled = false;
+                camDesvan2.enabled = false;
+                camDesvan3.enabled = false;
+                camDesvan4.enabled = false;
                 camDesvan5.enabled = false;
                 camDesvan6.enabled = true;
                 camDesvan7.enabled = false;
                 break;
             case 7:
-                camDesvan7.enabled = true;
+                Debug.Log("Estoy en la 7");
+                camDesvan1.enabled = false;
+                camDesvan2.enabled = false;
+                camDesvan3.enabled = false;
+                camDesvan4.enabled = false;
+                camDesvan5.enabled = false;
                 camDesvan6.enabled = false;
+                camDesvan7.enabled = true;
                 break;
             
         }
@@ -457,7 +495,7 @@ public class GameManager : MonoBehaviour {
     {
         if (cuartillo)
         {
-            SceneManager.UnloadSceneAsync("cuartillo");
+            SceneManager.UnloadSceneAsync("8cuartillo");
             cuartillo = false;
         }
     }

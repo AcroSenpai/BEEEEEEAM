@@ -24,7 +24,7 @@ public class TriggerDesvan : MonoBehaviour {
                 manager.CloseBaño();
                 manager.CloseNegacionN();
                 manager.CloseNegacionD();
-                manager.CloseCuartillo();
+                //manager.CloseCuartillo();
                 manager.CloseCocina();
                 manager.CloseSalon();
                 manager.CloseHabPadres();
@@ -34,10 +34,12 @@ public class TriggerDesvan : MonoBehaviour {
 
                 //manager.OpenDespensa();
             }
-            
-            manager.onDesvanPart = parteHabitacion;
 
-            
+            Debug.Log("T" + manager.onDesvanPart);
+            Debug.Log("T" + parteHabitacion);
+            manager.onDesvanPart = parteHabitacion;
+            Debug.Log("T" + manager.onDesvanPart);
+
         }
     }
 
