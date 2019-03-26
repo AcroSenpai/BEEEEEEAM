@@ -613,7 +613,14 @@ public class PlayerController : MonoBehaviour
         Realentizado = true;
         anim.SetBool("Climb", true);
         anim.SetBool("walk", false);
-        if(pos == 1)//Derecha izquierda
+
+        if(moveDirection.y <= 0)
+        {
+            anim.speed = 0;
+        }
+        else { anim.speed = 1; }
+
+        if (pos == 1)//Derecha izquierda
         {
             moveDirection.y = tranformDirection.x * speed;
         }
