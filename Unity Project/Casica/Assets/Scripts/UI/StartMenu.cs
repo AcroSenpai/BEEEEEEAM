@@ -7,7 +7,7 @@ public class StartMenu : MonoBehaviour {
 
     public void WakeUp()
     {
-        SceneManager.LoadScene("player");
+        SceneManager.LoadScene("2player");
     }
 
     public void Continue()

@@ -13,10 +13,12 @@ public class ResolucionUI : MonoBehaviour
     public GameObject de;
     public int pos;
     public OptionsFunctions of;
+    public Color colorcico;
     // Start is called before the first frame update
-
     public void NextResolution(int num)
     {
+        colorcico = op1.GetComponent<Text>().color;
+        colorcico.a = 1;
         if (num == 1)
         {
             if (pos == 1) iz.SetActive(false);
@@ -48,6 +50,7 @@ public class ResolucionUI : MonoBehaviour
                 op2.gameObject.SetActive(false);
                 op3.gameObject.SetActive(false);
                 of.changeResolution(0);
+                op1.GetComponent<Text>().color = colorcico;
                 break;
             case 2:
                 op1.DOAnchorPosX(120, 2f, true);
@@ -60,6 +63,7 @@ public class ResolucionUI : MonoBehaviour
                 op2.gameObject.SetActive(true);
                 op3.gameObject.SetActive(false);
                 of.changeResolution(1);
+                op2.GetComponent<Text>().color = colorcico;
                 break;
             case 3:
                 op1.DOAnchorPosX(80, 2f, true);
@@ -72,6 +76,7 @@ public class ResolucionUI : MonoBehaviour
                 op2.gameObject.SetActive(false);
                 op3.gameObject.SetActive(true);
                 of.changeResolution(2);
+                op3.GetComponent<Text>().color = colorcico;
                 break;
         }
 
