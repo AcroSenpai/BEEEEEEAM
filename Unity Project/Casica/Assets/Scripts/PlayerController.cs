@@ -93,6 +93,13 @@ public class PlayerController : MonoBehaviour
     public bool meshOculta;
 
 
+    public void OpenCometa()
+    {
+        Debug.Log("Abrir cometa");
+        cometita.SetActive(true);
+
+    }
+
     // Use this for initialization
     void Start ()
     {
@@ -161,12 +168,11 @@ public class PlayerController : MonoBehaviour
 
             if (planear && !trepar)
             {
-                //cometita.SetActive(true);
                 anim.SetBool("Planear", true);
             }
             else
             {
-                //cometita.SetActive(false);
+                cometita.SetActive(false);
                 anim.SetBool("Planear", false);
             }
 

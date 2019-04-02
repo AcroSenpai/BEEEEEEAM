@@ -5650,7 +5650,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: f79cdf34d4f0fe240baf9d9c42df7685, type: 3}
       propertyPath: m_Name
-      value: Animaciones_Johnny_Bake
+      value: Model
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f79cdf34d4f0fe240baf9d9c42df7685, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5682,7 +5682,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f79cdf34d4f0fe240baf9d9c42df7685, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f79cdf34d4f0fe240baf9d9c42df7685, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -9647,6 +9647,7 @@ MonoBehaviour:
   de: {fileID: 59512790}
   pos: 1
   of: {fileID: 1370728496}
+  colorcico: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1396519462
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10033,6 +10034,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1465610766}
   m_CullTransparentMesh: 0
+--- !u!1 &1474792053 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100116, guid: f79cdf34d4f0fe240baf9d9c42df7685,
+    type: 3}
+  m_PrefabInstance: {fileID: 883793322}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1489816614
 GameObject:
   m_ObjectHideFlags: 0
@@ -18905,7 +18912,7 @@ MonoBehaviour:
   saltar: 0
   corriendo: 0
   ando: 0
-  cometita: {fileID: 0}
+  cometita: {fileID: 1474792053}
   objetoColisionado: {fileID: 0}
   padreObjetoColisionado: {fileID: 0}
   padreGuardado: 0

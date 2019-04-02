@@ -259,12 +259,15 @@ ModelImporter:
     2100004: J_Rigg_003_lambert2
     2100006: J_Rigg_003_lambert5
     2300000: J_Rigg_003:Disfraz_Linterna
+    2300002: J_Rigg_003:pPlane1
     3300000: J_Rigg_003:Disfraz_Linterna
+    3300002: J_Rigg_003:pPlane1
     4300000: J_Rigg_003:Disfraz_Linterna
     4300002: J_Rigg_003:Linterna
     4300004: J_Rigg_003:Mesh
     4300006: J_Rigg_003:pCylinder2
     4300008: J_Rigg_003:pCylinder1
+    4300010: J_Rigg_003:pPlane1
     7400000: Walk
     7400002: Walk_Lantern
     7400004: Crouch_Lantern
@@ -296,7 +299,7 @@ ModelImporter:
     materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
-    bakeSimulation: 0
+    bakeSimulation: 1
     resampleCurves: 1
     optimizeGameObjects: 0
     motionNodeName: 
@@ -307,7 +310,7 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
-    importConstraints: 0
+    importConstraints: 1
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
@@ -731,7 +734,14 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.7477744
+        functionName: OpenCometa
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
@@ -827,7 +837,7 @@ ModelImporter:
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
-    importVisibility: 1
+    importVisibility: 0
     importBlendShapes: 1
     importCameras: 0
     importLights: 0
@@ -837,7 +847,7 @@ ModelImporter:
     optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 0
-    preserveHierarchy: 1
+    preserveHierarchy: 0
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
