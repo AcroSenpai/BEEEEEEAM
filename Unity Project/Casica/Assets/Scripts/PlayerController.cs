@@ -92,14 +92,6 @@ public class PlayerController : MonoBehaviour
     public float contadorOcultarMostrarMesh;
     public bool meshOculta;
 
-
-    public void OpenCometa()
-    {
-        Debug.Log("Abrir cometa");
-        cometita.SetActive(true);
-
-    }
-
     // Use this for initialization
     void Start ()
     {
@@ -180,6 +172,7 @@ public class PlayerController : MonoBehaviour
             {
                 moveDirection.z = tranformDirection.z * speed;
                 moveDirection.x = tranformDirection.x * speed;
+                anim.speed = 1;
             }
             else
             {
@@ -207,15 +200,6 @@ public class PlayerController : MonoBehaviour
                 lastAxis = axis;
                 anim.SetBool("walk", ando);
                 anim.SetBool("run", corriendo);
-                /*
-                if (ando)
-                {
-                    anim.SetBool("walk", true);
-                }
-                else if (corriendo)
-                {
-                    anim.SetBool("run", true);
-                }*/
             }
 
             if (cometa)
@@ -387,7 +371,12 @@ public class PlayerController : MonoBehaviour
                             }
                             if (hit.collider.tag == "Trepar")
                             {
-                                if (!cerca) trepar = true;
+                                if (!cerca)
+                                {
+                                    trepar = true;
+                                    model.rotation = Quaternion.LookRotation(direccion_rayo);
+                                    anim.SetBool("EndClimb", false);
+                                }
                                 else trepar = false;
                             }
                             break;
@@ -400,12 +389,19 @@ public class PlayerController : MonoBehaviour
                     {
                         cerca = false;
                         interactuar = false;
+                        if(trepar)
+                        {
+                            Debug.Log("AQUI TOY");
+
+                            anim.SetBool("EndClimb", true);
+                        }
                     }
 
                     if (i == 1 && trepar)
                     {
                         cerca = false;
                         Debug.Log("Trepo pero no tego nada delante");
+                        Debug.Log("Terminar escalada");
                         Realentizado = true;
                         speed = 4;
                     }
@@ -624,7 +620,7 @@ public class PlayerController : MonoBehaviour
         {
             anim.speed = 0;
         }
-        else { anim.speed = 1; }
+        else anim.speed = 1;
 
         if (pos == 1)//Derecha izquierda
         {
@@ -716,6 +712,12 @@ public class PlayerController : MonoBehaviour
             }
         }
         
+    }
+
+    public void OpenCometa()
+    {
+        Debug.Log("Abrir cometa");
+        cometita.SetActive(true);
     }
 
     public void cojerObj(int num)
