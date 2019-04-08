@@ -16,6 +16,8 @@ public class FundidoNegro : MonoBehaviour {
 
     public GameObject panelNegro;
 
+    public bool iniciarOscuridad = false;
+
     private void Start()
     {
         manager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
@@ -24,49 +26,53 @@ public class FundidoNegro : MonoBehaviour {
     private void Update()
     {
         panel.alpha = alpha;
-
-        if (manager.onNegacionN)
+        if(manager.GetProgresion() == 4)
+        if(iniciarOscuridad)
         {
-            panelNegro.SetActive(true);
-
-            if (counter < 5)
+            if (manager.onNegacionN)
             {
-                counter += Time.deltaTime;
-            }
-            else
-            {
-                alpha += 0.3f * Time.deltaTime;
-            }
+                panelNegro.SetActive(true);
 
-            if (alpha > 1)
-            {
-                manager.negacionDone = true;
+                if (counter < 5)
+                {
+                    counter += Time.deltaTime;
+                }
+                else
+                {
+                    alpha += 0.3f * Time.deltaTime;
+                }
 
-                manager.OpenNegacionD();
-                manager.TpNegacionD();
-                manager.ClosePasillo();
-                manager.CloseNegacionN();
+                if (alpha > 1)
+                {
+                    manager.negacionDone = true;
 
-                counter = 0;
-            }
-        }
+                    manager.OpenNegacionD();
+                    manager.TpNegacionD();
+                    manager.ClosePasillo();
+                    manager.CloseNegacionN();
 
-        if (manager.onNegacionD)
-        {
-            if (counter < 1)
-            {
-                counter += Time.deltaTime;
-            }
-            else
-            {
-                alpha -= 0.3f * Time.deltaTime;
+                    counter = 0;
+                }
             }
 
-            if (alpha < 0)
+            if (manager.onNegacionD)
             {
-                counter = 0;
-                panelNegro.SetActive(false);
+                if (counter < 1)
+                {
+                    counter += Time.deltaTime;
+                }
+                else
+                {
+                    alpha -= 0.3f * Time.deltaTime;
+                }
+
+                if (alpha < 0)
+                {
+                    counter = 0;
+                    panelNegro.SetActive(false);
+                }
             }
-        }
+        } 
     }
+    
 }

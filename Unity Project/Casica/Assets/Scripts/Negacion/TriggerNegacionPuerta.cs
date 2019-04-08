@@ -18,7 +18,8 @@ public class TriggerNegacionPuerta : MonoBehaviour
         {
             if (other.tag == "Player")
             {
-                manager.SetProgresion(4);
+                Debug.Log("Cerrar puerta, caer cuadro y cambiar a progreso 4");
+                //manager.SetProgresion(4);
             }
         }
         
