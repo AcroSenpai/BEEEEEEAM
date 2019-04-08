@@ -245,7 +245,51 @@ public class PlayerController : MonoBehaviour
             else
             {
                 sound.Play("push");
+                if(pullAxis.x != 0)
+                {
+                    if(axis.x > 0 && pullAxis.x < 0)
+                    {
+                        anim.SetFloat("pullDir", 1); //Pull
+                    }
+                    else if (axis.x < 0 && pullAxis.x < 0)
+                    {
+                        anim.SetFloat("pullDir", -1); //Push
+                    }
+                    else if(axis.x > 0 && pullAxis.x > 0)
+                    {
+                        anim.SetFloat("pullDir", -1); //Push
+                    }
+                    else if (axis.x < 0 && pullAxis.x > 0)
+                    {
+                        anim.SetFloat("pullDir", 1); //Pull
+                    }
+                }
+                else if(pullAxis.y != 0)
+                {
+                    if (axis.y > 0 && pullAxis.y < 0)
+                    {
+                        anim.SetFloat("pullDir", 1); //Pull
+                    }
+                    else if (axis.y < 0 && pullAxis.y < 0)
+                    {
+                        anim.SetFloat("pullDir", -1); //Push
+                    }
+                    else if (axis.y < 0 && pullAxis.y > 0)
+                    {
+                        anim.SetFloat("pullDir", 1); //Pull
+                    }
+                    else if (axis.y > 0 && pullAxis.y > 0)
+                    {
+                        anim.SetFloat("pullDir", -1); //Push
+                    }
+                }
+
+                Debug.Log(model.forward);
+
             }
+
+            if (push) { 
+}
             anim.SetBool("pull", push);
 
             anim.SetFloat("pullAxisX", pullAxis.x);
@@ -375,7 +419,6 @@ public class PlayerController : MonoBehaviour
                                 {
                                     trepar = true;
                                     model.rotation = Quaternion.LookRotation(direccion_rayo);
-                                    anim.SetBool("EndClimb", false);
                                 }
                                 else trepar = false;
                             }
@@ -391,8 +434,6 @@ public class PlayerController : MonoBehaviour
                         interactuar = false;
                         if(trepar)
                         {
-                            Debug.Log("AQUI TOY");
-
                             anim.SetBool("EndClimb", true);
                         }
                     }
@@ -401,13 +442,13 @@ public class PlayerController : MonoBehaviour
                     {
                         cerca = false;
                         Debug.Log("Trepo pero no tego nada delante");
-                        Debug.Log("Terminar escalada");
                         Realentizado = true;
                         speed = 4;
                     }
                     else if (i == 1 && !trepar)
                     {
                         Realentizado = false;
+                        anim.SetBool("EndClimb", false);
                         //speed = tspeed;
                         //escalar = false;
                     }
