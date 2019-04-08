@@ -78,9 +78,8 @@ public class PlayerController : MonoBehaviour
     public bool pLinterna;
     public int cLinterna;
     public GameObject espada;
-   
 
-    //HUd
+    //HUD
      public GameObject[] iconos;
 
     //Perder el control del personaje
@@ -92,7 +91,6 @@ public class PlayerController : MonoBehaviour
     public float contadorOcultarMostrarMesh;
     public bool meshOculta;
 
-    // Use this for initialization
     void Start ()
     {
         controller = GetComponent<CharacterController>();
@@ -118,7 +116,6 @@ public class PlayerController : MonoBehaviour
         contadorOcultarMostrarMesh = 0;
     }
 	
-	// Update is called once per frame
 	void Update ()
     {
         if (!enPerdidaDeControl)
@@ -283,9 +280,6 @@ public class PlayerController : MonoBehaviour
                         anim.SetFloat("pullDir", -1); //Push
                     }
                 }
-
-                Debug.Log(model.forward);
-
             }
 
             if (push) { 
