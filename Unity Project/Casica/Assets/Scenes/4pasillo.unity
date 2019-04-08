@@ -126,7 +126,7 @@ GameObject:
   - component: {fileID: 32918863}
   - component: {fileID: 32918862}
   - component: {fileID: 32918861}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: SpritePuntito
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4255,7 +4255,7 @@ GameObject:
   - component: {fileID: 164703068489871635}
   - component: {fileID: 85435549292030601}
   - component: {fileID: 54015114743411250}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: SpritePuntito
   m_TagString: Untagged
   m_Icon: {fileID: 0}
