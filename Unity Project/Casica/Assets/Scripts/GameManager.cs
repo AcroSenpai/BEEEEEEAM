@@ -10,7 +10,9 @@ public class GameManager : MonoBehaviour
      void Awake()
      {
          instance = this;
-     }
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        p = new Progresion();
+    }
 
     [Header("Progreso")]
     public Progresion p;
@@ -89,20 +91,6 @@ public class GameManager : MonoBehaviour
 
     public int onDesvanPart;
 
-    private void Awake()
-    {
-        if (GameObject.FindGameObjectsWithTag("GameManager").Length > 1)
-        {
-            Destroy(this.gameObject);
-        }
-        else
-        {
-            DontDestroyOnLoad(gameObject);
-        }
-
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-        p = new Progresion();
-    }
 
     private void Update()
     {
