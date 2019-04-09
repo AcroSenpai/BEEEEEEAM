@@ -1,10 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class Puntito : MonoBehaviour {
 
-    private SpriteRenderer sprite;
+    public SpriteRenderer puntito;
 
     private Transform player;
 
@@ -21,13 +22,13 @@ public class Puntito : MonoBehaviour {
 
 	void Start ()
     {
-        sprite = GetComponentInChildren<SpriteRenderer>();
 
         myColor = Color.white;
 
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
 
-        start = true;
+        start = false;
+        CambiarColor(0);
 
     }
 
@@ -35,15 +36,10 @@ public class Puntito : MonoBehaviour {
     {
         if (start)
         {
-            if (Mathf.Floor(alpha) != nextAlpha)
-            {
-                if (Mathf.Floor(alpha) > nextAlpha) alpha = nextAlpha;
-                alpha += Time.deltaTime;
-            }
-            else alpha = nextAlpha;
-            sprite.color = myColor;
-            myColor.a = alpha;
+            
+           
         }
+
             
 
        
@@ -52,17 +48,30 @@ public class Puntito : MonoBehaviour {
         //else alpha = nextAlpha;
         
 
-        if(Vector3.Distance(transform.position, player.position) < 10)
+        if(Vector3.Distance(transform.position, player.position) > 15)
         {
-            ChangeAlfaProximetriAndInteractuable(2);
+            AnimacionAparecerDesaparecer(1);
         }
-        else
+        else if(Vector3.Distance(transform.position, player.position) < 15)
         {
-            ChangeAlfaProximetriAndInteractuable(3);
+            AnimacionAparecerDesaparecer(0);
         }
 
         
 	}
+
+    public void AnimacionAparecerDesaparecer(int num)
+    {
+        if(num == 1) puntito.DOFade(0, 1);
+        else puntito.DOFade(1, 1);
+    }
+
+    public void CambiarColor(int num)
+    {
+        if(num == 1) puntito.DOColor(Color.white, 1);
+        else puntito.DOColor(Color.gray, 1);
+    }
+
 
     public void ChangeAlfaProximetriAndInteractuable(int num)
     {
@@ -71,18 +80,18 @@ public class Puntito : MonoBehaviour {
             case 1:
                 nextAlpha = 1;
                 myColor = Color.white;
-                start = true;
+                //start = true;
                 break;
 
             case 2:
                 nextAlpha = 0.5f;
                 myColor = Color.gray;
-                start = true;
+                //start = true;
                 break;
 
             case 3:
                 nextAlpha = 0;
-                start = true;
+                //start = true;
                 break;
         }
     }
@@ -91,8 +100,7 @@ public class Puntito : MonoBehaviour {
     {
         if(other.tag == "Player")
         {
-            start = true;
-            end = false;
+            CambiarColor(1);
         }
     }
 
@@ -100,8 +108,7 @@ public class Puntito : MonoBehaviour {
     {
         if (other.tag == "Player")
         {
-            end = true;
-            start = false;
+            CambiarColor(0);
         }
     }
 }

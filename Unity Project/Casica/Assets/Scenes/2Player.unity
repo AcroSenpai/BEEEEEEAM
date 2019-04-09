@@ -2719,8 +2719,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 390750141}
-  m_LocalRotation: {x: 0.07567288, y: -0.0051506762, z: 0.00039089247, w: 0.99711937}
-  m_LocalPosition: {x: 273.86514, y: 7.1114845, z: -383.63647}
+  m_LocalRotation: {x: 0.19936788, y: 0, z: 0.000000014901163, w: 0.97992474}
+  m_LocalPosition: {x: 189.4115, y: 22.195301, z: -312.22998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2133744323}
@@ -8783,6 +8783,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panel: {fileID: 225444965895289885}
   panelNegro: {fileID: 1434979299054937}
+  iniciarOscuridad: 0
 --- !u!114 &1228136139
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14438,7 +14439,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2133744323}
   - component: {fileID: 2133744325}
-  - component: {fileID: 2133744324}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -14460,14 +14460,6 @@ Transform:
   m_Father: {fileID: 390750144}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!81 &2133744324
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2133744322}
-  m_Enabled: 1
 --- !u!20 &2133744325
 Camera:
   m_ObjectHideFlags: 0
@@ -16304,6 +16296,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1802845265}
         m_MethodName: ClosePausePanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1802845265}
+        m_MethodName: QuitarCursor
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
