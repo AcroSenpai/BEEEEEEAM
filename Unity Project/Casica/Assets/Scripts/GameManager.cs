@@ -7,11 +7,6 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour 
 {
     public static GameManager instance;
-     void Awake()
-     {
-         instance = this;
-     }
-
     [Header("Progreso")]
     public Progresion p;
     public bool negacionDone;
@@ -99,6 +94,8 @@ public class GameManager : MonoBehaviour
         {
             DontDestroyOnLoad(gameObject);
         }
+
+        instance = this;
 
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         p = new Progresion();
