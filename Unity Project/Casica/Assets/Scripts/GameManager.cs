@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour 
 {
     public static GameManager instance;
+
     [Header("Progreso")]
     public Progresion p;
     public bool negacionDone;
@@ -83,6 +84,7 @@ public class GameManager : MonoBehaviour
     public GameObject sotanoDPoint;
 
     public int onDesvanPart;
+
 
     private void Awake()
     {
