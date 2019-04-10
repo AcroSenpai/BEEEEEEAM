@@ -11,6 +11,10 @@ public class TriggerNegacionPuerta : MonoBehaviour
         manager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
     }
 
+    public void CambiarProgreso()
+    {
+        manager.SetProgresion(4);
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -19,7 +23,9 @@ public class TriggerNegacionPuerta : MonoBehaviour
             if (other.tag == "Player")
             {
                 Debug.Log("Cerrar puerta, caer cuadro y cambiar a progreso 4");
-                //manager.SetProgresion(4);
+                other.GetComponent<PlayerController>().perderElControl(7);
+                
+                CambiarProgreso();
             }
         }
         

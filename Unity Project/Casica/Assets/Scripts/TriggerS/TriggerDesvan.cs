@@ -24,15 +24,7 @@ public class TriggerDesvan : MonoBehaviour {
                 manager.CloseBaño();
                 manager.CloseNegacionN();
                 manager.CloseNegacionD();
-                //manager.CloseCuartillo();
-                manager.CloseCocina();
-                manager.CloseSalon();
-                manager.CloseHabPadres();
-                manager.CloseLaberinto();
-                manager.CloseSotanoN();
-                manager.CloseSotanoD();
 
-                //manager.OpenDespensa();
             }
 
             Debug.Log("T" + manager.onDesvanPart);

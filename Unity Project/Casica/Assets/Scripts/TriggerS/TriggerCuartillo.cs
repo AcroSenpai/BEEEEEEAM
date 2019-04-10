@@ -24,13 +24,6 @@ public class TriggerCuartillo : MonoBehaviour {
             manager.CloseBaño();
             manager.CloseNegacionN();
             manager.CloseNegacionD();
-            manager.CloseDespensa();
-            manager.CloseCocina();
-            manager.CloseSalon();
-            manager.CloseHabPadres();
-            manager.CloseLaberinto();
-            manager.CloseSotanoN();
-            manager.CloseSotanoD();
 
             manager.OpenDesvan();
             collider.SetActive(true);
