@@ -14347,6 +14347,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.003168399
       objectReference: {fileID: 0}
+    - target: {fileID: 114151567179296172, guid: ccee4b14148ef9040a9d41ef691ea5f4,
+        type: 3}
+      propertyPath: puntito
+      value: 
+      objectReference: {fileID: 861298057}
     - target: {fileID: 212549644365492548, guid: ccee4b14148ef9040a9d41ef691ea5f4,
         type: 3}
       propertyPath: m_Color.a
@@ -14366,6 +14371,34 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ccee4b14148ef9040a9d41ef691ea5f4, type: 3}
+--- !u!1 &861298055 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1656011035472486, guid: ccee4b14148ef9040a9d41ef691ea5f4,
+    type: 3}
+  m_PrefabInstance: {fileID: 861298054}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &861298056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 861298055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d5df926d4145b64aa99e5a5fd4ffccb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  iniValue: {x: 5, y: 5, z: 5}
+  finalValue: {x: 5.5, y: 5.5, z: 5}
+  durationTime: 1
+  estilo: 5
+--- !u!212 &861298057 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 212549644365492548, guid: ccee4b14148ef9040a9d41ef691ea5f4,
+    type: 3}
+  m_PrefabInstance: {fileID: 861298054}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &862836297
 GameObject:
   m_ObjectHideFlags: 0

@@ -40,13 +40,7 @@ public class GameManager : MonoBehaviour
     public bool negacionD;
     public bool cuartillo;
     public bool desvan;
-    public bool despensa;
-    public bool cocina;
-    public bool salon;
-    public bool habPadres;
-    public bool laberinto;
-    public bool sotanoN;
-    public bool sotanoD;
+
 
     [Header("Camaras Activas")]
     public bool onHab;
@@ -56,13 +50,7 @@ public class GameManager : MonoBehaviour
     public bool onNegacionD;
     public bool onCuartillo;
     public bool onDesvan;
-    public bool onDespensa;
-    public bool onCocina;
-    public bool onSalon;
-    public bool onHabPadres;
-    public bool onLaberinto;
-    public bool onSotanoN;
-    public bool onSotanoD;
+
 
     [Header("Camaras")]
     public CinemachineVirtualCamera camHab;
@@ -78,11 +66,7 @@ public class GameManager : MonoBehaviour
     public CinemachineVirtualCamera camDesvan5;
     public CinemachineVirtualCamera camDesvan6;
     public CinemachineVirtualCamera camDesvan7;
-    public CinemachineVirtualCamera camDespensa;
-    public CinemachineVirtualCamera camHabPadres;
-    public CinemachineVirtualCamera camLaberinto;
-    public CinemachineVirtualCamera camSotanoN;
-    public CinemachineVirtualCamera camSotanoD;
+
 
     [Header("Teleports")]
     public GameObject habJohnnyPoint;
@@ -92,13 +76,7 @@ public class GameManager : MonoBehaviour
     public GameObject negacionDPoint;
     public GameObject cuartilloPoint;
     public GameObject desvanPoint;
-    public GameObject despensaPoint;
-    public GameObject cocinaPoint;
-    public GameObject salonPoint;
-    public GameObject habPadresPoint;
-    public GameObject laberintoPoint;
-    public GameObject sotanoNPoint;
-    public GameObject sotanoDPoint;
+
 
     public int onDesvanPart;
 
@@ -191,34 +169,8 @@ public class GameManager : MonoBehaviour
                 break;
             
         }
-        
-        
-        
-        camHabPadres.enabled = onHabPadres;
-        camLaberinto.enabled = onLaberinto;
-        camSotanoN.enabled = onSotanoN;
-        camSotanoD.enabled = onSotanoD;
-
-        if (onDespensa || onCocina ||onSalon)
-        {
-            camDespensa.enabled = true;
-        }
-        else
-        {
-            camDespensa.enabled = false;
-        }
-
-        //SetProgreso();
-
 
     }
-
-    /*private void SetProgreso()
-    {
-        if (onBaño) p.SetProgresion(1);
-        else if (onCuartillo) p.SetProgresion(2);
-
-    }*/
 
 
     #region Teleports
@@ -271,54 +223,6 @@ public class GameManager : MonoBehaviour
         Debug.Log("TP DONE");
     }
 
-    public void TpDespensa()
-    {
-        OpenDespensa();
-        player.position = despensaPoint.transform.position;
-        Debug.Log("TP DONE");
-    }
-
-    public void TpCocina()
-    {
-        OpenCocina();
-        player.position = cocinaPoint.transform.position;
-        Debug.Log("TP DONE");
-    }
-
-    public void TpSalon()
-    {
-        OpenSalon();
-        player.position = salonPoint.transform.position;
-        Debug.Log("TP DONE");
-    }
-
-    public void TpHabPadres()
-    {
-        OpenHabPadres();
-        player.position = habPadresPoint.transform.position;
-        Debug.Log("TP DONE");
-    }
-
-    public void TpLaberinto()
-    {
-        OpenLaberinto();
-        player.position = laberintoPoint.transform.position;
-        Debug.Log("TP DONE");
-    }
-
-    public void TpSotanoN()
-    {
-        OpenSotanoN();
-        player.position = sotanoNPoint.transform.position;
-        Debug.Log("TP DONE");
-    }
-
-    public void TpSotanoD()
-    {
-        OpenSotanoD();
-        player.position = sotanoDPoint.transform.position;
-        Debug.Log("TP DONE");
-    }
     #endregion
 
     #region Abrir Escenas
@@ -383,69 +287,6 @@ public class GameManager : MonoBehaviour
         {
             SceneManager.LoadSceneAsync("9desvan", LoadSceneMode.Additive);
             //desvan = true;
-        }
-    }
-
-    public void OpenDespensa()
-    {
-        if (!despensa)
-        {
-            SceneManager.LoadSceneAsync("despensa", LoadSceneMode.Additive);
-            despensa = true;
-        }
-    }
-
-    public void OpenCocina()
-    {
-        if (!cocina)
-        {
-            SceneManager.LoadSceneAsync("cocina", LoadSceneMode.Additive);
-            cocina = true;
-        }
-    }
-
-    public void OpenSalon()
-    {
-        if (!salon)
-        {
-            SceneManager.LoadSceneAsync("salon", LoadSceneMode.Additive);
-            salon = true;
-        }
-    }
-
-    public void OpenHabPadres()
-    {
-        if (!habPadres)
-        {
-            SceneManager.LoadSceneAsync("habPadres", LoadSceneMode.Additive);
-            habPadres = true;
-        }
-    }
-
-    public void OpenLaberinto()
-    {
-        if (!laberinto)
-        {
-            SceneManager.LoadSceneAsync("laberinto", LoadSceneMode.Additive);
-            laberinto = true;
-        }
-    }
-
-    public void OpenSotanoN()
-    {
-        if (!sotanoN)
-        {
-            SceneManager.LoadSceneAsync("sotanoN", LoadSceneMode.Additive);
-            sotanoN = true;
-        }
-    }
-
-    public void OpenSotanoD()
-    {
-        if (!sotanoD)
-        {
-            SceneManager.LoadSceneAsync("sotanoD", LoadSceneMode.Additive);
-            sotanoD = true;
         }
     }
 
@@ -517,69 +358,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void CloseDespensa()
-    {
-        if (despensa)
-        {
-            SceneManager.UnloadSceneAsync("despensa");
-            despensa = false;
-        }
-    }
-
-    public void CloseCocina()
-    {
-        if (cocina)
-        {
-            SceneManager.UnloadSceneAsync("cocina");
-            cocina = false;
-        }
-    }
-
-    public void CloseSalon()
-    {
-        if (salon)
-        {
-            SceneManager.UnloadSceneAsync("salon");
-            salon = false;
-        }
-    }
-
-    public void CloseHabPadres()
-    {
-        if (habPadres)
-        {
-            SceneManager.UnloadSceneAsync("habPadres");
-            habPadres = false;
-        }
-    }
-
-    public void CloseLaberinto()
-    {
-        if (laberinto)
-        {
-            SceneManager.UnloadSceneAsync("laberinto");
-            laberinto = false;
-        }
-    }
-
-    public void CloseSotanoN()
-    {
-        if (sotanoN)
-        {
-            SceneManager.UnloadSceneAsync("sotanoN");
-            sotanoN = false;
-        }
-    }
-
-    public void CloseSotanoD()
-    {
-        if (sotanoD)
-        {
-            SceneManager.UnloadSceneAsync("sotanoD");
-            sotanoD = false;
-        }
-    }
-
+    
     #endregion
 
     public void Respawn()
@@ -588,17 +367,9 @@ public class GameManager : MonoBehaviour
         {
             TpBaño();
         }
-        else if(onCocina)
-        {
-            TpCocina();
-        }
         else if(onCuartillo)
         {
             TpCuartillo();
-        }
-        else if(onDespensa)
-        {
-            TpDespensa();
         }
         else if(onDesvan)
         {
@@ -607,14 +378,6 @@ public class GameManager : MonoBehaviour
         else if(onHab)
         {
             TpHabJohnny();
-        }
-        else if(onHabPadres)
-        {
-            TpHabPadres();
-        }
-        else if(onLaberinto)
-        {
-            TpLaberinto();
         }
         else if(onNegacionD)
         {
@@ -627,18 +390,6 @@ public class GameManager : MonoBehaviour
         else if(onPasillo)
         {
             TpPasillo();
-        }
-        else if(onSalon)
-        {
-            TpSalon();
-        }
-        else if(onSotanoD)
-        {
-            TpSotanoD();
-        }
-        else if(onSotanoN)
-        {
-            TpSotanoN();
         }
         else
         {

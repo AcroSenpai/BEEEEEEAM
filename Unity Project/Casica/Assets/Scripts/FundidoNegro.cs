@@ -27,13 +27,12 @@ public class FundidoNegro : MonoBehaviour {
     {
         panel.alpha = alpha;
         if(manager.GetProgresion() == 4)
-        if(iniciarOscuridad)
         {
             if (manager.onNegacionN)
             {
                 panelNegro.SetActive(true);
 
-                if (counter < 5)
+                if (counter < 1)
                 {
                     counter += Time.deltaTime;
                 }
@@ -72,7 +71,7 @@ public class FundidoNegro : MonoBehaviour {
                     panelNegro.SetActive(false);
                 }
             }
-        } 
+        }
     }
     
 }

@@ -23,13 +23,6 @@ public class TriggerBano : MonoBehaviour {
             manager.CloseNegacionD();
             manager.CloseCuartillo();
             manager.CloseDesvan();
-            manager.CloseDespensa();
-            manager.CloseCocina();
-            manager.CloseSalon();
-            manager.CloseHabPadres();
-            manager.CloseLaberinto();
-            manager.CloseSotanoN();
-            manager.CloseSotanoD();
 
             manager.OpenPasillo();
         }
