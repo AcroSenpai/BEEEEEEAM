@@ -113,7 +113,6 @@ public class GameManager : MonoBehaviour
         camNegacionD.enabled = onNegacionD;
         camCuartillo.enabled = onCuartillo;
 
-        Debug.Log(onDesvanPart);
         switch(onDesvanPart)
         {
             case 1:
