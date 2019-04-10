@@ -19,7 +19,7 @@ public class Mear : Interactive
         manager.pissed = true;
         manager.SetProgresion(2);
         manager.timeline.Play();
-        //Destroy(gameObject);
-        pc.perderElControl(10f);
+        pc.perderElControl(9.5f, false);
+        Destroy(gameObject);
     }
 }

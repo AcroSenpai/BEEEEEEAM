@@ -42,7 +42,7 @@ public class PlayerController : MonoBehaviour
     public Vector3 DistanciaRayo;
     public bool trepar;
     private RaycastHit Cubito;
-    private Animator anim;
+    public Animator anim;
     
     //Muerte por altura
     public float puntoMasAlto;
@@ -722,7 +722,6 @@ public class PlayerController : MonoBehaviour
     {
         if(objetoColisionado != null)
         {
-            anim.SetTrigger("Pick");
             objetoColisionado.GetComponent<Interactive>().Activar();
         }
     }
@@ -797,10 +796,20 @@ public class PlayerController : MonoBehaviour
         GetComponent<CharacterController>().enabled = false;
     }
 
+    public void perderElControl(float tiempo, bool b)
+    {
+        tiempoDeEspera = tiempo;
+        contadorTiempoDeEspera = 0;
+        enPerdidaDeControl = true;
+        mesh.SetActive(b);
+        GetComponent<CharacterController>().enabled = false;
+    }
+
     public void recuperarElControl()
     {
         enPerdidaDeControl = false;
         GetComponent<CharacterController>().enabled = true;
+        mesh.SetActive(true);
     }
 
      public void OcultarMesh()

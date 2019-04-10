@@ -15,6 +15,7 @@ public class llave : Interactive
     public override void Activar()
     {
         PC.cojerObj(3);
+        PC.anim.SetTrigger("Pick");
         Object.Destroy(gameObject);
     }
 
