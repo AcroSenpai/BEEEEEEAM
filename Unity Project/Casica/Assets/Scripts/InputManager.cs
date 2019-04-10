@@ -13,7 +13,7 @@ public class InputManager : MonoBehaviour
     public bool jump = false;
     public int status; 
     public UIControler hud;
-
+    
     // Use this for initialization
     void Start ()
     {

@@ -34,28 +34,24 @@ public class Puntito : MonoBehaviour {
 
     void Update ()
     {
-        if (start)
-        {
-            
-           
-        }
-
-            
-
-       
-
-        //if(Mathf.Floor(alpha) != nextAlpha) alpha += counter * Time.deltaTime;
-        //else alpha = nextAlpha;
-        
 
         if(Vector3.Distance(transform.position, player.position) > 15)
         {
             AnimacionAparecerDesaparecer(1);
         }
+        else if (Vector3.Distance(transform.position, player.position) < 4)
+        {
+            CambiarColor(1);
+        }
         else if(Vector3.Distance(transform.position, player.position) < 15)
         {
             AnimacionAparecerDesaparecer(0);
         }
+        else
+        {
+            CambiarColor(0);
+        }
+       
 
         
 	}
@@ -73,28 +69,6 @@ public class Puntito : MonoBehaviour {
     }
 
 
-    public void ChangeAlfaProximetriAndInteractuable(int num)
-    {
-        switch (num)
-        {
-            case 1:
-                nextAlpha = 1;
-                myColor = Color.white;
-                //start = true;
-                break;
-
-            case 2:
-                nextAlpha = 0.5f;
-                myColor = Color.gray;
-                //start = true;
-                break;
-
-            case 3:
-                nextAlpha = 0;
-                //start = true;
-                break;
-        }
-    }
 
     private void OnTriggerEnter(Collider other)
     {
