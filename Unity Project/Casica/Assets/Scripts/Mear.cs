@@ -4,14 +4,13 @@ using UnityEngine;
 
 public class Mear : Interactive
 {
-
     private GameManager manager;
     public GameObject puntito;
     private PlayerController pc;
 
     private void Start()
     {
-        manager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+        manager = GameManager.instance;
         pc = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
     }
 
@@ -19,7 +18,8 @@ public class Mear : Interactive
     {
         manager.pissed = true;
         manager.SetProgresion(2);
-        Destroy(gameObject);
+        manager.timeline.Play();
+        //Destroy(gameObject);
         pc.perderElControl(10f);
     }
 }

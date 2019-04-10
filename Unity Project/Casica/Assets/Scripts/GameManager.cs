@@ -2,11 +2,29 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Playables;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour 
 {
     public static GameManager instance;
+    private Transform player;
+
+    private void Awake()
+    {
+        if(instance != null && instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        instance = this;
+        DontDestroyOnLoad(this);
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+
+    }
+
+    [Header("Timeline settings")]
+    public PlayableDirector timeline;
 
     [Header("Progreso")]
     public Progresion p;
@@ -66,7 +84,6 @@ public class GameManager : MonoBehaviour
     public CinemachineVirtualCamera camSotanoN;
     public CinemachineVirtualCamera camSotanoD;
 
-    private Transform player;
     [Header("Teleports")]
     public GameObject habJohnnyPoint;
     public GameObject pasilloPoint;
@@ -85,21 +102,8 @@ public class GameManager : MonoBehaviour
 
     public int onDesvanPart;
 
-
-    private void Awake()
+    private void Start()
     {
-        if (GameObject.FindGameObjectsWithTag("GameManager").Length > 1)
-        {
-            Destroy(this.gameObject);
-        }
-        else
-        {
-            DontDestroyOnLoad(gameObject);
-        }
-
-        instance = this;
-
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         p = new Progresion();
     }
 
