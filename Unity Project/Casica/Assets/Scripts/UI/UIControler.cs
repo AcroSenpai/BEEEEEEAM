@@ -38,8 +38,6 @@ public class UIControler : MonoBehaviour
         {
             i.SetActive(false);
         }
-
-        Cursor.visible = false;
     }
 
     public void LoadScene(int num)
@@ -57,7 +55,6 @@ public class UIControler : MonoBehaviour
         Time.timeScale = 0;
         sonidoPausa.Play();
         musicaMenu.volume= 0.5f;
-        Cursor.visible = true;
     }
 
     public void OpenOptionPanel()
@@ -102,7 +99,6 @@ public class UIControler : MonoBehaviour
         //CloseOptionPanel();
         optionPanel.SetActive(false);
         musicaMenu.volume = 0f;
-       
     }
 
     public void CloseOptionPanel()
@@ -141,10 +137,7 @@ public class UIControler : MonoBehaviour
         Application.Quit();
     }
 
-    public void QuitarCursor()
-    {
-        Cursor.visible = false;
-    }
+
     
 
 }
