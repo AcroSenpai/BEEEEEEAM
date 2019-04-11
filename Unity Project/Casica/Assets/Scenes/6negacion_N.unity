@@ -180,7 +180,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!23 &88199168
 MeshRenderer:
@@ -5687,7 +5687,6 @@ Transform:
   - {fileID: 90493836}
   - {fileID: 90493838}
   - {fileID: 90493824}
-  - {fileID: 824519177}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5860,8 +5859,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 16.22, y: 17.14, z: 18.62}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 44.114685, y: 11.998161, z: 36.783222}
+  m_Center: {x: 6.5569763, y: 2.570919, z: 9.08161}
 --- !u!114 &124435534
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5874,6 +5873,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d200e689a120b247b71616b47652808, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cuadro: {fileID: 824519181}
 --- !u!4 &124435535
 Transform:
   m_ObjectHideFlags: 0
@@ -5931,7 +5931,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &416528831
 MonoBehaviour:
@@ -5955,10 +5955,12 @@ GameObject:
   m_Component:
   - component: {fileID: 824519177}
   - component: {fileID: 824519179}
+  - component: {fileID: 824519182}
   - component: {fileID: 824519178}
-  m_Layer: 0
-  m_Name: Marco_Habitacion_1_group1 (1)
-  m_TagString: Untagged
+  - component: {fileID: 824519181}
+  m_Layer: 10
+  m_Name: Cuadro
+  m_TagString: Object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5970,13 +5972,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 824519176}
-  m_LocalRotation: {x: -0, y: 0.70710576, z: -0, w: 0.70710784}
-  m_LocalPosition: {x: 42.12, y: 9.73, z: 8.4}
-  m_LocalScale: {x: 1, y: 0.67121, z: 1}
+  m_LocalRotation: {x: -0.07823874, y: 0.702764, z: 0.078238964, w: 0.70276606}
+  m_LocalPosition: {x: 218.96, y: -2.4522476, z: -260.97}
+  m_LocalScale: {x: 1.0877, y: 0.7173099, z: 1}
   m_Children: []
-  m_Father: {fileID: 90493556}
-  m_RootOrder: 68
-  m_LocalEulerAnglesHint: {x: 0, y: 90.00001, z: 0}
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: -12.705001, y: 90.00001, z: 0}
 --- !u!23 &824519178
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5987,7 +5989,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
+  m_DynamicOccludee: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -6022,6 +6024,35 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 824519176}
   m_Mesh: {fileID: 4300124, guid: 938a20d2b83222c408ad12be53999050, type: 3}
+--- !u!54 &824519181
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 824519176}
+  serializedVersion: 2
+  m_Mass: 2
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 1
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &824519182
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 824519176}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 7.166601, y: 11.04809, z: 1.0401921}
+  m_Center: {x: -0.33488142, y: 23.336704, z: 6.075554}
 --- !u!1 &882614103
 GameObject:
   m_ObjectHideFlags: 0
@@ -6089,7 +6120,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1086441758
 GameObject:
@@ -6133,7 +6164,7 @@ Transform:
   m_LocalScale: {x: 24.16832, y: 6.075851, z: 13.892132}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: -90.00001, z: 0}
 --- !u!1001 &1405858132
 PrefabInstance:

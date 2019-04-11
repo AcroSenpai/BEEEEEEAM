@@ -77,8 +77,9 @@ public class GameManager : MonoBehaviour
     public GameObject cuartilloPoint;
     public GameObject desvanPoint;
 
-
+    [Header("Others")]
     public int onDesvanPart;
+    public bool puertaNegacionCerrada;
 
     private void Start()
     {

@@ -14,7 +14,7 @@ public class PuertaNegacion : MonoBehaviour
     {
         PC = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         anim = GetComponent<Animator>();
-        manager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+        manager = GameManager.instance;
     }
 
     public void Update()
@@ -35,6 +35,7 @@ public class PuertaNegacion : MonoBehaviour
     public void Destruir()
     {
         aus.Play();
+        manager.puertaNegacionCerrada = true;
         GetComponentInChildren<GameObject>().SetActive(false);
     }
 

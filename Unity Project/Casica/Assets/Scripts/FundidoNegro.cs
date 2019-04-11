@@ -18,9 +18,13 @@ public class FundidoNegro : MonoBehaviour {
 
     public bool iniciarOscuridad = false;
 
+    private PlayerController player;
+
     private void Start()
     {
-        manager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+        manager = GameManager.instance;
+
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
     }
 
     private void Update()
@@ -43,18 +47,21 @@ public class FundidoNegro : MonoBehaviour {
 
                 if (alpha > 1)
                 {
-                    manager.negacionDone = true;
+                    if(!manager.onNegacionD)
+                    {
+                        manager.negacionDone = true;
 
-                    manager.OpenNegacionD();
-                    manager.TpNegacionD();
-                    manager.ClosePasillo();
-                    manager.CloseNegacionN();
-
-                    counter = 0;
+                        manager.TpNegacionD();
+                        manager.ClosePasillo();
+                        manager.CloseNegacionN();
+                        manager.onNegacionN = false;
+                        counter = 0;
+                        player.Inmune();
+                    }
                 }
             }
 
-            if (manager.onNegacionD)
+            if (manager.onNegacionD && panelNegro.active)
             {
                 if (counter < 1)
                 {
@@ -68,10 +75,11 @@ public class FundidoNegro : MonoBehaviour {
                 if (alpha < 0)
                 {
                     counter = 0;
+                    player.Inmune();
+                    player.fAltura = false;
                     panelNegro.SetActive(false);
                 }
             }
         }
     }
-    
 }

@@ -3185,7 +3185,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 465086038}
   m_LocalRotation: {x: -0.22549096, y: 0.20805345, z: -0.15395142, w: 0.93923724}
-  m_LocalPosition: {x: -40.863743, y: -6.145835, z: 32.836517}
+  m_LocalPosition: {x: -33.47, y: -9.41, z: 30.09}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1049394334}
@@ -7471,7 +7471,8 @@ PrefabInstance:
       propertyPath: m_LocalRotation.w
       value: 0.9999974
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 9500000, guid: f79cdf34d4f0fe240baf9d9c42df7685, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f79cdf34d4f0fe240baf9d9c42df7685, type: 3}
 --- !u!1 &910271723
 GameObject:
@@ -21745,7 +21746,7 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1748590293552365}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: f4275ad164606c542a68c1db853a4f7a, type: 3}
+  m_Avatar: {fileID: 9000000, guid: f79cdf34d4f0fe240baf9d9c42df7685, type: 3}
   m_Controller: {fileID: 9100000, guid: b13c2e2b550dd1f49b4a787084d6ac25, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0

@@ -20,7 +20,7 @@ public class TriggerNegacionN : MonoBehaviour {
 
             manager.CloseHabJohnny();
             manager.CloseBaño();
-            manager.ClosePasillo();
+            //manager.ClosePasillo();
         }
     }
 

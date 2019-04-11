@@ -5,10 +5,18 @@ using UnityEngine;
 public class TriggerNegacionPuerta : MonoBehaviour
 {
     private GameManager manager;
-    // Start is called before the first frame update
+
+    public Rigidbody cuadro;
+
+    private Animator player;
+
     void Start()
     {
-        manager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+        manager = GameManager.instance;
+
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
+
+        cuadro.isKinematic = true;
     }
 
     public void CambiarProgreso()
@@ -18,16 +26,33 @@ public class TriggerNegacionPuerta : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(manager.GetProgresion() == 3)
+        if (other.tag == "Player")
+        {
+            Debug.Log("Cerrar puerta, caer cuadro y cambiar a progreso 4");
+            other.GetComponent<PlayerController>().perderElControl(7);
+            if (manager.puertaNegacionCerrada)
+            {
+                Physics.gravity = new Vector3(0, -50, 0);
+                cuadro.isKinematic = false;
+            }
+        }
+        if (manager.GetProgresion() == 3)
         {
             if (other.tag == "Player")
             {
                 Debug.Log("Cerrar puerta, caer cuadro y cambiar a progreso 4");
                 other.GetComponent<PlayerController>().perderElControl(7);
-                
-                CambiarProgreso();
+                Physics.gravity = new Vector3(0, -50, 0);
+                cuadro.isKinematic = false;
             }
         }
-        
+
+        if(other.CompareTag("Object"))
+        {
+            Physics.gravity = new Vector3(0, -9.8f, 0);
+            //Debug.LogError("OJETE CALOR");
+            player.SetTrigger("desmayo");
+            CambiarProgreso();
+        }
     }
 }
