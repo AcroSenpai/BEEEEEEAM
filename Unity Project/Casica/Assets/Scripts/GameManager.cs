@@ -59,13 +59,13 @@ public class GameManager : MonoBehaviour
     public CinemachineVirtualCamera camNegacionN;
     public CinemachineVirtualCamera camNegacionD;
     public CinemachineVirtualCamera camCuartillo;
-    public CinemachineVirtualCamera camDesvan1;
-    public CinemachineVirtualCamera camDesvan2;
-    public CinemachineVirtualCamera camDesvan3;
-    public CinemachineVirtualCamera camDesvan4;
-    public CinemachineVirtualCamera camDesvan5;
-    public CinemachineVirtualCamera camDesvan6;
-    public CinemachineVirtualCamera camDesvan7;
+    public GameObject camDesvan1;
+    public GameObject camDesvan2;
+    public GameObject camDesvan3;
+    public GameObject camDesvan4;
+    public GameObject camDesvan5;
+    public GameObject camDesvan6;
+    public GameObject camDesvan7;
 
 
     [Header("Teleports")]
@@ -100,73 +100,73 @@ public class GameManager : MonoBehaviour
         {
             case 1:
                 Debug.Log("Estoy en la 1");
-                camDesvan1.enabled = true;
-                camDesvan2.enabled = false;
-                camDesvan3.enabled = false;
-                camDesvan4.enabled = false;
-                camDesvan5.enabled = false;
-                camDesvan6.enabled = false;
-                camDesvan7.enabled = false;
+                camDesvan1.SetActive(true);
+                camDesvan2.SetActive(false);
+                camDesvan3.SetActive(false);
+                camDesvan4.SetActive(false);
+                camDesvan5.SetActive(false);
+                camDesvan6.SetActive(false);
+                camDesvan7.SetActive(false);
                 break;
             case 2:
                 Debug.Log("Estoy en la 2");
-                camDesvan1.enabled = false;
-                camDesvan2.enabled = true;
-                camDesvan3.enabled = false;
-                camDesvan4.enabled = false;
-                camDesvan5.enabled = false;
-                camDesvan6.enabled = false;
-                camDesvan7.enabled = false;
+                camDesvan1.SetActive(false);
+                camDesvan2.SetActive(true);
+                camDesvan3.SetActive(false);
+                camDesvan4.SetActive(false);
+                camDesvan5.SetActive(false);
+                camDesvan6.SetActive(false);
+                camDesvan7.SetActive(false);
                 break;
             case 3:
                 Debug.Log("Estoy en la 3");
-                camDesvan1.enabled = false;
-                camDesvan2.enabled = false;
-                camDesvan3.enabled = true;
-                camDesvan4.enabled = false;
-                camDesvan5.enabled = false;
-                camDesvan6.enabled = false;
-                camDesvan7.enabled = false;
+                camDesvan1.SetActive(false);
+                camDesvan2.SetActive(false);
+                camDesvan3.SetActive(true);
+                camDesvan4.SetActive(false);
+                camDesvan5.SetActive(false);
+                camDesvan6.SetActive(false);
+                camDesvan7.SetActive(false);
                 break;
             case 4:
                 Debug.Log("Estoy en la 4");
-                camDesvan1.enabled = false;
-                camDesvan2.enabled = false;
-                camDesvan3.enabled = false;
-                camDesvan4.enabled = true;
-                camDesvan5.enabled = false;
-                camDesvan6.enabled = false;
-                camDesvan7.enabled = false;
+                camDesvan1.SetActive(false);
+                camDesvan2.SetActive(false);
+                camDesvan3.SetActive(false);
+                camDesvan4.SetActive(true);
+                camDesvan5.SetActive(false);
+                camDesvan6.SetActive(false);
+                camDesvan7.SetActive(false);
                 break;
             case 5:
                 Debug.Log("Estoy en la 5");
-                camDesvan1.enabled = false;
-                camDesvan2.enabled = false;
-                camDesvan3.enabled = false;
-                camDesvan4.enabled = false;
-                camDesvan5.enabled = true;
-                camDesvan6.enabled = false;
-                camDesvan7.enabled = false;
+                camDesvan1.SetActive(false);
+                camDesvan2.SetActive(false);
+                camDesvan3.SetActive(false);
+                camDesvan4.SetActive(false);
+                camDesvan5.SetActive(true);
+                camDesvan6.SetActive(false);
+                camDesvan7.SetActive(false);
                 break;
             case 6:
                 Debug.Log("Estoy en la 6");
-                camDesvan1.enabled = false;
-                camDesvan2.enabled = false;
-                camDesvan3.enabled = false;
-                camDesvan4.enabled = false;
-                camDesvan5.enabled = false;
-                camDesvan6.enabled = true;
-                camDesvan7.enabled = false;
+                camDesvan1.SetActive(false);
+                camDesvan2.SetActive(false);
+                camDesvan3.SetActive(false);
+                camDesvan4.SetActive(false);
+                camDesvan5.SetActive(false);
+                camDesvan6.SetActive(true);
+                camDesvan7.SetActive(false);
                 break;
             case 7:
                 Debug.Log("Estoy en la 7");
-                camDesvan1.enabled = false;
-                camDesvan2.enabled = false;
-                camDesvan3.enabled = false;
-                camDesvan4.enabled = false;
-                camDesvan5.enabled = false;
-                camDesvan6.enabled = false;
-                camDesvan7.enabled = true;
+                camDesvan1.SetActive(false);
+                camDesvan2.SetActive(false);
+                camDesvan3.SetActive(false);
+                camDesvan4.SetActive(false);
+                camDesvan5.SetActive(false);
+                camDesvan6.SetActive(false);
+                camDesvan7.SetActive(true);
                 break;
             
         }

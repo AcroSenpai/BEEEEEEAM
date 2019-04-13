@@ -7,6 +7,7 @@ public class TriggerCuartillo : MonoBehaviour {
 
     private GameManager manager;
     public GameObject collider;
+    public bool desvanCargado = false;
     private void Start()
     {
         manager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
@@ -25,7 +26,12 @@ public class TriggerCuartillo : MonoBehaviour {
             manager.CloseNegacionN();
             manager.CloseNegacionD();
 
-            manager.OpenDesvan();
+            if(!desvanCargado)
+            {
+                manager.OpenDesvan();
+                desvanCargado = true;
+            }
+            
             collider.SetActive(true);
 
         }

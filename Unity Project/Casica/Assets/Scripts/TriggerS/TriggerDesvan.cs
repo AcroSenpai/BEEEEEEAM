@@ -24,7 +24,6 @@ public class TriggerDesvan : MonoBehaviour {
                 manager.CloseBaño();
                 manager.CloseNegacionN();
                 manager.CloseNegacionD();
-
             }
 
             Debug.Log("T" + manager.onDesvanPart);
