@@ -7,9 +7,9 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour 
 {
-    public static GameManager instance;
-    private Transform player;
 
+
+    public static GameManager instance;
     private void Awake()
     {
         if(instance != null && instance != this)
@@ -18,10 +18,13 @@ public class GameManager : MonoBehaviour
             return;
         }
         instance = this;
-        DontDestroyOnLoad(this);
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        DontDestroyOnLoad(this);
+       
 
     }
+
+    public Transform player;
 
     [Header("Timeline settings")]
     public PlayableDirector timeline;

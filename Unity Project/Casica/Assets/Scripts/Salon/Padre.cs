@@ -34,6 +34,8 @@ public class Padre : MonoBehaviour
     public bool triggerOn;
     public int nextNode;
 
+    public int fase;
+
 
     private void Start()
     {
@@ -41,9 +43,17 @@ public class Padre : MonoBehaviour
         //sound = GetComponentInChildren<SoundPlayer>();
         agent = GetComponent<NavMeshAgent>();
         agent.Warp(transform.position);
-        GoToNearNode();
+        
         SetIdle();
         triggerOn = false;
+        if(fase == 1)
+        {
+            nodes = new Transform[1];
+            nodes[0] = GameManager.instance.player;
+        }
+        
+
+        GoToNearNode();
     }
 
     private void Update()
@@ -84,6 +94,7 @@ public class Padre : MonoBehaviour
         }
 
         GoToNode(0);
+
         //Animacion Correspondiente
         //segunda condicion target
     }
@@ -91,6 +102,7 @@ public class Padre : MonoBehaviour
     void SearchUpdate()
     {
         GoToNode(nextNode);
+        
         if(timeCounter >= idleTime) SetIdle();
         else timeCounter += Time.deltaTime;
 
