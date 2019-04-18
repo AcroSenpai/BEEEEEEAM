@@ -7,6 +7,7 @@ public class TriggerDesvan : MonoBehaviour {
 
     private GameManager manager;
     public int parteHabitacion;
+    public GameObject[] padres;
     private void Start()
     {
         manager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
@@ -30,6 +31,35 @@ public class TriggerDesvan : MonoBehaviour {
             Debug.Log("T" + parteHabitacion);
             manager.onDesvanPart = parteHabitacion;
             Debug.Log("T" + manager.onDesvanPart);
+
+            switch (parteHabitacion)
+            {
+                case 2:
+                    padres[0].SetActive(true);
+                    break;
+                case 3:
+                    padres[0].SetActive(false);
+                    padres[1].SetActive(true);
+                    break;
+                case 4:
+                    padres[1].SetActive(false);
+                    padres[2].SetActive(true);
+                    break;
+                case 5:
+                    padres[2].SetActive(false);
+                    padres[3].SetActive(true);
+                    break;
+                case 6:
+                    padres[3].SetActive(false);
+                    padres[4].SetActive(true);
+                    break;
+                case 7:
+                    padres[4].SetActive(false);
+                    padres[5].SetActive(true);
+                    break;
+                default:
+                    break;
+            }
 
         }
     }

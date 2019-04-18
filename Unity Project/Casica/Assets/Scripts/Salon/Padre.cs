@@ -51,9 +51,10 @@ public class Padre : MonoBehaviour
             nodes = new Transform[1];
             nodes[0] = GameManager.instance.player;
         }
-        
 
-        GoToNearNode();
+
+
+        AnimacionAbrirPuerta();
     }
 
     private void Update()
@@ -93,7 +94,7 @@ public class Padre : MonoBehaviour
             triggerOn = false;
         }
 
-        GoToNode(0);
+        GoToNode(nextNode);
 
         //Animacion Correspondiente
         //segunda condicion target
@@ -147,6 +148,13 @@ public class Padre : MonoBehaviour
         }
 
         agent.SetDestination(nodes[curentNode].position);
+    }
+
+    void AnimacionAbrirPuerta()
+    {
+        //Aqui animacion de abrir puerta.
+        //Al acabar ir a por el GoToNearNode();
+        GoToNearNode();
     }
 
     void GoToNode(int num)

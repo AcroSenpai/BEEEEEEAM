@@ -112,7 +112,7 @@ NavMeshSettings:
     accuratePlacement: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 23800000, guid: 40f7b0adb45de684d9b0ce86277ec225, type: 2}
+  m_NavMeshData: {fileID: 0}
 --- !u!1 &332403
 GameObject:
   m_ObjectHideFlags: 0
@@ -1808,6 +1808,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parteHabitacion: 4
+  padres: []
 --- !u!65 &242560483
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3974,6 +3975,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parteHabitacion: 6
+  padres: []
 --- !u!65 &551616257
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4238,6 +4240,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parteHabitacion: 7
+  padres: []
 --- !u!65 &583448806
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8770,6 +8773,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parteHabitacion: 2
+  padres: []
 --- !u!65 &1032210894
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11434,6 +11438,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parteHabitacion: 1
+  padres: []
 --- !u!65 &1395031683
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16727,6 +16732,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parteHabitacion: 3
+  padres: []
 --- !u!65 &1564265258
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17905,6 +17911,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parteHabitacion: 5
+  padres: []
 --- !u!65 &1814685460
 BoxCollider:
   m_ObjectHideFlags: 0
