@@ -550,6 +550,7 @@ MonoBehaviour:
   - {fileID: 543854132}
   - {fileID: 162492976}
   - {fileID: 1520425261}
+  vuelta: 0
 --- !u!65 &152495544
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1016,6 +1017,7 @@ MonoBehaviour:
   - {fileID: 543854132}
   - {fileID: 162492976}
   - {fileID: 1520425261}
+  vuelta: 0
 --- !u!65 &244912166
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1479,6 +1481,7 @@ MonoBehaviour:
   - {fileID: 543854132}
   - {fileID: 162492976}
   - {fileID: 1520425261}
+  vuelta: 0
 --- !u!65 &349090684
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2801,6 +2804,7 @@ MonoBehaviour:
   - {fileID: 543854132}
   - {fileID: 162492976}
   - {fileID: 1520425261}
+  vuelta: 0
 --- !u!65 &1078880668
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2900,6 +2904,7 @@ MonoBehaviour:
   - {fileID: 543854132}
   - {fileID: 162492976}
   - {fileID: 1520425261}
+  vuelta: 0
 --- !u!65 &1137107598
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3431,6 +3436,7 @@ MonoBehaviour:
   - {fileID: 543854132}
   - {fileID: 162492976}
   - {fileID: 1520425261}
+  vuelta: 0
 --- !u!65 &1241339298
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4405,6 +4411,7 @@ MonoBehaviour:
   - {fileID: 543854132}
   - {fileID: 162492976}
   - {fileID: 1520425261}
+  vuelta: 0
 --- !u!1 &1690909150
 GameObject:
   m_ObjectHideFlags: 0
@@ -5248,7 +5255,7 @@ PrefabInstance:
     - target: {fileID: 3630235457485388455, guid: e6a435c9ce84cf8409922b4020f01b85,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3630235457485388477, guid: e6a435c9ce84cf8409922b4020f01b85,
         type: 3}
@@ -5345,6 +5352,16 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 3630235457120253166, guid: e6a435c9ce84cf8409922b4020f01b85,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7430980315813771718, guid: e6a435c9ce84cf8409922b4020f01b85,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: b28855c1ac443dd428699c4e5baaee58, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6a435c9ce84cf8409922b4020f01b85, type: 3}
 --- !u!1 &2078811504 stripped

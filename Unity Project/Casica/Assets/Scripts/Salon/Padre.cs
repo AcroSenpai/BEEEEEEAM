@@ -41,7 +41,7 @@ public class Padre : MonoBehaviour
 
     private void Start()
     {
-        //anim = GetComponentInChildren<Animator>();
+        anim = GetComponentInChildren<Animator>();
         //sound = GetComponentInChildren<SoundPlayer>();
         agent = GetComponent<NavMeshAgent>();
         agent.Warp(transform.position);
@@ -122,6 +122,7 @@ public class Padre : MonoBehaviour
         if(Vector3.Distance(transform.position, targetTransform.position) < 4)
         {
             //Animacion de aggarar al niño.
+            anim.SetTrigger("kill");
             MatarAlNiño();
         }
         
@@ -167,13 +168,16 @@ public class Padre : MonoBehaviour
         //agent.isStopped = true;
         agent.stoppingDistance = 0;
         //radius = 5;
-        
+
+        anim.SetBool("walk", false);
+
         state = State.Idle;
                 
     }
 
     void SetSearch()
     {
+        anim.SetBool("walk", true);
         agent.isStopped = false;
         //radius = 5;     
         state = State.Shearch;       
