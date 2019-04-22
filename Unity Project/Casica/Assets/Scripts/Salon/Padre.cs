@@ -31,6 +31,8 @@ public class Padre : MonoBehaviour
 
     public float minPlayerDetectDistance;
 
+    public float tiempo;
+    public bool parado;
     public bool triggerOn;
     public int nextNode;
 
@@ -46,13 +48,18 @@ public class Padre : MonoBehaviour
         
         SetIdle();
         triggerOn = false;
-        if(fase == 1)
+        targetTransform = GameManager.instance.player;
+        if (fase == 1 || fase == 3)
         {
             nodes = new Transform[1];
             nodes[0] = GameManager.instance.player;
         }
+        else
+        {
+            nextNode = curentNode + 1;
+        }
 
-
+       
 
         AnimacionAbrirPuerta();
     }
@@ -82,6 +89,47 @@ public class Padre : MonoBehaviour
             targetDetected = true;
             targetTransform = hitCollider[0].transform;
         }
+
+        if(fase == 2)
+        {
+            if (nextNode >= nodes.Length)
+            {
+                nextNode = 0;
+            }
+
+            if (Vector3.Distance(transform.position, nodes[curentNode].transform.position) < 7)
+            {
+                Debug.Log("1: " + nextNode + " 2: " + nodes.Length);
+
+                GoToNode(nextNode);
+                nextNode += 1;
+            }
+        }
+
+        if(fase == 3)
+        {
+            if(tiempo > 4)
+            {
+                agent.isStopped = !agent.isStopped;
+                tiempo = 0;
+            }
+            else
+            {
+                tiempo += Time.deltaTime;
+            }
+        }
+
+        if(Vector3.Distance(transform.position, targetTransform.position) < 4)
+        {
+            //Animacion de aggarar al niño.
+            MatarAlNiño();
+        }
+        
+    }
+
+    void MatarAlNiño()
+    {
+        targetTransform.GetComponent<PlayerController>().Dead();
     }
 
     void IdleUpdate()
@@ -161,6 +209,7 @@ public class Padre : MonoBehaviour
     {
         curentNode = num;
         agent.SetDestination(nodes[curentNode].position);
+
     }
 
     public void TriggerNode(int num)

@@ -102,7 +102,6 @@ public class GameManager : MonoBehaviour
         switch(onDesvanPart)
         {
             case 1:
-                Debug.Log("Estoy en la 1");
                 camDesvan1.SetActive(true);
                 camDesvan2.SetActive(false);
                 camDesvan3.SetActive(false);
@@ -112,7 +111,6 @@ public class GameManager : MonoBehaviour
                 camDesvan7.SetActive(false);
                 break;
             case 2:
-                Debug.Log("Estoy en la 2");
                 camDesvan1.SetActive(false);
                 camDesvan2.SetActive(true);
                 camDesvan3.SetActive(false);
@@ -122,7 +120,6 @@ public class GameManager : MonoBehaviour
                 camDesvan7.SetActive(false);
                 break;
             case 3:
-                Debug.Log("Estoy en la 3");
                 camDesvan1.SetActive(false);
                 camDesvan2.SetActive(false);
                 camDesvan3.SetActive(true);
@@ -132,7 +129,6 @@ public class GameManager : MonoBehaviour
                 camDesvan7.SetActive(false);
                 break;
             case 4:
-                Debug.Log("Estoy en la 4");
                 camDesvan1.SetActive(false);
                 camDesvan2.SetActive(false);
                 camDesvan3.SetActive(false);
@@ -142,7 +138,6 @@ public class GameManager : MonoBehaviour
                 camDesvan7.SetActive(false);
                 break;
             case 5:
-                Debug.Log("Estoy en la 5");
                 camDesvan1.SetActive(false);
                 camDesvan2.SetActive(false);
                 camDesvan3.SetActive(false);
@@ -152,7 +147,6 @@ public class GameManager : MonoBehaviour
                 camDesvan7.SetActive(false);
                 break;
             case 6:
-                Debug.Log("Estoy en la 6");
                 camDesvan1.SetActive(false);
                 camDesvan2.SetActive(false);
                 camDesvan3.SetActive(false);
@@ -162,7 +156,6 @@ public class GameManager : MonoBehaviour
                 camDesvan7.SetActive(false);
                 break;
             case 7:
-                Debug.Log("Estoy en la 7");
                 camDesvan1.SetActive(false);
                 camDesvan2.SetActive(false);
                 camDesvan3.SetActive(false);

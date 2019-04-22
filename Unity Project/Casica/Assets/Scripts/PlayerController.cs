@@ -43,6 +43,7 @@ public class PlayerController : MonoBehaviour
     public bool trepar;
     private RaycastHit Cubito;
     public Animator anim;
+    public bool sonidoTaburete = false;
     
     //Muerte por altura
     public float puntoMasAlto;
@@ -241,7 +242,7 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
-                sound.Play("push");
+                
                 if(pullAxis.x != 0)
                 {
                     if(axis.x > 0 && pullAxis.x < 0)
@@ -577,7 +578,11 @@ public class PlayerController : MonoBehaviour
                 padreGuardado = true;
             }
             
-            
+            if(!sonidoTaburete)
+            {
+                sound.Play("push");
+                sonidoTaburete = true;
+            }
             saltar = false;
             Cubito = hit;
             Cubito.transform.parent = transform;
@@ -591,6 +596,11 @@ public class PlayerController : MonoBehaviour
     public void NoPullPush()
     {
         Cubito.transform.parent = padreObjetoColisionado;
+        if(sonidoTaburete)
+        {
+            sound.Stop("push");
+            sonidoTaburete = false;
+        }
         saltar = true;
         objSelec = 0;
         push = false;
@@ -643,7 +653,6 @@ public class PlayerController : MonoBehaviour
 
     public void Escalar()
     {
-        Debug.Log("Escalo");
         escalar = true;
         Realentizado = true;
         anim.SetBool("Climb", true);
@@ -758,6 +767,7 @@ public class PlayerController : MonoBehaviour
         {
             /*Animaicon recogiendo la linterna y que desde ahora aparezca */
             cLinterna ++;
+            pLinterna = true;
         }
         else if(num == 2)
         {
