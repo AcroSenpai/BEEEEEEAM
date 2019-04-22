@@ -38,14 +38,13 @@ public class Mear : Interactive
             }
             
         }
-        
     }
 
     public override void Activar()
     {
         manager.pissed = true;
         manager.SetProgresion(2);
-        manager.timeline.Play();
+        manager.timelineBaño.Play();
         pc.perderElControl(9.5f, false);
         puntitoTaburete.SetActive(false);
         Destroy(gameObject, 11f);

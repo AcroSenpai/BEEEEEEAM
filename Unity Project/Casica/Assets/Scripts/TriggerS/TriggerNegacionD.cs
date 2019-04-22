@@ -8,7 +8,7 @@ public class TriggerNegacionD : MonoBehaviour {
 
     private void Start()
     {
-        manager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+        manager = GameManager.instance;
     }
 
     private void OnTriggerEnter(Collider other)

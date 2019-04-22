@@ -7,9 +7,8 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour 
 {
-
-
     public static GameManager instance;
+
     private void Awake()
     {
         if(instance != null && instance != this)
@@ -20,14 +19,13 @@ public class GameManager : MonoBehaviour
         instance = this;
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         DontDestroyOnLoad(this);
-       
-
     }
 
     public Transform player;
 
     [Header("Timeline settings")]
-    public PlayableDirector timeline;
+    public PlayableDirector timelineBaño;
+    public PlayableDirector timelineNegacionD;
 
     [Header("Progreso")]
     public Progresion p;
@@ -54,7 +52,6 @@ public class GameManager : MonoBehaviour
     public bool onCuartillo;
     public bool onDesvan;
 
-
     [Header("Camaras")]
     public CinemachineVirtualCamera camHab;
     public CinemachineVirtualCamera camPasillo;
@@ -69,7 +66,6 @@ public class GameManager : MonoBehaviour
     public GameObject camDesvan5;
     public GameObject camDesvan6;
     public GameObject camDesvan7;
-
 
     [Header("Teleports")]
     public GameObject habJohnnyPoint;
@@ -98,6 +94,11 @@ public class GameManager : MonoBehaviour
         camNegacionN.enabled = onNegacionN;
         camNegacionD.enabled = onNegacionD;
         camCuartillo.enabled = onCuartillo;
+
+        if(onNegacionD)
+        {
+            //timelineNegacionD.Play();
+        }
 
         switch(onDesvanPart)
         {

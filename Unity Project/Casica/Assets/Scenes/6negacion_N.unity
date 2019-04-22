@@ -5859,8 +5859,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 44.114685, y: 11.998161, z: 36.783222}
-  m_Center: {x: 6.5569763, y: 2.570919, z: 9.08161}
+  m_Size: {x: 44.114685, y: 11.998161, z: 30.640305}
+  m_Center: {x: 6.5569763, y: 2.570919, z: 12.153069}
 --- !u!114 &124435534
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6265,6 +6265,11 @@ PrefabInstance:
       propertyPath: puntito
       value: 
       objectReference: {fileID: 1405858133}
+    - target: {fileID: 212549644365492548, guid: ccee4b14148ef9040a9d41ef691ea5f4,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4463348581757880, guid: ccee4b14148ef9040a9d41ef691ea5f4, type: 3}
       propertyPath: m_LocalPosition.z
       value: -3.1
@@ -6276,11 +6281,6 @@ PrefabInstance:
     - target: {fileID: 4463348581757880, guid: ccee4b14148ef9040a9d41ef691ea5f4, type: 3}
       propertyPath: m_LocalPosition.y
       value: 19.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 212549644365492548, guid: ccee4b14148ef9040a9d41ef691ea5f4,
-        type: 3}
-      propertyPath: m_Color.a
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ccee4b14148ef9040a9d41ef691ea5f4, type: 3}
