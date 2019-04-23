@@ -31,7 +31,8 @@ public class TriggerCuartillo : MonoBehaviour {
                 manager.OpenDesvan();
                 desvanCargado = true;
             }
-            
+
+            GameManager.instance.SetProgresion(5);
             collider.SetActive(true);
 
         }

@@ -32,7 +32,7 @@ public class AudioManager : MonoBehaviour {
         }
     }
     
-    public void Play(string name)
+    public void Play(string name, float pitch = 10)
     {
         Sound s = Array.Find(sounds, sound => sound.name == name);
 
@@ -42,6 +42,10 @@ public class AudioManager : MonoBehaviour {
             return;
         }
 
+        if(pitch != 10)
+        {
+            s.source.pitch = pitch;
+        }
         s.source.Play();
     }
 
