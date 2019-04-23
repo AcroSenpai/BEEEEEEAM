@@ -8050,7 +8050,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
-  m_Pitch: 1
+  m_Pitch: 1.1
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -10351,13 +10351,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mensajes:
-  - Salir de la habitacion
+  - Salir del cuarto
   - Ir al lavabo
   - Volver a la cama
   - Esconderse
   - Buscar una salida
-  - 1
-  - 1
+  - Subir al desvan
+  - Buscar donde esconderse
   - 1
   - 1
   - 1
