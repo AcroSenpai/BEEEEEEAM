@@ -11,15 +11,18 @@ public class TriggerDesvan : MonoBehaviour {
     public bool vuelta = false;
     private void Start()
     {
-        manager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+        manager = GameManager.instance;
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
+            manager.onDesvan = true;
 
-            if(parteHabitacion == 1)
+            GameManager.instance.SetProgresion(6);
+
+            if (parteHabitacion == 1)
             {
                 manager.CloseHabJohnny();
                 manager.ClosePasillo();

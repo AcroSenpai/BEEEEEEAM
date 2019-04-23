@@ -10,6 +10,8 @@ public class TriggerNegacionPuerta : MonoBehaviour
 
     private Animator player;
 
+    private float counter;
+
     void Start()
     {
         manager = GameManager.instance;
@@ -28,31 +30,31 @@ public class TriggerNegacionPuerta : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            Debug.Log("Cerrar puerta, caer cuadro y cambiar a progreso 4");
-            other.GetComponent<PlayerController>().perderElControl(7);
-            if (manager.puertaNegacionCerrada)
+            if (manager.GetProgresion() == 3)
             {
-                Physics.gravity = new Vector3(0, -50, 0);
-                cuadro.isKinematic = false;
+                if (other.tag == "Player")
+                {
+                    Debug.Log("Cerrar puerta, caer cuadro y cambiar a progreso 4");
+                    other.GetComponent<PlayerController>().perderElControl(7);
+                    CambiarProgreso();
+                    if(counter >= 5)
+                    {
+                        Physics.gravity = new Vector3(0, -50, 0);
+                        cuadro.isKinematic = false;
+                        counter = 0;
+                    }
+                    else
+                    {
+                        counter += Time.deltaTime;
+                    }
+                }
             }
         }
-        if (manager.GetProgresion() == 3)
-        {
-            if (other.tag == "Player")
-            {
-                Debug.Log("Cerrar puerta, caer cuadro y cambiar a progreso 4");
-                other.GetComponent<PlayerController>().perderElControl(7);
-                Physics.gravity = new Vector3(0, -50, 0);
-                cuadro.isKinematic = false;
-            }
-        }
-
+        
         if(other.CompareTag("Object"))
         {
             Physics.gravity = new Vector3(0, -9.8f, 0);
-            //Debug.LogError("OJETE CALOR");
             player.SetTrigger("desmayo");
-            CambiarProgreso();
         }
     }
 }

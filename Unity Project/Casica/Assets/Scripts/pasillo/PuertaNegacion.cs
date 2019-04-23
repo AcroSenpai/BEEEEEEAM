@@ -28,8 +28,6 @@ public class PuertaNegacion : MonoBehaviour
         {
             anim.SetTrigger("C");
         }
-            
-
     }
 
     public void Destruir()
@@ -38,7 +36,4 @@ public class PuertaNegacion : MonoBehaviour
         manager.puertaNegacionCerrada = true;
         GetComponentInChildren<GameObject>().SetActive(false);
     }
-
-
-
 }

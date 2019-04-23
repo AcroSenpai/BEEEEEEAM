@@ -36,7 +36,7 @@ public class FundidoNegro : MonoBehaviour {
             {
                 panelNegro.SetActive(true);
 
-                if (counter < 1)
+                if (counter < 8)
                 {
                     counter += Time.deltaTime;
                 }

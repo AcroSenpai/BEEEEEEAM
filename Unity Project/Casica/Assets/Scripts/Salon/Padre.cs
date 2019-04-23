@@ -81,6 +81,8 @@ public class Padre : MonoBehaviour
 
     private void FixedUpdate()
     {
+        anim.SetBool("walk", !agent.isStopped);
+
         targetDetected = false;
         Collider[] hitCollider = Physics.OverlapSphere(transform.position, radius, targetMask);
         if(hitCollider.Length != 0)
@@ -177,7 +179,7 @@ public class Padre : MonoBehaviour
 
     void SetSearch()
     {
-        anim.SetBool("walk", true);
+        //anim.SetBool("walk", true);
         agent.isStopped = false;
         //radius = 5;     
         state = State.Shearch;       
