@@ -9,6 +9,7 @@ public class Puerta : Interactive
     public GameObject puntito;
     private GameManager manager;
     public AudioSource aus;
+    public AudioSource candado;
 
     public void Start()
     {
@@ -31,6 +32,15 @@ public class Puerta : Interactive
             puntito.SetActive(false);
             aus.Play();
             manager.SetProgresion(1);
+        }
+        else
+        {
+            if(candado !=null)
+            {
+                candado.Play();
+                Destroy(candado, 5f);
+            }
+            
         }
     }
 
