@@ -7,7 +7,7 @@ public class StartMenu : MonoBehaviour {
 
     public void WakeUp()
     {
-        SceneManager.LoadScene("2player");
+        SceneManager.LoadScene("Animatica");
     }
 
     public void Continue()

@@ -6,6 +6,7 @@ public class AudioManager : MonoBehaviour {
 
     public Sound[] sounds;
     public AudioSource ase;
+    public AudioSource candado;
 
 	void Awake ()
     {

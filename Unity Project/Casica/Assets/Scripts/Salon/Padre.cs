@@ -110,9 +110,14 @@ public class Padre : MonoBehaviour
 
         if(fase == 3)
         {
-            if(tiempo > 4)
+            if(tiempo > 3 && agent.isStopped)
             {
-                agent.isStopped = !agent.isStopped;
+                agent.isStopped = false;
+                tiempo = 0;
+            }
+            else if(tiempo > 5 && !agent.isStopped)
+            {
+                agent.isStopped = true;
                 tiempo = 0;
             }
             else
@@ -121,7 +126,7 @@ public class Padre : MonoBehaviour
             }
         }
 
-        if(Vector3.Distance(transform.position, targetTransform.position) < 4)
+        if(Vector3.Distance(transform.position, targetTransform.position) < 5)
         {
             //Animacion de aggarar al niño.
             anim.SetTrigger("kill");
