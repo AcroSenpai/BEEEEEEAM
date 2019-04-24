@@ -2801,7 +2801,7 @@ PlayableDirector:
   - key: {fileID: 114353929987135836, guid: 71c1667133032e1468f97db5cb6fa8e9, type: 2}
     value: {fileID: 5539330113372755393}
   - key: {fileID: 114219055559842918, guid: 71c1667133032e1468f97db5cb6fa8e9, type: 2}
-    value: {fileID: 1748590293552365}
+    value: {fileID: 699754782}
   m_ExposedReferences:
     m_References: []
 --- !u!1 &411271198
@@ -2871,7 +2871,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 442761592}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 288.71, y: -6.55, z: -339.77}
+  m_LocalPosition: {x: 288.71, y: -4.81, z: -339.77}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1380115907}
@@ -10293,6 +10293,21 @@ PrefabInstance:
       propertyPath: timelineNegacionD
       value: 
       objectReference: {fileID: 1357559820}
+    - target: {fileID: 114111014836050942, guid: d873bac7b60ffa04d94c03055cb66835,
+        type: 3}
+      propertyPath: timelineInicio
+      value: 
+      objectReference: {fileID: 391558123}
+    - target: {fileID: 114111014836050942, guid: d873bac7b60ffa04d94c03055cb66835,
+        type: 3}
+      propertyPath: mesh
+      value: 
+      objectReference: {fileID: 699754783}
+    - target: {fileID: 114111014836050942, guid: d873bac7b60ffa04d94c03055cb66835,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 4994786710358317}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d873bac7b60ffa04d94c03055cb66835, type: 3}
 --- !u!1 &1228136135 stripped
@@ -11104,7 +11119,7 @@ PlayableDirector:
   m_Enabled: 1
   serializedVersion: 3
   m_PlayableAsset: {fileID: 11400000, guid: e4ce9328c366b034a8d12770847312a9, type: 2}
-  m_InitialState: 1
+  m_InitialState: 0
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
@@ -28199,7 +28214,7 @@ Transform:
   m_GameObject: {fileID: 5539330113380050433}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0.0000029504295}
   m_LocalPosition: {x: -0.00012207031, y: -1.8661594, z: 0.913208}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.6, y: 1.6, z: 1.6}
   m_Children:
   - {fileID: 5539330113380023255}
   m_Father: {fileID: 391558121}

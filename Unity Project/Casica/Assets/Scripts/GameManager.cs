@@ -17,15 +17,17 @@ public class GameManager : MonoBehaviour
             return;
         }
         instance = this;
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        p = new Progresion();
         DontDestroyOnLoad(this);
     }
 
     public Transform player;
+    public Transform mesh;
 
     [Header("Timeline settings")]
     public PlayableDirector timelineBaño;
     public PlayableDirector timelineNegacionD;
+    public PlayableDirector timelineInicio;
 
     [Header("Progreso")]
     public Progresion p;
@@ -82,12 +84,12 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        p = new Progresion();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        //p = new Progresion();
     }
 
     private void Update()
     {
-
         camHab.enabled = onHab;
         camPasillo.enabled = onPasillo;
         camBaño.enabled = onBaño;
@@ -176,7 +178,13 @@ public class GameManager : MonoBehaviour
     {
         OpenHabJohnny();
         player.position = habJohnnyPoint.transform.position;
+        mesh.rotation = habJohnnyPoint.transform.rotation;
         Debug.Log("TP DONE");
+        if (p.GetProgresion() == 0)
+        {
+            Debug.LogError("QUE DICE");
+            timelineInicio.Play();
+        }
     }
 
     public void TpPasillo()
