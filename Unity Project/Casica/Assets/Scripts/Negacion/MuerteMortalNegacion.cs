@@ -6,13 +6,13 @@ public class MuerteMortalNegacion : MonoBehaviour {
 
 	// Use this for initialization
 	public Vector3 posicion;
-    private Vector3 posantigua;
+    public  Vector3 posantigua;
 	public float velocidad = 0.3f;
     public bool inicio;
 	void Start () 
 	{
         inicio = false;
-        posantigua = posicion;
+        posantigua = transform.position;
 	}
 	
 	// Update is called once per frame
@@ -32,8 +32,10 @@ public class MuerteMortalNegacion : MonoBehaviour {
     {
 		if (other.gameObject.tag == "Player")
         {
+             posicion = posantigua;
+             transform.position = posicion;
            other.gameObject.GetComponent<PlayerController>().Dead();
-            posicion = posantigua;
+           
         }
 	}
 

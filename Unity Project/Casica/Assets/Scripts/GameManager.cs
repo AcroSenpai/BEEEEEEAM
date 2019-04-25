@@ -22,6 +22,8 @@ public class GameManager : MonoBehaviour
     }
 
     public Transform player;
+
+    private PlayerController niño;
     public Transform mesh;
 
     [Header("Timeline settings")]
@@ -85,6 +87,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        niño = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         //p = new Progresion();
     }
 
@@ -182,8 +185,8 @@ public class GameManager : MonoBehaviour
         Debug.Log("TP DONE");
         if (p.GetProgresion() == 0)
         {
-            Debug.LogError("QUE DICE");
             timelineInicio.Play();
+            niño.perderElControl(5);
         }
     }
 

@@ -21,6 +21,7 @@ public class PuertaNLlave : Interactive
     {
             anim.SetTrigger("T");
             PC.llave = false;
+            PC.anim.SetTrigger("door");
             puntito.SetActive(false);
             aus.Play();
     }

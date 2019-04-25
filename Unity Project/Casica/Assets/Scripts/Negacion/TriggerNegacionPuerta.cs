@@ -10,6 +10,8 @@ public class TriggerNegacionPuerta : MonoBehaviour
 
     private Animator player;
 
+    private bool caer;
+
     private float counter;
 
     void Start()
@@ -19,6 +21,15 @@ public class TriggerNegacionPuerta : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
 
         cuadro.isKinematic = true;
+    }
+
+    void Update()
+    {
+        if(caer)
+        {
+            Physics.gravity = new Vector3(0, -50, 0);
+            cuadro.isKinematic = false;
+        }
     }
 
     public void CambiarProgreso()
@@ -32,22 +43,10 @@ public class TriggerNegacionPuerta : MonoBehaviour
         {
             if (manager.GetProgresion() == 3)
             {
-                if (other.tag == "Player")
-                {
-                    Debug.Log("Cerrar puerta, caer cuadro y cambiar a progreso 4");
-                    other.GetComponent<PlayerController>().perderElControl(7);
-                    CambiarProgreso();
-                    if(counter >= 5)
-                    {
-                        Physics.gravity = new Vector3(0, -50, 0);
-                        cuadro.isKinematic = false;
-                        counter = 0;
-                    }
-                    else
-                    {
-                        counter += Time.deltaTime;
-                    }
-                }
+                Debug.Log("Cerrar puerta, caer cuadro y cambiar a progreso 4");
+                other.GetComponent<PlayerController>().perderElControl(7);
+                CambiarProgreso();
+                caer = true;
             }
         }
         
