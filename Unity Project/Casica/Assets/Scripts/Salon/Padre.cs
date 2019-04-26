@@ -16,6 +16,8 @@ public class Padre : MonoBehaviour
     private float timeCounter;
     public float idleTime = 1;
 
+    private GameManager manager;
+
     [Header("Path properties")]
     public Transform[] nodes;
     public int curentNode;
@@ -38,6 +40,7 @@ public class Padre : MonoBehaviour
 
     public int fase;
 
+    public Animator door;
 
     private void Start()
     {
@@ -45,6 +48,7 @@ public class Padre : MonoBehaviour
         //sound = GetComponentInChildren<SoundPlayer>();
         agent = GetComponent<NavMeshAgent>();
         agent.Warp(transform.position);
+        manager = GameManager.instance;
         
         SetIdle();
         triggerOn = false;
@@ -126,18 +130,24 @@ public class Padre : MonoBehaviour
             }
         }
 
-        if(Vector3.Distance(transform.position, targetTransform.position) < 5)
+        if(Vector3.Distance(transform.position, targetTransform.position) < 5 )
         {
             //Animacion de aggarar al niño.
             anim.SetTrigger("kill");
             MatarAlNiño();
         }
-        
     }
 
     void MatarAlNiño()
     {
-        targetTransform.GetComponent<PlayerController>().Dead();
+        if(targetTransform.GetComponent<PlayerController>().pLinterna)
+        {
+            manager.OpenFinal();
+        }
+        else
+        {
+            targetTransform.GetComponent<PlayerController>().Dead();
+        }
     }
 
     void IdleUpdate()
@@ -212,6 +222,7 @@ public class Padre : MonoBehaviour
     void AnimacionAbrirPuerta()
     {
         //Aqui animacion de abrir puerta.
+        door.SetTrigger("open");
         //Al acabar ir a por el GoToNearNode();
         GoToNearNode();
     }
@@ -220,7 +231,6 @@ public class Padre : MonoBehaviour
     {
         curentNode = num;
         agent.SetDestination(nodes[curentNode].position);
-
     }
 
     public void TriggerNode(int num)
@@ -236,8 +246,4 @@ public class Padre : MonoBehaviour
         Gizmos.color = c;
         Gizmos.DrawSphere(transform.position, radius);
     }
-
-    
-
-
 }

@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
 
     public Transform player;
 
-    private PlayerController niño;
+    public PlayerController niño;
     public Transform mesh;
 
     [Header("Timeline settings")]
@@ -63,6 +63,7 @@ public class GameManager : MonoBehaviour
     public CinemachineVirtualCamera camNegacionN;
     public CinemachineVirtualCamera camNegacionD;
     public CinemachineVirtualCamera camCuartillo;
+    public CinemachineVirtualCamera camHabPadre;
     public GameObject camDesvan1;
     public GameObject camDesvan2;
     public GameObject camDesvan3;
@@ -89,6 +90,7 @@ public class GameManager : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         niño = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         //p = new Progresion();
+        camHabPadre.enabled = false;
     }
 
     private void Update()
@@ -186,7 +188,7 @@ public class GameManager : MonoBehaviour
         if (p.GetProgresion() == 0)
         {
             timelineInicio.Play();
-            niño.perderElControl(5);
+            //niño.perderElControl(5f);
         }
     }
 
@@ -297,6 +299,11 @@ public class GameManager : MonoBehaviour
             SceneManager.LoadSceneAsync("9desvan", LoadSceneMode.Additive);
             //desvan = true;
         }
+    }
+
+    public void OpenFinal()
+    {
+        SceneManager.LoadScene("Final");
     }
 
     #endregion

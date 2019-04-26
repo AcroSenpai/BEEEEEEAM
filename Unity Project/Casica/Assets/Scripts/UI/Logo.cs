@@ -32,7 +32,7 @@ public class Logo : MonoBehaviour {
 
         if (!video.isPlaying && go)
         {
-            SceneManager.LoadScene("MenuPrincipal");
+            SceneManager.LoadScene("1MenuPrincipal");
         }
     }
 }

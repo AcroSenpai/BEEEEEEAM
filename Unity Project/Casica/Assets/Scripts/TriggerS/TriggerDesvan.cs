@@ -9,6 +9,7 @@ public class TriggerDesvan : MonoBehaviour {
     public int parteHabitacion;
     public GameObject[] padres;
     public bool vuelta = false;
+
     private void Start()
     {
         manager = GameManager.instance;
@@ -45,7 +46,6 @@ public class TriggerDesvan : MonoBehaviour {
                     case 3:
                         //Destroy(this);
                         Destroy(padres[0]);
-
                         padres[1].SetActive(true);
                         vuelta = true;
                         break;
@@ -96,7 +96,7 @@ public class TriggerDesvan : MonoBehaviour {
     {
         if (other.tag == "Player")
         {
-            manager.onDesvan = false;
+            //manager.onDesvan = false;
         }
     }
 }

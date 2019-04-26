@@ -15,6 +15,7 @@ public class Linterna : Interactive
 	public override void Activar()
 	{
 		PC.cojerObj(1);
+        PC.anim.SetTrigger("Pick");
 		Object.Destroy(gameObject);
 	}
 }

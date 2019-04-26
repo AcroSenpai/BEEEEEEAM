@@ -6,13 +6,30 @@ public class TriggerAnimPadreNegacion : MonoBehaviour
 {
     private GameManager manager;
     private PlayerController pc;
-    // Start is called before the first frame update
+
+    private float counter;
+
     void Start()
     {
-        manager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+        manager = GameManager.instance;
         pc = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
     }
 
+    private void Update()
+    {
+        if(manager.camHabPadre.enabled)
+        {
+            if(counter >= 5)
+            {
+                manager.camHabPadre.enabled = false;
+                counter = 0;
+            }
+            else
+            {
+                counter += Time.deltaTime;
+            }
+        }
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -20,10 +37,11 @@ public class TriggerAnimPadreNegacion : MonoBehaviour
         {
             if (other.tag == "Player")
             {
+                manager.camHabPadre.enabled = true;
+
                 manager.SetProgresion(3);
-                pc.perderElControl(10f);
+                pc.perderElControl(5f);
             }
         }
-        
     }
 }

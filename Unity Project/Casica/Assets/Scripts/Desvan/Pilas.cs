@@ -14,7 +14,8 @@ public class Pilas : Interactive
 	}
 	public override void Activar()
 	{
+        PC.anim.SetTrigger("Pick");
 		PC.cojerObj(2);
-		Object.Destroy(gameObject);
+        Object.Destroy(gameObject);
 	}
 }

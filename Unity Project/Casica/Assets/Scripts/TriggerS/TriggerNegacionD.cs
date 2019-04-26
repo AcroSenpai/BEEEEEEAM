@@ -21,6 +21,7 @@ public class TriggerNegacionD : MonoBehaviour {
             manager.ClosePasillo();
             manager.CloseBaño();
             manager.CloseNegacionN();
+            UnityEngine.SceneManagement.SceneManager.UnloadSceneAsync("6negacion_N");
             manager.CloseDesvan();
 
             manager.OpenCuartillo();

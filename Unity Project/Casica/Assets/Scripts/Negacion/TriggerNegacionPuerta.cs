@@ -29,6 +29,7 @@ public class TriggerNegacionPuerta : MonoBehaviour
         {
             Physics.gravity = new Vector3(0, -50, 0);
             cuadro.isKinematic = false;
+            caer = false;
         }
     }
 
