@@ -45,7 +45,7 @@ public class TriggerNegacionPuerta : MonoBehaviour
             if (manager.GetProgresion() == 3)
             {
                 Debug.Log("Cerrar puerta, caer cuadro y cambiar a progreso 4");
-                other.GetComponent<PlayerController>().perderElControl(7);
+                other.GetComponent<PlayerController>().perderElControl(5);
                 CambiarProgreso();
                 caer = true;
             }
@@ -54,7 +54,7 @@ public class TriggerNegacionPuerta : MonoBehaviour
         if(other.CompareTag("Object"))
         {
             Physics.gravity = new Vector3(0, -9.8f, 0);
-            player.SetTrigger("desmayo");
+            //player.SetTrigger("desmayo");
         }
     }
 }
