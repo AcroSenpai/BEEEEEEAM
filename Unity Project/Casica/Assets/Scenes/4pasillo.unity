@@ -1046,9 +1046,9 @@ GameObject:
   - component: {fileID: 284577580}
   - component: {fileID: 283577836}
   - component: {fileID: 281383725}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Carretilla
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
