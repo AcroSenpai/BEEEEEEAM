@@ -16,7 +16,6 @@ public class Progresion
     public void SetProgresion(int num)
     {
         if(num > (int)progreso) progreso = (Zonas)num;
-        Debug.Log(GetProgresion());
     }
 
     public int GetProgresion()

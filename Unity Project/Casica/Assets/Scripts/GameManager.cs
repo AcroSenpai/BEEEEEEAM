@@ -184,7 +184,7 @@ public class GameManager : MonoBehaviour
         OpenHabJohnny();
         player.position = habJohnnyPoint.transform.position;
         mesh.rotation = habJohnnyPoint.transform.rotation;
-        Debug.Log("TP DONE");
+       // Debug.Log("TP DONE");
         if (p.GetProgresion() == 0)
         {
             timelineInicio.Play();
@@ -196,42 +196,42 @@ public class GameManager : MonoBehaviour
     {
         OpenPasillo();
         player.position = pasilloPoint.transform.position;
-        Debug.Log("TP DONE");
+        //Debug.Log("TP DONE");
     }
 
     public void TpBaño()
     {
         OpenBaño();
         player.position = bañoPoint.transform.position;
-        Debug.Log("TP DONE");
+        //Debug.Log("TP DONE");
     }
 
     public void TpNegacionN()
     {
         OpenNegacionN();
         player.position = negacionNPoint.transform.position;
-        Debug.Log("TP DONE");
+       // Debug.Log("TP DONE");
     }
 
     public void TpNegacionD()
     {
         OpenNegacionD();
         player.position = negacionDPoint.transform.position;
-        Debug.Log("TP DONE");
+       // Debug.Log("TP DONE");
     }
 
     public void TpCuartillo()
     {
         OpenCuartillo();
         player.position = cuartilloPoint.transform.position;
-        Debug.Log("TP DONE");
+       // Debug.Log("TP DONE");
     }
 
     public void TpDesvan()
     {
         OpenDesvan();
         player.position = desvanPoint.transform.position;
-        Debug.Log("TP DONE");
+        //Debug.Log("TP DONE");
     }
 
     #endregion

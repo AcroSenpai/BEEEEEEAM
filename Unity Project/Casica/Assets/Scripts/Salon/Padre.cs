@@ -105,9 +105,9 @@ public class Padre : MonoBehaviour
 
             if (Vector3.Distance(transform.position, nodes[curentNode].transform.position) < 7)
             {
-                Debug.Log("1: " + nextNode + " 2: " + nodes.Length);
+                //Debug.Log("1: " + nextNode + " 2: " + nodes.Length);
 
-                GoToNode(nextNode);
+                GoToNode(nextNode-1);
                 nextNode += 1;
             }
         }

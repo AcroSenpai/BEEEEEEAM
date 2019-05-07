@@ -85,7 +85,7 @@ public class TriggerDesvan : MonoBehaviour {
 
             if(parteHabitacion == 1)
             {
-                Debug.Log("Muerte del niño y final del juego");
+                //Debug.Log("Muerte del niño y final del juego");
                 //Cargar escena final.
             }
 

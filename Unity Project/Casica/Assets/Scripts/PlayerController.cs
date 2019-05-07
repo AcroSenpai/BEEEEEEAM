@@ -435,7 +435,7 @@ public class PlayerController : MonoBehaviour
                     if (i == 1 && trepar)
                     {
                         cerca = false;
-                        Debug.Log("Trepo pero no tego nada delante");
+                        //Debug.Log("Trepo pero no tego nada delante");
                         Realentizado = true;
                         speed = 4;
                     }
@@ -758,7 +758,7 @@ public class PlayerController : MonoBehaviour
 
     public void OpenCometa()
     {
-        Debug.Log("Abrir cometa");
+        //Debug.Log("Abrir cometa");
         cometita.SetActive(true);
     }
 
