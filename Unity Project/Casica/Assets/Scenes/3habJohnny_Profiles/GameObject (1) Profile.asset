@@ -146,7 +146,7 @@ MonoBehaviour:
     value: 1
   mode:
     overrideState: 1
-    value: 0
+    value: 1
   color:
     overrideState: 1
     value: {r: 0, g: 0, b: 0, a: 1}
@@ -155,7 +155,7 @@ MonoBehaviour:
     value: {x: 0.5, y: 0.5}
   intensity:
     overrideState: 1
-    value: 0.246
+    value: 0.3
   smoothness:
     overrideState: 0
     value: 0.2
@@ -166,12 +166,12 @@ MonoBehaviour:
     overrideState: 0
     value: 0
   mask:
-    overrideState: 0
-    value: {fileID: 0}
+    overrideState: 1
+    value: {fileID: 10904, guid: 0000000000000000f000000000000000, type: 0}
     defaultState: 1
   opacity:
-    overrideState: 0
-    value: 1
+    overrideState: 1
+    value: 0.41
 --- !u!114 &114979502380475496
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -263,16 +263,16 @@ MonoBehaviour:
     value: -27
   saturation:
     overrideState: 1
-    value: -24
+    value: -25
   brightness:
     overrideState: 0
     value: 0
   postExposure:
     overrideState: 1
-    value: 0.28
+    value: 0.25
   contrast:
     overrideState: 1
-    value: -29
+    value: -30
   mixerRedOutRedIn:
     overrideState: 1
     value: 112

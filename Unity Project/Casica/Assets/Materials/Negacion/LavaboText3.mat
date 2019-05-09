@@ -89,7 +89,7 @@ Material:
     - _Shininess: 0.102
     - _SmoothnessTextureChannel: 1
     - _SpecularHighlights: 1
-    - _SpecularIntensity: 0.407
+    - _SpecularIntensity: 0.01
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1
