@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class Interactive : MonoBehaviour 
 {
+	public virtual void Activar(){}
 
-	public virtual void Activar()
-	{
-		Debug.Log("No se que poner ha haaaa salu2");
-	}
-
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("Player"))
+        {
+            other.GetComponent<PlayerController>().activable = true;
+        }
+    }
 }
