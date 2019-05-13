@@ -704,7 +704,6 @@ public class PlayerController : MonoBehaviour
         {
             hud.OpenLosePanel();
         }
-        
     }
 
     public void Win()

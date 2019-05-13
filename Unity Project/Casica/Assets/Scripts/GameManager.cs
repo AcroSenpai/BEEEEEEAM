@@ -32,8 +32,8 @@ public class GameManager : MonoBehaviour
     public PlayableDirector timelineInicio;
 
     [Header("Progreso")]
-    public Progresion p;
     public bool negacionDone;
+    public Progresion p;
     public bool pissed;
     public bool goNegacionD;
 
@@ -297,7 +297,7 @@ public class GameManager : MonoBehaviour
         if (!desvan)
         {
             SceneManager.LoadSceneAsync("9desvan", LoadSceneMode.Additive);
-            //desvan = true;
+            desvan = true;
         }
     }
 
@@ -373,7 +373,6 @@ public class GameManager : MonoBehaviour
             desvan = false;
         }
     }
-
     
     #endregion
 
@@ -407,10 +406,15 @@ public class GameManager : MonoBehaviour
         {
             TpPasillo();
         }
+        else if (p.GetProgresion() == 6)
+        {
+            TpDesvan();
+        }
         else
         {
             TpHabJohnny();
         }
+        
     }
 
     public void SetProgresion(int num)

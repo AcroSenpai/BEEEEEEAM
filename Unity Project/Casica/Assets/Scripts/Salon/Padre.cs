@@ -147,6 +147,7 @@ public class Padre : MonoBehaviour
         else
         {
             targetTransform.GetComponent<PlayerController>().Dead();
+            manager.CloseDesvan();
         }
     }
 
