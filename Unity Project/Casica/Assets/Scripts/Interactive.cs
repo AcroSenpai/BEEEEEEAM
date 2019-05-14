@@ -11,6 +11,16 @@ public class Interactive : MonoBehaviour
         if(other.CompareTag("Player"))
         {
             other.GetComponent<PlayerController>().activable = true;
+            other.GetComponent<PlayerController>().objetoColisionado = gameObject;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            other.GetComponent<PlayerController>().activable = false;
+            other.GetComponent<PlayerController>().objetoColisionado = null;
         }
     }
 }

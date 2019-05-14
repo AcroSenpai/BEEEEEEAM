@@ -72,6 +72,7 @@ public class PlayerController : MonoBehaviour
     public bool padreGuardado;
     public bool Realentizado;
     public bool llave;
+    public bool activable;
 
     //Linterna
     public GameObject linterna;
@@ -583,6 +584,23 @@ public class PlayerController : MonoBehaviour
             {
                 sound.Play("push");
                 sonidoTaburete = true;
+                GetComponent<CharacterController>().radius = 3.5f;
+                switch (pos)
+                {
+                    case 1:
+                        GetComponent<CharacterController>().center = new Vector3(2.3f, 1.5f, 0);
+                        break;
+                    case 2:
+                        GetComponent<CharacterController>().center = new Vector3(-2.3f, 1.5f, 0);
+                        break;
+                    case 3:
+                        GetComponent<CharacterController>().center = new Vector3(0, 1.5f, 2.3f);
+                        break;
+                    case 4:
+                        GetComponent<CharacterController>().center = new Vector3(0, 1.5f, -2.3f);
+                        break;
+                }
+                
             }
             saltar = false;
             Cubito = hit;
@@ -601,6 +619,8 @@ public class PlayerController : MonoBehaviour
         {
             sound.Stop("push");
             sonidoTaburete = false;
+            GetComponent<CharacterController>().radius = 1.42f;
+            GetComponent<CharacterController>().center = new Vector3(0, 1.5f, 0);
         }
         saltar = true;
         objSelec = 0;

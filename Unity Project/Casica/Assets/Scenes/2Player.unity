@@ -26420,6 +26420,7 @@ MonoBehaviour:
   padreGuardado: 0
   Realentizado: 0
   llave: 0
+  activable: 0
   linterna: {fileID: 610648400}
   fLinterna: 0
   pLinterna: 0

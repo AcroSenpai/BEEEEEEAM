@@ -16,7 +16,7 @@ public class llave : Interactive
     {
         PC.cojerObj(3);
         PC.anim.SetTrigger("Pick");
-        Object.Destroy(gameObject);
+        Destroy(gameObject);
     }
 
 }

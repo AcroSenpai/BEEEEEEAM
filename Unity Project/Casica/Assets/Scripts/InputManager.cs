@@ -120,7 +120,7 @@ public class InputManager : MonoBehaviour
 
         }
 
-        if(PC.interactuar)
+        if(PC.activable)
         {
             if(Input.GetButtonDown("Interactuar"))
             {
