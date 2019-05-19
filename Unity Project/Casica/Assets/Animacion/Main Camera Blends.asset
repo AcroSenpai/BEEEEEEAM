@@ -313,8 +313,8 @@ MonoBehaviour:
   - m_From: vcam_Desvan1
     m_To: vcam_Desvan2
     m_Blend:
-      m_Style: 1
-      m_Time: 1
+      m_Style: 0
+      m_Time: 0.5
       m_CustomCurve:
         serializedVersion: 2
         m_Curve: []
@@ -324,8 +324,8 @@ MonoBehaviour:
   - m_From: vcam_Desvan2
     m_To: vcam_Desvan3
     m_Blend:
-      m_Style: 1
-      m_Time: 1
+      m_Style: 0
+      m_Time: 0.5
       m_CustomCurve:
         serializedVersion: 2
         m_Curve: []
@@ -335,8 +335,8 @@ MonoBehaviour:
   - m_From: vcam_Desvan3
     m_To: vcam_Desvan4
     m_Blend:
-      m_Style: 1
-      m_Time: 1
+      m_Style: 0
+      m_Time: 0.5
       m_CustomCurve:
         serializedVersion: 2
         m_Curve: []
@@ -346,8 +346,8 @@ MonoBehaviour:
   - m_From: vcam_Desvan4
     m_To: vcam_Desvan5
     m_Blend:
-      m_Style: 1
-      m_Time: 1
+      m_Style: 0
+      m_Time: 0.5
       m_CustomCurve:
         serializedVersion: 2
         m_Curve: []
@@ -357,8 +357,8 @@ MonoBehaviour:
   - m_From: vcam_Desvan5
     m_To: vcam_Desvan6
     m_Blend:
-      m_Style: 1
-      m_Time: 1
+      m_Style: 0
+      m_Time: 0.5
       m_CustomCurve:
         serializedVersion: 2
         m_Curve: []
@@ -368,7 +368,7 @@ MonoBehaviour:
   - m_From: '**ANY CAMERA**'
     m_To: vcam_habitacionJohnnyPadre
     m_Blend:
-      m_Style: 4
+      m_Style: 0
       m_Time: 1
       m_CustomCurve:
         serializedVersion: 2
@@ -380,6 +380,17 @@ MonoBehaviour:
     m_To: vcam_habitacionJohnny
     m_Blend:
       m_Style: 1
+      m_Time: 2
+      m_CustomCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 0
+        m_PostInfinity: 0
+        m_RotationOrder: 0
+  - m_From: '**ANY CAMERA**'
+    m_To: vcam_Desvan1
+    m_Blend:
+      m_Style: 0
       m_Time: 2
       m_CustomCurve:
         serializedVersion: 2

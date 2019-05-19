@@ -42,6 +42,7 @@ public class Mear : Interactive
 
     public override void Activar()
     {
+        manager.timelineB.SetActive(true);
         manager.pissed = true;
         manager.SetProgresion(2);
         manager.timelineBaño.Play();

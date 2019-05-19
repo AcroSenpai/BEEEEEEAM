@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour
     public PlayableDirector timelineBaño;
     public PlayableDirector timelineNegacionD;
     public PlayableDirector timelineInicio;
+    public GameObject timelineB;
 
     [Header("Progreso")]
     public bool negacionDone;
@@ -91,6 +92,7 @@ public class GameManager : MonoBehaviour
         niño = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         //p = new Progresion();
         camHabPadre.enabled = false;
+        timelineB.SetActive(false);
     }
 
     private void Update()

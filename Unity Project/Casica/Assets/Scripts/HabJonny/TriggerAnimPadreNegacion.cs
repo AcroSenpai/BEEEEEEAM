@@ -8,6 +8,7 @@ public class TriggerAnimPadreNegacion : MonoBehaviour
     private PlayerController pc;
 
     private float counter;
+    public Animator padre;
 
     void Start()
     {
@@ -19,7 +20,7 @@ public class TriggerAnimPadreNegacion : MonoBehaviour
     {
         if(manager.camHabPadre.enabled)
         {
-            if(counter >= 5)
+            if(counter >= 3)
             {
                 manager.camHabPadre.enabled = false;
                 counter = 0;
@@ -38,6 +39,7 @@ public class TriggerAnimPadreNegacion : MonoBehaviour
             if (other.tag == "Player")
             {
                 manager.camHabPadre.enabled = true;
+                padre.SetTrigger("kill");
 
                 manager.SetProgresion(3);
                 pc.perderElControl(5f);
