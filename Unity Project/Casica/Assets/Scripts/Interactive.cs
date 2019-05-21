@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class Interactive : MonoBehaviour 
 {
-	public virtual void Activar(){}
+	public virtual void Activar()
+    {
+        Destroy(this);
+    }
 
     private void OnTriggerEnter(Collider other)
     {

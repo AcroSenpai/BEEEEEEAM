@@ -18,6 +18,6 @@ public class Cometa : Interactive
 	{
 		PC.cometa = true;
         muerte.GetComponent<MuerteMortalNegacion>().Inicio();
-		Object.Destroy(gameObject);
+		Destroy(gameObject);
 	}
 }

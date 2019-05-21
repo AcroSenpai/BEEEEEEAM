@@ -27,6 +27,7 @@ public class PuertaNegacion : MonoBehaviour
         if(manager.GetProgresion() == 4)
         {
             anim.SetTrigger("C");
+
         }
     }
 
@@ -34,6 +35,6 @@ public class PuertaNegacion : MonoBehaviour
     {
         aus.Play();
         manager.puertaNegacionCerrada = true;
-        GetComponentInChildren<GameObject>().SetActive(false);
+        transform.GetChild(0).gameObject.SetActive(false);
     }
 }

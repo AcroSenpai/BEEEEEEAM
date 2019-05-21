@@ -16,6 +16,6 @@ public class Linterna : Interactive
 	{
 		PC.cojerObj(1);
         PC.anim.SetTrigger("Pick");
-		Object.Destroy(gameObject);
+		Destroy(gameObject);
 	}
 }

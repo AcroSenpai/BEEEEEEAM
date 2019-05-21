@@ -380,7 +380,7 @@ public class PlayerController : MonoBehaviour
                 ray = new Ray(origen, direccion_rayo);
                 if (Physics.Raycast(ray, out hit, distance, mask))
                 {
-                    objetoColisionado = hit.transform.gameObject;
+
                     //Debug.DrawRay (ray.origin, ray.direction * hit.distance, Color.red, 1);
                     switch (i)
                     {

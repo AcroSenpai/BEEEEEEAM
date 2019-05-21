@@ -19,6 +19,8 @@ public class celda : Interactive
         {
 
         }
+
+        base.Activar();
                
     }
 }
