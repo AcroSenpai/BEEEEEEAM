@@ -18,11 +18,14 @@ public class UIControler : MonoBehaviour
     public GameObject[] iconos;
     public AudioSource musicaMenu;
 
+    private GameManager manager;
+
     public bool paused;
     //public bool winLose;
     // Use this for initialization
     void Start()
     {
+        manager = GameManager.instance;
         CloseOptionPanel();
         ClosePausePanel();
         CloseWinPanel();
@@ -37,6 +40,11 @@ public class UIControler : MonoBehaviour
         foreach (GameObject i in iconos)
         {
             i.SetActive(false);
+        }
+
+        if(manager.p.GetProgresion() == 0)
+        {
+            StartCoroutine(Desfundido());
         }
 
         Cursor.visible = false;
@@ -99,6 +107,20 @@ public class UIControler : MonoBehaviour
         }
         losePanel.SetActive(false);
 
+    }
+
+    IEnumerator Desfundido()
+    {
+        losePanel.SetActive(true);
+        Image ig = losePanel.GetComponent<Image>();
+        ig.color = new Color(0, 0, 0, 1);
+        for (float i = 1.2f; i > -0.2; i -= 0.03f)
+        {
+            Debug.Log(i);
+            ig.color = new Color(0, 0, 0, i);
+            yield return null;
+        }
+        losePanel.SetActive(false);
     }
     public void OpenGodPanel()
     {
