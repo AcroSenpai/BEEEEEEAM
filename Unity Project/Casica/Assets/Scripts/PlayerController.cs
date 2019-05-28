@@ -720,6 +720,7 @@ public class PlayerController : MonoBehaviour
 
     public void Dead()
     {
+        
         if(!inmune && primerSuelo)
         {
             hud.OpenLosePanel();

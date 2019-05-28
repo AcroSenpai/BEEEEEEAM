@@ -8550,7 +8550,8 @@ GameObject:
   - component: {fileID: 2127298283}
   - component: {fileID: 1584755156}
   - component: {fileID: 1584755155}
-  m_Layer: 10
+  - component: {fileID: 1584755157}
+  m_Layer: 8
   m_Name: pila1
   m_TagString: Palanca
   m_Icon: {fileID: 0}
@@ -8581,6 +8582,19 @@ BoxCollider:
   m_GameObject: {fileID: 1584755154}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 21.18, z: 7.31}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &1584755157
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1584755154}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 21.18, z: 7.31}

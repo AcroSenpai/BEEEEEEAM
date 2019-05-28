@@ -73,8 +73,32 @@ public class UIControler : MonoBehaviour
     }
     public void OpenLosePanel()
     {
-        losePanel.SetActive(true);
+        //losePanel.SetActive(true);
         //winLose = true;
+        StartCoroutine(FundidoYDesfundido());
+    }
+
+    IEnumerator FundidoYDesfundido()
+    {
+        losePanel.SetActive(true);
+        Image ig = losePanel.GetComponent<Image>();
+        for (float i = 0; i <= 1.2f; i+= 0.05f)
+        {
+            ig.color = new Color(0, 0, 0, i);
+            yield return null;
+        }
+        //Suene sonido
+        GameManager.instance.Respawn();
+        yield return new WaitForSeconds(2);
+        Debug.LogError("Empieza a desvanecese");
+        for (float i = 1.2f; i > -0.2; i -= 0.05f)
+        {
+            Debug.Log(i);
+            ig.color = new Color(0, 0, 0, i);
+            yield return null;
+        }
+        losePanel.SetActive(false);
+
     }
     public void OpenGodPanel()
     {
