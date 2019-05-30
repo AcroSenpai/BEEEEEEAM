@@ -723,6 +723,8 @@ public class PlayerController : MonoBehaviour
         
         if(!inmune && primerSuelo)
         {
+            //anim.SetTrigger("desmayo");
+            GetComponent<AudioSource>().Play();
             hud.OpenLosePanel();
         }
     }

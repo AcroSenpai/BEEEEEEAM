@@ -222,6 +222,7 @@ ModelImporter:
     400214: Padre_Rigg_01:R 1
     400216: Padre_Rigg_01:RIGG_PADRE
     2000000: left
+    2000002: //RootNode
     2100000: lambert1
     2100002: PadreMat
     2300000: Padre_Rigg_01:CuchilloPadre:polySurface1
