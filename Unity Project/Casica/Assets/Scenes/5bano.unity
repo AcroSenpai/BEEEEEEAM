@@ -416,6 +416,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Puntito
       objectReference: {fileID: 0}
+    - target: {fileID: 317832658332028557, guid: ccee4b14148ef9040a9d41ef691ea5f4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4581175557296390, guid: ccee4b14148ef9040a9d41ef691ea5f4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.94999695
@@ -460,6 +465,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1656011035472486, guid: ccee4b14148ef9040a9d41ef691ea5f4, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 7955217758355030595, guid: ccee4b14148ef9040a9d41ef691ea5f4,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -473,15 +482,6 @@ PrefabInstance:
     - target: {fileID: 4463348581757880, guid: ccee4b14148ef9040a9d41ef691ea5f4, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.2999973
-      objectReference: {fileID: 0}
-    - target: {fileID: 1656011035472486, guid: ccee4b14148ef9040a9d41ef691ea5f4, type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 317832658332028557, guid: ccee4b14148ef9040a9d41ef691ea5f4,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ccee4b14148ef9040a9d41ef691ea5f4, type: 3}
@@ -1904,6 +1904,103 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 722248770}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &1934585094
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1934585093}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 243842338166052998, guid: d9f7e02694e696e45abf0c23fd24514a,
+    type: 2}
+  m_audioClip: {fileID: 8300000, guid: 4bea8a0dd5056434cb0ed28108d1a7b1, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!4 &1934585096 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4581175557296390, guid: ccee4b14148ef9040a9d41ef691ea5f4,
@@ -2085,7 +2182,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 6.9, y: 12.02, z: 14.3}
-  m_Center: {x: 0.62, y: 1.28, z: 1.8}
+  m_Center: {x: 0.62, y: 3.08, z: 1.8}
 --- !u!23 &5156472077984970817
 MeshRenderer:
   m_ObjectHideFlags: 0

@@ -93,7 +93,7 @@ public class Padre : MonoBehaviour
         {
             //ha detectado un target
             targetDetected = true;
-            targetTransform = hitCollider[0].transform;
+            //targetTransform = hitCollider[0].transform;
         }
 
         if(fase == 2)
@@ -129,8 +129,9 @@ public class Padre : MonoBehaviour
                 tiempo += Time.deltaTime;
             }
         }
+        Debug.Log(Vector3.Distance(transform.position, targetTransform.position));
 
-        if(Vector3.Distance(transform.position, targetTransform.position) < 5 )
+        if (Vector3.Distance(transform.position, targetTransform.position) < 6 )
         {
             //Animacion de aggarar al niño.
             anim.SetTrigger("kill");
@@ -146,9 +147,15 @@ public class Padre : MonoBehaviour
         }
         else
         {
-            targetTransform.GetComponent<PlayerController>().Dead();
-            manager.CloseDesvan();
+            StartCoroutine(MatarAlNiñoNormal());
+            
         }
+    }
+    IEnumerator MatarAlNiñoNormal()
+    {
+        targetTransform.GetComponent<PlayerController>().Dead();
+        yield return new WaitForSeconds(1);
+        manager.CloseDesvan();
     }
 
     void IdleUpdate()
@@ -156,7 +163,6 @@ public class Padre : MonoBehaviour
         //primera condicion patrol
         if(triggerOn)
         {
-            Debug.Log("Voy de camino");
             SetSearch();
             triggerOn = false;
         }

@@ -101,7 +101,6 @@ public class UIControler : MonoBehaviour
         Debug.LogError("Empieza a desvanecese");
         for (float i = 1.2f; i > -0.2; i -= 0.05f)
         {
-            Debug.Log(i);
             ig.color = new Color(0, 0, 0, i);
             yield return null;
         }
@@ -116,7 +115,6 @@ public class UIControler : MonoBehaviour
         ig.color = new Color(0, 0, 0, 1);
         for (float i = 1.2f; i > -0.2; i -= 0.03f)
         {
-            Debug.Log(i);
             ig.color = new Color(0, 0, 0, i);
             yield return null;
         }
