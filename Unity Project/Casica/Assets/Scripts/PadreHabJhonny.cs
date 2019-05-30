@@ -9,10 +9,14 @@ public class PadreHabJhonny : MonoBehaviour
 
     public GameObject padre;
 
+    public AudioClip clip;
+    public AudioClip clip2;
+
+    public AudioSource audio;
+
     void Start()
     {
         manager = GameManager.instance;
-
 
         if(manager.p.GetProgresion() == 2)
         {
@@ -24,8 +28,13 @@ public class PadreHabJhonny : MonoBehaviour
         }
     }
 
-    void Update()
+    public void Apuñalada()
     {
-        
+        audio.PlayOneShot(clip);
+    }
+
+    public void EmpezarAMatar()
+    {
+        audio.PlayOneShot(clip2);
     }
 }
