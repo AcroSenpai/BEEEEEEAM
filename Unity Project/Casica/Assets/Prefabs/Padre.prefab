@@ -122,7 +122,7 @@ Transform:
   m_GameObject: {fileID: 3630235457485388455}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 166.58734, y: -61.97, z: -253.8}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
+  m_LocalScale: {x: 0.68468803, y: 0.68468803, z: 0.68468803}
   m_Children:
   - {fileID: 7430980315803883046}
   - {fileID: 3630235457120253161}
@@ -244,6 +244,7 @@ MonoBehaviour:
   triggerOn: 0
   nextNode: 0
   fase: 0
+  door: {fileID: 0}
 --- !u!1 &7430980315804240384
 GameObject:
   m_ObjectHideFlags: 0

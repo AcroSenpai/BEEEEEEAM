@@ -29,7 +29,6 @@ public class GameManager : MonoBehaviour
     [Header("Timeline settings")]
     public PlayableDirector timelineBaño;
     public PlayableDirector timelineNegacionD;
-    public PlayableDirector timelineInicio;
     public GameObject timelineB;
 
     [Header("Progreso")]
@@ -187,11 +186,6 @@ public class GameManager : MonoBehaviour
         player.position = habJohnnyPoint.transform.position;
         mesh.rotation = habJohnnyPoint.transform.rotation;
        // Debug.Log("TP DONE");
-        if (p.GetProgresion() == 0)
-        {
-            timelineInicio.Play();
-            //niño.perderElControl(5f);
-        }
     }
 
     public void TpPasillo()
