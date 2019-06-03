@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour {
 
+    public static AudioManager instance;
+   
     public Sound[] sounds;
     public AudioSource ase;
     public AudioSource candado;
@@ -15,9 +17,13 @@ public class AudioManager : MonoBehaviour {
     public GameObject sonidoC;
     public GameObject sonidoD;
 
+    public GameObject musica1;
+    public GameObject musica2;
+
 
     void Awake ()
     {
+        instance = this;
         if(GameObject.FindGameObjectsWithTag("Music").Length > 1)
         {
             Destroy(this.gameObject);
@@ -41,7 +47,7 @@ public class AudioManager : MonoBehaviour {
         }
     }
     
-    public void Play(string name, float pitch = 10)
+    public void Play(string name, float pitch = 10, float volumen = 10)
     {
         Sound s = Array.Find(sounds, sound => sound.name == name);
 
@@ -55,6 +61,12 @@ public class AudioManager : MonoBehaviour {
         {
             s.source.pitch = pitch;
         }
+
+        if (volumen != 10)
+        {
+            s.source.volume = volumen;
+        }
+
         s.source.Play();
     }
 
@@ -124,5 +136,24 @@ public class AudioManager : MonoBehaviour {
             sonidoD.SetActive(true);
         }
 
+    }
+
+    public void CambiarMusica(int num)
+    {
+        if(num == 1)
+        {
+            musica1.SetActive(true);
+            musica2.SetActive(false);
+        }
+        else if(num == 2) 
+        {
+            musica1.SetActive(false);
+            musica2.SetActive(true);
+        }
+        else
+        {
+            musica1.SetActive(false);
+            musica2.SetActive(false);
+        }
     }
 }

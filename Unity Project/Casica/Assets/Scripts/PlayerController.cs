@@ -534,7 +534,8 @@ public class PlayerController : MonoBehaviour
     public void Step()
     {
         float pitch = Random.Range(0.80f, 1.21f);
-        sound.Play("step", pitch);
+        float volumen = Random.Range(0.80f, 1f);
+        sound.Play("step", pitch, volumen);
     }
 
     public void SetAxis(Vector2 naxis)

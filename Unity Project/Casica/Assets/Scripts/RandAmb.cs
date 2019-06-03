@@ -16,7 +16,7 @@ public class RandAmb : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(sonidicotiempo > 20)
+        if(sonidicotiempo > Random.Range(15, 25))
         {
             int rand = Random.Range(1, 6);
             switch (rand)

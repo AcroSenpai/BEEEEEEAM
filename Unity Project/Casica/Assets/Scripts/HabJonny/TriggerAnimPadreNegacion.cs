@@ -40,7 +40,7 @@ public class TriggerAnimPadreNegacion : MonoBehaviour
             {
                 manager.camHabPadre.enabled = true;
                 padre.SetTrigger("kill");
-
+                AudioManager.instance.CambiarMusica(2);
                 manager.SetProgresion(3);
                 pc.perderElControl(5f);
             }
