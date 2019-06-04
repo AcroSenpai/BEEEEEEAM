@@ -156,6 +156,7 @@ public class Padre : MonoBehaviour
         targetTransform.GetComponent<PlayerController>().Dead();
         yield return new WaitForSeconds(1);
         manager.CloseDesvan();
+        manager.OpenDesvan();
     }
 
     void IdleUpdate()
