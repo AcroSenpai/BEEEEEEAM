@@ -824,6 +824,7 @@ public class PlayerController : MonoBehaviour
 
     public void perderElControl(float tiempo)
     {
+        ResetAnimations();
         tiempoDeEspera = tiempo;
         contadorTiempoDeEspera = 0;
         enPerdidaDeControl = true;
@@ -832,6 +833,7 @@ public class PlayerController : MonoBehaviour
 
     public void perderElControl(float tiempo, bool b)
     {
+        ResetAnimations();
         tiempoDeEspera = tiempo;
         contadorTiempoDeEspera = 0;
         enPerdidaDeControl = true;
@@ -846,7 +848,30 @@ public class PlayerController : MonoBehaviour
         mesh.SetActive(true);
     }
 
-     public void OcultarMesh()
+    public void ResetAnimations()
+    {
+        
+        anim.SetFloat("axisX", 0);
+        anim.SetFloat("axisY", 0);
+        anim.SetFloat("lastAxisX", 0);
+        anim.SetFloat("lastAxisY", 0);
+        anim.SetFloat("pullAxisX", 0);
+        anim.SetFloat("pullAxisY", 0);
+        anim.SetFloat("pullDir", 0);
+
+        anim.SetBool("walk", false);
+        anim.SetBool("crouch", false);
+        anim.SetBool("pull", false);
+        anim.SetBool("climb", false);
+        anim.SetBool("run", false);
+        anim.SetBool("Planear", false);
+        anim.SetBool("EndClimb", false);
+
+        anim.SetTrigger("reset");
+        anim.Play("idle");
+    }
+
+    public void OcultarMesh()
     {
         contadorOcultarMostrarMesh = 0;
         meshOculta = true;
