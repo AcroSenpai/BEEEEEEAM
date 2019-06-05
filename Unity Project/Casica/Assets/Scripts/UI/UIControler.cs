@@ -141,6 +141,11 @@ public class UIControler : MonoBehaviour
     public void ClosePausePanel()
     {
         pusePanel.SetActive(false);
+        for(int i = 0; i < ControlPanel.transform.childCount; i++)
+        {
+            ControlPanel.transform.GetChild(i).gameObject.SetActive(false);
+        }
+        ControlPanel.SetActive(false);
         paused = false;
         Time.timeScale = 1;
         sonidoPausa.Play();

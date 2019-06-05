@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -23,27 +23,22 @@ public class Mear : Interactive
     {
         if(activar)
         {
-            Debug.Log("1");
             if (contador > 9.9f)
             {
-                Debug.Log("5");
                 puntitoTaburete.SetActive(false);
             }
             else if (contador > 8 && sonidoplay)
             {
-                Debug.Log("4");
                 sonido.Play();
                 sonidoplay = false;
             }
             else if (contador > 2 && contador < 3)
             {
-                Debug.Log("3");
                 transform.GetChild(0).GetComponent<AudioSource>().Play();
                 contador ++;
             }
             else
             {
-                Debug.Log("2");
                 contador += Time.deltaTime;
             }
             
