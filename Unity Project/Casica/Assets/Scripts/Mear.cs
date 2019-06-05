@@ -51,6 +51,7 @@ public class Mear : Interactive
         manager.pissed = true;
         manager.SetProgresion(2);
         manager.timelineBaño.Play();
+		pc.ResetAnimations();
         pc.perderElControl(9.5f, false);
         puntitoTaburete.SetActive(false);
         Destroy(gameObject, 11f);

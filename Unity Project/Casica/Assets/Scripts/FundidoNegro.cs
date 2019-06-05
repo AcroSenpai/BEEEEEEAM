@@ -45,6 +45,8 @@ public class FundidoNegro : MonoBehaviour {
                     alpha += 0.3f * Time.deltaTime;
                 }
 
+				
+
                 if (alpha > 1)
                 {
                     if(!manager.onNegacionD)
@@ -56,7 +58,7 @@ public class FundidoNegro : MonoBehaviour {
                         manager.CloseNegacionN();
                         manager.onNegacionN = false;
                         counter = 0;
-                        player.Inmune();
+                        //player.Inmune();
                     }
                 }
             }
@@ -75,7 +77,7 @@ public class FundidoNegro : MonoBehaviour {
                 if (alpha < 0)
                 {
                     counter = 0;
-                    player.Inmune();
+                    //player.Inmune();
                     player.fAltura = false;
                     panelNegro.SetActive(false);
                 }

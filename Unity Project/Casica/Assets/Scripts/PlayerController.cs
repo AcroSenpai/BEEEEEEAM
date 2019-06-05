@@ -824,7 +824,7 @@ public class PlayerController : MonoBehaviour
 
     public void perderElControl(float tiempo)
     {
-        ResetAnimations();
+		Debug.Log("me activo");
         tiempoDeEspera = tiempo;
         contadorTiempoDeEspera = 0;
         enPerdidaDeControl = true;
@@ -833,7 +833,6 @@ public class PlayerController : MonoBehaviour
 
     public void perderElControl(float tiempo, bool b)
     {
-        ResetAnimations();
         tiempoDeEspera = tiempo;
         contadorTiempoDeEspera = 0;
         enPerdidaDeControl = true;

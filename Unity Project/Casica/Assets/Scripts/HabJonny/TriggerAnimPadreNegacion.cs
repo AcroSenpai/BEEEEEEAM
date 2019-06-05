@@ -42,6 +42,7 @@ public class TriggerAnimPadreNegacion : MonoBehaviour
                 padre.SetTrigger("kill");
                 AudioManager.instance.CambiarMusica(2);
                 manager.SetProgresion(3);
+				pc.ResetAnimations();
                 pc.perderElControl(5f);
             }
         }
