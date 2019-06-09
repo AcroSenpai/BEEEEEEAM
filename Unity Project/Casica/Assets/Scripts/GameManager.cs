@@ -281,10 +281,8 @@ public class GameManager : MonoBehaviour
 
     public void OpenCuartillo()
     {
-        Debug.Log("1");
         if (!cuartillo)
         {
-            Debug.Log("2");
             SceneManager.LoadSceneAsync("8Cuartillo", LoadSceneMode.Additive);
             cuartillo = true;
         }

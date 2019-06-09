@@ -143,6 +143,7 @@ public class Padre : MonoBehaviour
     {
         if(targetTransform.GetComponent<PlayerController>().pLinterna)
         {
+            AudioManager.instance.CambiarMusica(0);
             manager.OpenFinal();
         }
         else

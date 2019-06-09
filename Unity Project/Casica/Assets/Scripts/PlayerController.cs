@@ -116,6 +116,14 @@ public class PlayerController : MonoBehaviour
         anim = GetComponent<Animator>();
         sound = GameObject.FindGameObjectWithTag("Music").GetComponent<AudioManager>();
         contadorOcultarMostrarMesh = 0;
+        StartCoroutine(Empezar());
+    }
+
+    IEnumerator Empezar()
+    {
+        Inmune();
+        yield return new WaitForSeconds(1);
+        Inmune();
     }
 	
 	void Update ()

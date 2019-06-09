@@ -34,6 +34,7 @@ public class TriggerCuartillo : MonoBehaviour {
 
             GameManager.instance.SetProgresion(5);
             collider.SetActive(true);
+            AudioManager.instance.CambiarMusica(0);
 
         }
     }

@@ -18,6 +18,8 @@ public class Cometa : Interactive
 	{
 		PC.cometa = true;
         muerte.GetComponent<MuerteMortalNegacion>().Inicio();
+		Debug.Log("Iniciar Spnido");
+		AudioManager.instance.CambiarMusica(2);
 		Destroy(gameObject);
 	}
 }

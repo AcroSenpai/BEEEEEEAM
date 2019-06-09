@@ -4,15 +4,34 @@ using UnityEngine;
 
 public class Musica : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public AudioSource audiosource;
+  public void SubirMusica()
+  {
+      audiosource.Play();
+      StartCoroutine(SubirVolumen());
+  }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+  IEnumerator SubirVolumen()
+  {
+      for(float i = 0; i < 1; i += 0.01f)
+      {
+          audiosource.volume = i;
+          yield return  null;
+      }
+  }
+  
+  public void BajarMusica()
+  {
+      StartCoroutine(BajarVolumen());
+      audiosource.Stop();
+  }
+
+  IEnumerator BajarVolumen()
+  {
+      for(float i = 1; i > 0; i -= 0.01f)
+      {
+          audiosource.volume = i;
+          yield return  null;
+      }
+  }
 }

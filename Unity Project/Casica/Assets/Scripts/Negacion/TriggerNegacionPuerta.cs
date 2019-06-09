@@ -45,7 +45,6 @@ public class TriggerNegacionPuerta : MonoBehaviour
             if (manager.GetProgresion() == 3)
             {
                 Debug.Log("Cerrar puerta, caer cuadro y cambiar a progreso 4");
-                AudioManager.instance.CambiarMusica(0);
 				other.GetComponent<PlayerController>().ResetAnimations();
                 other.GetComponent<PlayerController>().perderElControl(5);
                 CambiarProgreso();

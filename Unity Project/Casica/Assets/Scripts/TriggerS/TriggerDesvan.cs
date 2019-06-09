@@ -39,42 +39,45 @@ public class TriggerDesvan : MonoBehaviour {
                 switch (parteHabitacion)
                 {
                     case 2:
-                        padres[0].SetActive(true);
+                        StartCoroutine(IniciarPadre(0));
+                        //padres[0].SetActive(true);
+                        AudioManager.instance.CambiarMusica(2);
                         vuelta = true;
                         //Destroy(this);
                         break;
                     case 3:
                         //Destroy(this);
                         Destroy(padres[0]);
-                        padres[1].SetActive(true);
+                        StartCoroutine(IniciarPadre(1));
+                        //padres[1].SetActive(true);
                         vuelta = true;
                         break;
                     case 4:
                         //Destroy(this);
                         Destroy(padres[1]);
-
-                        padres[2].SetActive(true);
+                        StartCoroutine(IniciarPadre(2));
+                        //padres[2].SetActive(true);
                         vuelta = true;
                         break;
                     case 5:
                         //Destroy(this);
                         Destroy(padres[2]);
-
-                        padres[3].SetActive(true);
+                        StartCoroutine(IniciarPadre(3));
+                        //padres[3].SetActive(true);
                         vuelta = true;
                         break;
                     case 6:
                         //Destroy(this);
                         Destroy(padres[3]);
-
-                        padres[4].SetActive(true);
+                        StartCoroutine(IniciarPadre(4));
+                        //padres[4].SetActive(true);
                         vuelta = true;
                         break;
                     case 7:
                         //Destroy(this);
                         Destroy(padres[4]);
-
-                        padres[5].SetActive(true);
+                        StartCoroutine(IniciarPadre(5));
+                        //padres[5].SetActive(true);
                         vuelta = true;
                         break;
                     default:
@@ -90,6 +93,11 @@ public class TriggerDesvan : MonoBehaviour {
             }
 
         }
+    }
+    IEnumerator IniciarPadre(int num)
+    {
+        yield return new WaitForSeconds(2f);
+        padres[num].SetActive(true);
     }
 
     private void OnTriggerExit(Collider other)

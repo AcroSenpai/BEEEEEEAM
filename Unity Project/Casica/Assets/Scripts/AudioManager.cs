@@ -45,6 +45,8 @@ public class AudioManager : MonoBehaviour {
             s.source.playOnAwake = false;
             s.source.outputAudioMixerGroup = ase.outputAudioMixerGroup;
         }
+
+        CambiarMusica(1);
     }
     
     public void Play(string name, float pitch = 10, float volumen = 10)
@@ -142,18 +144,19 @@ public class AudioManager : MonoBehaviour {
     {
         if(num == 1)
         {
-            musica1.SetActive(true);
-            musica2.SetActive(false);
+            musica1.GetComponent<Musica>().SubirMusica();
+            musica2.GetComponent<Musica>().BajarMusica();
         }
         else if(num == 2) 
         {
-            musica1.SetActive(false);
-            musica2.SetActive(true);
+
+            musica2.GetComponent<Musica>().SubirMusica();
+            musica1.GetComponent<Musica>().BajarMusica();
         }
         else
         {
-            musica1.SetActive(false);
-            musica2.SetActive(false);
+            musica1.GetComponent<Musica>().BajarMusica();
+            musica2.GetComponent<Musica>().BajarMusica();
         }
     }
 }

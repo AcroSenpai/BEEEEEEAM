@@ -43,7 +43,6 @@ public class Textos : MonoBehaviour
 		Color c = texto.color;
 		for(float i = 0; i < 1; i += 0.1f)
 		{
-			Debug.Log(i);
 			c.a = i;
 			texto.color = c;
 			yield return null;
@@ -56,7 +55,6 @@ public class Textos : MonoBehaviour
 		Color c = texto.color;
 		for(float i = 0; i > 0; i -= 0.1f)
 		{
-			Debug.Log(i);
 			c.a = i;
 			texto.color = c;
 			yield return null;

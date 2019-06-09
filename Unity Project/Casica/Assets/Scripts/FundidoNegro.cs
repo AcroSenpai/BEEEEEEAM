@@ -32,6 +32,7 @@ public class FundidoNegro : MonoBehaviour {
         panel.alpha = alpha;
         if(manager.GetProgresion() == 4)
         {
+            AudioManager.instance.CambiarMusica(0);
             if (manager.onNegacionN)
             {
                 panelNegro.SetActive(true);

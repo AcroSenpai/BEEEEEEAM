@@ -32,7 +32,7 @@ public class Mear : Interactive
                 sonido.Play();
                 sonidoplay = false;
             }
-            else if (contador > 2 && contador < 3)
+            else if (contador > 1 && contador < 2)
             {
                 transform.GetChild(0).GetComponent<AudioSource>().Play();
                 contador ++;
