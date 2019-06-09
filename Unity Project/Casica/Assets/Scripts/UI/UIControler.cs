@@ -122,8 +122,8 @@ public class UIControler : MonoBehaviour
     }
     public void OpenGodPanel()
     {
-        godPanel.SetActive(true);
-        Cursor.visible = true;
+        //godPanel.SetActive(true);
+        //Cursor.visible = true;
     }
 
     /*public void OpenMenuPanel()
@@ -172,8 +172,8 @@ public class UIControler : MonoBehaviour
     }
     public void CloseGodPanel()
     {
-        godPanel.SetActive(false);
-        Cursor.visible = false;
+        //godPanel.SetActive(false);
+        //Cursor.visible = false;
     }
     /*public void CloseMenuPanel()
     {
