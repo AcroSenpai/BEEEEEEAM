@@ -76,7 +76,7 @@ public class TriggerDesvan : MonoBehaviour {
                     case 7:
                         //Destroy(this);
                         Destroy(padres[4]);
-                        StartCoroutine(IniciarPadre(5));
+                        //StartCoroutine(IniciarPadre(5));
                         //padres[5].SetActive(true);
                         vuelta = true;
                         break;

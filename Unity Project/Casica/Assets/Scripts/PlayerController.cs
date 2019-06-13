@@ -591,7 +591,7 @@ public class PlayerController : MonoBehaviour
             
             if(!sonidoTaburete)
             {
-                sound.Play("push");
+                sound.Play("push", 1, 0.2f);
                 sonidoTaburete = true;
                 GetComponent<CharacterController>().radius = 3.5f;
                 switch (pos)

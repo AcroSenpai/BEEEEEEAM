@@ -59,6 +59,7 @@ public class AudioManager : MonoBehaviour {
             return;
         }
 
+
         if(pitch != 10)
         {
             s.source.pitch = pitch;

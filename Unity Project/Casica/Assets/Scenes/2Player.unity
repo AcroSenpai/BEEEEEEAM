@@ -7215,14 +7215,14 @@ MonoBehaviour:
   sounds:
   - name: step
     clip: {fileID: 8300000, guid: f7a62b9819d33c642bcdc1e7dc60ca82, type: 3}
-    volume: 1
+    volume: 0.086
     pitch: 1
     loop: 0
     audioMixer: {fileID: 0}
     source: {fileID: 0}
   - name: push
-    clip: {fileID: 8300000, guid: d3d56ae143f87ce40819056f9fdea7e5, type: 3}
-    volume: 1
+    clip: {fileID: 8300000, guid: 17ee34d7b4becfb4cb414c6acac54395, type: 3}
+    volume: 0.668
     pitch: 1
     loop: 1
     audioMixer: {fileID: 0}
@@ -21348,7 +21348,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: f3718033a914f1f4baf7b62ec5b362f7, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.937
+  m_Volume: 0.4
   m_Pitch: 0.8
   Loop: 0
   Mute: 0
@@ -27320,6 +27320,11 @@ PrefabInstance:
     - target: {fileID: 1777338912463223864, guid: 553b2ef763df2584aa5b89a3afac997a,
         type: 3}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1873082574811287894, guid: 553b2ef763df2584aa5b89a3afac997a,
+        type: 3}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
