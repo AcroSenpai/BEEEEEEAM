@@ -20,6 +20,7 @@ public class Linterna : Interactive
 	{
 		PC.cojerObj(1);
         PC.anim.SetTrigger("Pick");
+		linterna.SetActive(false);
 		StartCoroutine(empezarFinal());
 	}
 
